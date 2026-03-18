@@ -1,0 +1,51 @@
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --header-height: 80px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-page {
+  width: 100%;
+  max-width: 1200px; /* Reduced from 1920px to ensure visible side margins on most screens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #000;
+  margin: 0 auto;
+  padding: 2rem 0; /* Vertical spacing between pages */
+}
+
+.menu-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 1080px) {
+  .menu-page {
+    aspect-ratio: auto;
+    height: auto;
+  }
+}
