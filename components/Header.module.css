@@ -23,9 +23,14 @@
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .menuButton {
@@ -37,6 +42,13 @@
   align-items: center;
   justify-content: center;
   transition: opacity 0.3s ease;
+  padding: 0;
+}
+
+.menuIcon {
+  width: 32px;
+  height: auto;
+  object-fit: contain;
 }
 
 .menuButton:hover {
@@ -111,5 +123,13 @@
   }
   .overlay {
     padding: 1.25rem;
+  }
+
+  .logoImage {
+    height: 30px;
+  }
+
+  .menuIcon {
+    width: 28px;
   }
 }
