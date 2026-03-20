@@ -3,7 +3,7 @@
     "id": 1,
     "category": "ATIŞTIRMALIKLAR",
     "subCategory": "SNACKS",
-    "backgroundImage": "/menu/1.png",
+    "backgroundImage": "/menu/1.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Patates Kızartması (ithal)", "subName": "French Fries(Export)", "price": "350TL / 400TL / 450TL", "description": "Küçük / Orta / Büyük" },
@@ -26,7 +26,7 @@
     "id": 2,
     "category": "BURGER",
     "subCategory": "BURGER",
-    "backgroundImage": "/menu/2.png",
+    "backgroundImage": "/menu/2.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "The Shamrock Burger", "subName": "200. gr. Homemade Burger Patty, Caramelized Onion, with French Fries.", "price": "680TL", "description": "200 gr. El Yapımı Burger Köftesi, Karamelize Soğan, Patates Kızartması ile." },
@@ -42,7 +42,7 @@
     "id": 3,
     "category": "WRAP",
     "subCategory": "WRAP",
-    "backgroundImage": "/menu/3.png",
+    "backgroundImage": "/menu/3.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Vejeteryan Wrap", "subName": "Vegetarian Wrap", "price": "620TL", "description": "Patates Kızartması ile servis edilir. (Served with French Fries.)" },
@@ -56,7 +56,7 @@
     "id": 4,
     "category": "KENTUCKY STYLE FRIED CHICKEN",
     "subCategory": "FRIED CHICKEN",
-    "backgroundImage": "/menu/4.png",
+    "backgroundImage": "/menu/4.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "6 Acılı Kanat", "subName": "6 Hot Wings", "price": "610TL", "description": "Çıtır Tavuk Parçaları, Patates Kızartması. (Crispy Chicken Wings, French Fries.)" },
@@ -73,7 +73,7 @@
     "id": 5,
     "category": "PIZZA",
     "subCategory": "PIZZA",
-    "backgroundImage": "/menu/5.png",
+    "backgroundImage": "/menu/5.webp",
     "layoutAlign": "left",
     "layoutType": "columns",
     "columns": ["S", "M", "L"],
@@ -96,7 +96,7 @@
     "id": 7,
     "category": "TAVUK MENÜ",
     "subCategory": "CHICKEN MENU",
-    "backgroundImage": "/menu/7.png",
+    "backgroundImage": "/menu/7.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Tavuk Şnitzel", "subName": "Chicken Schnitzel", "price": "685TL", "description": "Patates Kızartması, Pilav, Salata. (French Fries, Rice, Salad.)" },
@@ -118,7 +118,7 @@
     "id": 6,
     "category": "ET MENÜ",
     "subCategory": "BEEF MENU",
-    "backgroundImage": "/menu/6.png",
+    "backgroundImage": "/menu/6.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Fajita", "subName": "Beef, California Peppers, Red Onion, Tomato Sauce, Mexican Sauce, Cheese, Sweet Corn Sauce.", "price": "895TL", "description": "Dana Eti, Kaliforniya Biberleri, Kırmızı Soğan, Domates Sosu, Meksika Sosu, Peynir, Mısır Sosu." }
@@ -128,7 +128,7 @@
     "id": 8,
     "category": "SALATA",
     "subCategory": "SALAD",
-    "backgroundImage": "/menu/8.png",
+    "backgroundImage": "/menu/8.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Sezar Salata", "subName": "Cesar Salad", "price": "640TL", "description": "Izgara Tavuk Bonfile, Göbek Marul, Grissini, Mısır, Parmesan, Sos. (Grilled Chicken Fillet, iceberg Lettuce, Grissini, Corn, Parmesan, Sauce.)" },
@@ -141,7 +141,7 @@
     "id": 9,
     "category": "MAKARNA",
     "subCategory": "PASTA",
-    "backgroundImage": "/menu/9.png",
+    "backgroundImage": "/menu/9.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Spaghetti Bolognese", "price": "690TL", "description": "Kıyma, Soğan, Domates, Biber. (Minced Meat, Onion, Tomato, Pepper.)" },
@@ -155,7 +155,7 @@
     "id": 10,
     "category": "BALIK",
     "subCategory": "FISH",
-    "backgroundImage": "/menu/10.png",
+    "backgroundImage": "/menu/10.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Chili Fish", "price": "970TL", "description": "Özel Acı Sosla Marine Edilmiş Çipura, Patates Kızartması ve Salata. (Sea Bream Marinated with Special Sauce, French Fries and Salad.)" },
@@ -168,7 +168,7 @@
     "id": 11,
     "category": "ÇOCUK MENÜSÜ",
     "subCategory": "KIDS MENU",
-    "backgroundImage": "/menu/11.png",
+    "backgroundImage": "/menu/11.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Nuggets", "price": "520TL", "description": "Patates Kızartması ile servis edilir. (Served with French Fries.)" },
@@ -180,7 +180,7 @@
     "id": 12,
     "category": "TATLI",
     "subCategory": "DESSERT",
-    "backgroundImage": "/menu/12.png",
+    "backgroundImage": "/menu/12.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Souflé", "price": "380TL", "description": "Dondurma ile servis edilir. (Served with Ice Cream.)" },
@@ -192,7 +192,7 @@
     "id": 13,
     "category": "SOĞUK İÇECEK",
     "subCategory": "COLD DRINKS",
-    "backgroundImage": "/menu/13.png",
+    "backgroundImage": "/menu/13.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Coca-Cola, Coca-Cola Light, Coca-Cola Zero, Fanta, Sprite", "price": "95TL", "description": "" },
@@ -214,7 +214,7 @@
     "id": 19,
     "category": "ÇAY",
     "subCategory": "TEA",
-    "backgroundImage": "/menu/19.png",
+    "backgroundImage": "/menu/19.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Küçük Demli Çay", "subName": "Brewed Tea", "price": "50TL", "description": "" },
@@ -227,7 +227,7 @@
     "id": 15,
     "category": "KAHVE",
     "subCategory": "COFFEE",
-    "backgroundImage": "/menu/15.png",
+    "backgroundImage": "/menu/15.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Espresso Single / Double", "price": "175TL / 195TL", "description": "" },
@@ -260,7 +260,7 @@
     "id": 16,
     "category": "SOĞUK KAHVE",
     "subCategory": "ICED COFFEE",
-    "backgroundImage": "/menu/16.png",
+    "backgroundImage": "/menu/16.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Frappe", "price": "200TL", "description": "" },
@@ -278,7 +278,7 @@
     "id": 14,
     "category": "FROSTY",
     "subCategory": "FROSTY",
-    "backgroundImage": "/menu/14.png",
+    "backgroundImage": "/menu/14.webp",
     "layoutAlign": "left",
     "subSections": [
       {
@@ -317,7 +317,7 @@
     "id": 17,
     "category": "BEER",
     "subCategory": "BEER",
-    "backgroundImage": "/menu/17.png",
+    "backgroundImage": "/menu/17.webp",
     "layoutAlign": "left",
     "subSections": [
       {
@@ -359,7 +359,7 @@
     "id": 18,
     "category": "BEER",
     "subCategory": "BEER",
-    "backgroundImage": "/menu/18.png",
+    "backgroundImage": "/menu/18.webp",
     "layoutAlign": "left",
     "subSections": [
       {
@@ -402,7 +402,7 @@
     "id": 25,
     "category": "ALKOLSÜZ KOKTEYL",
     "subCategory": "ALCOHOL-FREE COCKTAIL",
-    "backgroundImage": "/menu/25.png",
+    "backgroundImage": "/menu/25.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Mojito", "price": "290TL" },
@@ -418,7 +418,7 @@
     "id": 23,
     "category": "KOKTEYL",
     "subCategory": "COCKTAIL",
-    "backgroundImage": "/menu/23.png",
+    "backgroundImage": "/menu/23.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Jäger Bomb", "price": "310TL" },
@@ -445,7 +445,7 @@
     "id": 24,
     "category": "KOKTEYL",
     "subCategory": "COCKTAIL",
-    "backgroundImage": "/menu/24.png",
+    "backgroundImage": "/menu/24.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Balyoz", "price": "420TL" },
@@ -473,7 +473,7 @@
     "id": 29,
     "category": "KOKTEYL",
     "subCategory": "COCKTAIL",
-    "backgroundImage": "/menu/29.png",
+    "backgroundImage": "/menu/29.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Touch Down 🍸🍸", "price": "390TL", "description": "Infused Grapefruit Peel Malf Gin, Skinoss Mastic Liquer, Fresh Green Apple, Fresh Sorrel Leaf, Cucumber, Citrus Blend Sweet & Sour Mix, Earl Grey Bittter, Vegan Cocktail Foamer." },
@@ -491,7 +491,7 @@
     "id": 26,
     "category": "SHOT",
     "subCategory": "SHOT",
-    "backgroundImage": "/menu/26.png",
+    "backgroundImage": "/menu/26.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Tequila", "price": "150TL" },
@@ -513,7 +513,7 @@
     "id": 28,
     "category": "ALKOLLÜ İÇECEK",
     "subCategory": "ALCOHOLIC DRINKS",
-    "backgroundImage": "/menu/28.png",
+    "backgroundImage": "/menu/28.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Baileys", "price": "250TL" },
@@ -532,7 +532,7 @@
     "id": 20,
     "category": "VİSKİ",
     "subCategory": "WHISKY",
-    "backgroundImage": "/menu/20.png",
+    "backgroundImage": "/menu/20.webp",
     "layoutAlign": "left",
     "items": [
       { "name": "Monkey Shoulder", "price": "370TL", "description": "" },
@@ -559,7 +559,7 @@
     "id": 21,
     "category": "VODKA",
     "subCategory": "ALCOHOL",
-    "backgroundImage": "/menu/21.png",
+    "backgroundImage": "/menu/21.webp",
     "layoutAlign": "left",
     "subSections": [
       {
@@ -602,7 +602,7 @@
     "id": 22,
     "category": "ŞARAP",
     "subCategory": "WINE",
-    "backgroundImage": "/menu/22.png",
+    "backgroundImage": "/menu/22.webp",
     "layoutAlign": "left",
     "subSections": [
       {

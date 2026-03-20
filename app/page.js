@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import { menuData } from '@/data/menuData';
 import { useRef } from 'react';
 import styles from '@/app/page.module.css';
+import Image from 'next/image';
 
 export default function Home() {
   const sectionRefs = useRef({}); // Changed to an object to store refs by ID
@@ -52,10 +53,14 @@ export default function Home() {
             ref={(el) => (sectionRefs.current[section.id] = el)} // Store ref by section.id
           >
             <div className={styles.backgroundImageWrapper}>
-              <img 
+              <Image 
                 src={section.backgroundImage} 
                 alt={section.category} 
                 className={styles.backgroundImage}
+                width={1200}
+                height={800}
+                priority={index === 0}
+                loading={index === 0 ? undefined : "lazy"}
               />
             </div>
 
