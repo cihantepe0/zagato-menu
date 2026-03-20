@@ -19,10 +19,23 @@
 }
 
 .loginTitle {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  letter-spacing: 0.2rem;
+  color: #fff;
   margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+.adminLogoWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.adminLogo {
+  height: auto;
+  width: 200px;
+  object-fit: contain;
 }
 
 .loginSubtitle {

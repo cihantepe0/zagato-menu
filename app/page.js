@@ -1,13 +1,23 @@
 'use client';
 
 import Header from '@/components/Header';
-import { menuData } from '@/data/menuData';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import styles from '@/app/page.module.css';
 import Image from 'next/image';
 
 export default function Home() {
-  const sectionRefs = useRef({}); // Changed to an object to store refs by ID
+  const [menuData, setMenuData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const sectionRefs = useRef({}); 
+
+  useEffect(() => {
+    fetch('/api/menu')
+      .then(res => res.json())
+      .then(data => {
+        setMenuData(data);
+        setLoading(false);
+      });
+  }, []);
 
   const scrollToSection = (id) => {
     const element = sectionRefs.current[id];
@@ -22,6 +32,16 @@ export default function Home() {
       });
     }
   };
+
+  if (loading) {
+    return (
+      <main className={styles.container}>
+        <div className={styles.loadingWrapper}>
+          <div className={styles.spinner}></div>
+        </div>
+      </main>
+    );
+  }
 
   // Group unique categories for navigation
   const navigationCategories = [];
@@ -41,7 +61,7 @@ export default function Home() {
   return (
     <main className={styles.container}>
       <Header 
-        categories={navigationCategories} // Use the new navigationCategories
+        categories={navigationCategories} 
         onNavigate={scrollToSection} 
       />
       
