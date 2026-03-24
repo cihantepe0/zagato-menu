@@ -3,6 +3,9 @@ import './globals.css';
 export const metadata = {
   title: 'Shamrock | Menu',
   description: 'Shamrock Restaurant Menu',
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({ children }) {
