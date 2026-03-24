@@ -109,6 +109,9 @@ export default function Home() {
                   {section.subSections ? (
                     section.subSections.map((sub, subIndex) => (
                       <div key={subIndex} className={styles.subSection}>
+                        {sub.title && (
+                          <div className={styles.subSectionTitle}>{sub.title}</div>
+                        )}
                         {sub.layoutType === 'columns' && (
                           <div className={styles.headersRow}>
                             <div className={styles.spacer}></div>
