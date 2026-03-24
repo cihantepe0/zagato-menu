@@ -497,7 +497,7 @@
     "category": "MAKARNA",
     "subCategory": "PASTA",
     "backgroundImage": "/menu/9.webp",
-    "layoutAlign": "left",
+    "layoutAlign": "right",
     "items": [
       {
         "name": "Spaghetti Bolognese",
@@ -616,7 +616,7 @@
     "category": "SOĞUK İÇECEK",
     "subCategory": "COLD DRINKS",
     "backgroundImage": "/menu/13.webp",
-    "layoutAlign": "left",
+    "layoutAlign": "center",
     "items": [
       {
         "name": "Coca-Cola, Coca-Cola Light, Coca-Cola Zero, Fanta, Sprite",
@@ -698,7 +698,7 @@
     "category": "ÇAY",
     "subCategory": "TEA",
     "backgroundImage": "/menu/19.webp",
-    "layoutAlign": "left",
+    "layoutAlign": "center",
     "items": [
       {
         "name": "Küçük Demli Çay",
@@ -1269,7 +1269,7 @@
     "category": "ALKOLSÜZ KOKTEYL",
     "subCategory": "ALCOHOL-FREE COCKTAIL",
     "backgroundImage": "/menu/25.webp",
-    "layoutAlign": "left",
+    "layoutAlign": "center",
     "items": [
       {
         "name": "Mojito",
@@ -1307,7 +1307,7 @@
     "category": "KOKTEYL",
     "subCategory": "COCKTAIL",
     "backgroundImage": "/menu/23.webp",
-    "layoutAlign": "left",
+    "layoutAlign": "center",
     "items": [
       {
         "name": "Jäger Bomb",
@@ -1388,7 +1388,7 @@
     "category": "KOKTEYL",
     "subCategory": "COCKTAIL",
     "backgroundImage": "/menu/24.webp",
-    "layoutAlign": "left",
+    "layoutAlign": "center",
     "items": [
       {
         "name": "Balyoz",
@@ -1588,7 +1588,7 @@
     "category": "ALKOLLÜ İÇECEK",
     "subCategory": "ALCOHOLIC DRINKS",
     "backgroundImage": "/menu/28.webp",
-    "layoutAlign": "left",
+    "layoutAlign": "center",
     "items": [
       {
         "name": "Baileys",

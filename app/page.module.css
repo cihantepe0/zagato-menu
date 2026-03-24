@@ -57,58 +57,68 @@
   inset: 0;
   display: flex;
   flex-direction: column;
-  padding: 4% 6%;
+  padding: 5% 7%;
 }
 
 .alignLeft {
   align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .alignRight {
   align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.alignCenter {
+  align-items: center;
+  justify-content: center;
 }
 
 .categoryHeader {
   margin-bottom: 2rem;
-  align-self: flex-start; /* Always on the left */
+  width: 100%;
 }
 
 .categoryTitle {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 800;
   line-height: 1;
   color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
 }
 
 .categorySubTitle {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color: #fff;
   opacity: 0.9;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .subSection {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .subSectionTitle {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 800;
   color: #fff;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  letter-spacing: 0.1rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
 }
 
 .itemsCard {
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(16px);
-  padding: 2.25rem;
-  border-radius: 4px;
-  max-width: 600px;
-  margin-top: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2.5rem;
+  border-radius: 2px;
+  width: 100%;
+  max-width: 650px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .alignLeft .itemsCard {
@@ -117,6 +127,11 @@
 
 .alignRight .itemsCard {
   align-self: flex-end;
+}
+
+.alignCenter .itemsCard {
+  align-self: center;
+  margin-top: 0; /* Let justify-content handle vertical position if desired */
 }
 
 .menuItem {

@@ -84,7 +84,11 @@ export default function Home() {
               />
             </div>
 
-            <div className={`${styles.contentOverlay} ${section.layoutAlign === 'left' ? styles.alignLeft : styles.alignRight}`}>
+            <div className={`${styles.contentOverlay} ${
+              section.layoutAlign === 'center' ? styles.alignCenter : 
+              section.layoutAlign === 'right' ? styles.alignRight : 
+              styles.alignLeft
+            }`}>
               <div className={styles.categoryHeader}>
                 <h2 className={styles.categoryTitle}>{section.category}</h2>
                 <h3 className={styles.categorySubTitle}>{section.subCategory}</h3>
