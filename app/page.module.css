@@ -39,37 +39,36 @@
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
-  min-height: 85vh; /* Balanced height to avoid side-cropping */
+  min-height: auto;
   overflow: hidden;
 }
 
 .backgroundImageWrapper {
-  position: absolute;
-  inset: 0;
+  width: 100%;
+  position: relative;
   z-index: 0;
 }
 
 .backgroundImage {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
+  height: auto;
+  display: block;
 }
 
 .contentOverlay {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 1;
-  flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 2.5rem 3rem;
+  padding: 1.5rem 2rem;
   box-sizing: border-box;
 }
 
 .categoryHeader {
   position: absolute;
-  top: 2.5rem;
-  left: 3rem;
+  top: 1.5rem;
+  left: 2rem;
   margin-bottom: 0;
   width: auto;
   z-index: 2;
@@ -126,14 +125,14 @@
 .alignCenter .itemsCardWrapper { align-items: center; }
 
 .itemsCard {
-  background: rgba(0, 0, 0, 0.65); /* Increased contrast for readability */
-  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.85); /* Maximum contrast for tiny fonts */
+  padding: 0.4rem 0.8rem;
   border-radius: 2px;
   width: auto;
-  min-width: 200px;
-  max-width: 230px; /* Zepto-size width */
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  min-width: 180px;
+  max-width: 210px; /* Atto-size ultra miniature */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
 .alignLeft .itemsCard {
@@ -173,13 +172,13 @@
 }
 
 .itemName {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #fff;
 }
 
 .itemSubName {
-  font-size: 0.62rem;
+  font-size: 0.58rem;
   font-weight: 300;
   color: #d1d1d6;
   font-style: italic;
@@ -187,16 +186,16 @@
 }
 
 .itemDescription {
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   color: #d1d1d6;
-  margin-top: 0.08rem;
-  line-height: 1.15;
+  margin-top: 0.05rem;
+  line-height: 1.1;
 }
 
 .itemPrice {
   white-space: nowrap;
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
 .itemPrice small {
@@ -247,62 +246,57 @@
 
 @media (max-width: 768px) {
   .menuPage {
-    min-height: 82vh; /* Optimal height to minimize cropping while fitting cards */
+    min-height: auto;
     margin-bottom: 0;
   }
 
   .menuWrapper {
-    margin-top: 85px;
+    margin-top: 75px;
     padding: 0;
   }
 
   .contentOverlay {
-    padding: 1.5rem 1rem;
+    padding: 1rem 0.75rem;
   }
 
   .categoryHeader {
-    top: 1.25rem;
-    left: 1.25rem;
+    top: 1rem;
+    left: 1rem;
   }
 
   .categoryTitle { 
-    font-size: 1.4rem; 
-    letter-spacing: 0.05em;
+    font-size: 1.1rem; 
   }
   
   .categorySubTitle { 
-    font-size: 0.85rem; 
-    opacity: 0.9;
-    letter-spacing: 0.08rem;
+    font-size: 0.7rem; 
   }
 
   .subSectionTitle {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    border-left: 2px solid rgba(255, 255, 255, 0.4);
-    margin-bottom: 0.5rem;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.4rem;
   }
 
   .itemsCard { 
-    padding: 0.6rem 0.6rem; 
-    margin-top: 2rem; /* Give room for absolute header */
-    width: 92%;
-    max-width: 250px;
-    background: rgba(0, 0, 0, 0.75); /* Maximum contrast for mirroring */
+    padding: 0.4rem 0.5rem; 
+    margin-top: 2rem;
+    width: 88%;
+    max-width: 210px;
+    background: rgba(0, 0, 0, 0.85);
   }
 
-  .itemName { font-size: 0.75rem; }
-  .itemSubName { font-size: 0.68rem; }
-  .itemPrice { font-size: 0.75rem; min-width: 45px; }
-  .itemDescription { font-size: 0.58rem; line-height: 1.2; }
+  .itemName { font-size: 0.68rem; }
+  .itemSubName { font-size: 0.6rem; }
+  .itemPrice { font-size: 0.68rem; min-width: 35px; }
+  .itemDescription { font-size: 0.5rem; line-height: 1.1; }
 
   .headersRow, .columnPrices {
-    width: 85px;
-    gap: 0.4rem;
+    width: 70px;
+    gap: 0.35rem;
   }
 
   .columnHeader, .columnPrice {
-    width: 26px;
-    font-size: 0.58rem;
+    width: 22px;
+    font-size: 0.5rem;
   }
 }
