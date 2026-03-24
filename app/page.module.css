@@ -39,29 +39,30 @@
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
-  min-height: auto;
-  overflow: hidden;
+  min-height: 70vh; /* Minimum height for visual impact */
+  overflow: visible;
 }
 
 .backgroundImageWrapper {
-  width: 100%;
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 0;
 }
 
 .backgroundImage {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .contentOverlay {
-  position: absolute;
-  inset: 0;
+  position: relative;
   z-index: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 2rem;
+  padding: 4.5rem 2rem 2.5rem 2rem; /* Added top padding for absolute header room */
   box-sizing: border-box;
 }
 
@@ -125,14 +126,14 @@
 .alignCenter .itemsCardWrapper { align-items: center; }
 
 .itemsCard {
-  background: rgba(0, 0, 0, 0.85); /* Maximum contrast for tiny fonts */
-  padding: 0.4rem 0.8rem;
+  background: rgba(0, 0, 0, 0.9); /* Maximum contrast for tiny fonts */
+  padding: 0.35rem 0.6rem;
   border-radius: 2px;
   width: auto;
-  min-width: 180px;
-  max-width: 210px; /* Atto-size ultra miniature */
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  min-width: 170px;
+  max-width: 195px; /* Femto-size ultra miniature */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
 }
 
 .alignLeft .itemsCard {
@@ -172,30 +173,30 @@
 }
 
 .itemName {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: #fff;
 }
 
 .itemSubName {
-  font-size: 0.58rem;
+  font-size: 0.55rem;
   font-weight: 300;
   color: #d1d1d6;
   font-style: italic;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .itemDescription {
-  font-size: 0.5rem;
+  font-size: 0.48rem;
   color: #d1d1d6;
-  margin-top: 0.05rem;
+  margin-top: 0.04rem;
   line-height: 1.1;
 }
 
 .itemPrice {
   white-space: nowrap;
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
 }
 
 .itemPrice small {
@@ -246,57 +247,57 @@
 
 @media (max-width: 768px) {
   .menuPage {
-    min-height: auto;
+    min-height: 60vh;
     margin-bottom: 0;
   }
 
   .menuWrapper {
-    margin-top: 75px;
+    margin-top: 65px;
     padding: 0;
   }
 
   .contentOverlay {
-    padding: 1rem 0.75rem;
+    padding: 3.5rem 0.6rem 1.5rem 0.6rem;
   }
 
   .categoryHeader {
-    top: 1rem;
+    top: 0.85rem;
     left: 1rem;
   }
 
   .categoryTitle { 
-    font-size: 1.1rem; 
+    font-size: 1rem; 
   }
   
   .categorySubTitle { 
-    font-size: 0.7rem; 
+    font-size: 0.65rem; 
   }
 
   .subSectionTitle {
-    font-size: 0.65rem;
-    padding: 0.2rem 0.4rem;
+    font-size: 0.62rem;
+    padding: 0.15rem 0.45rem;
   }
 
   .itemsCard { 
-    padding: 0.4rem 0.5rem; 
-    margin-top: 2rem;
-    width: 88%;
-    max-width: 210px;
-    background: rgba(0, 0, 0, 0.85);
+    padding: 0.35rem 0.5rem; 
+    margin-top: 0;
+    width: 94%;
+    max-width: 195px;
+    background: rgba(0, 0, 0, 0.9);
   }
 
-  .itemName { font-size: 0.68rem; }
-  .itemSubName { font-size: 0.6rem; }
-  .itemPrice { font-size: 0.68rem; min-width: 35px; }
-  .itemDescription { font-size: 0.5rem; line-height: 1.1; }
+  .itemName { font-size: 0.65rem; }
+  .itemSubName { font-size: 0.55rem; }
+  .itemPrice { font-size: 0.65rem; min-width: 32px; }
+  .itemDescription { font-size: 0.45rem; line-height: 1.1; }
 
   .headersRow, .columnPrices {
-    width: 70px;
-    gap: 0.35rem;
+    width: 65px;
+    gap: 0.3rem;
   }
 
   .columnHeader, .columnPrice {
-    width: 22px;
-    font-size: 0.5rem;
+    width: 20px;
+    font-size: 0.48rem;
   }
 }
