@@ -1837,7 +1837,7 @@
   },
   {
     "id": 22,
-    "category": "ŞARAP",
+    "category": "ŞARAP", "layoutType": "quad-grid",
     "subCategory": "WINE",
     "backgroundImage": "/menu/22.webp",
     "layoutAlign": "left",

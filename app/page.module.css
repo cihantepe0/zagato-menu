@@ -62,7 +62,7 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  padding: 1.2rem 2.5rem;
+  padding: 4.8rem 2.2rem 1.2rem 2.2rem; /* Reduced top padding for top-left cards */
   box-sizing: border-box;
 }
 
@@ -117,8 +117,22 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Global Top alignment */
+  align-items: flex-start; /* Global Left alignment */
   width: 100%;
+  position: relative;
+}
+
+.quadGridWrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.quadGridWrapper > * {
+  pointer-events: auto;
 }
 
 .alignLeft .itemsCardWrapper { align-items: flex-start; }
@@ -140,13 +154,14 @@
   align-self: flex-start;
 }
 
-.alignRight .itemsCard {
-  align-self: flex-end;
-}
+.alignRight .itemsCard { align-self: flex-start; } /* Overridden to match global TOP-LEFT */
+.alignCenter .itemsCard { align-self: flex-start; } /* Overridden to match global TOP-LEFT */
 
-.alignCenter .itemsCard {
-  align-self: center;
-}
+/* Quad Grid Specific Positions (BakuBase Mirroring) */
+.cardNW { position: absolute; top: 0; left: 0; }
+.cardEC { position: absolute; top: 40%; right: 0; transform: translateY(-50%); }
+.cardWC { position: absolute; top: 60%; left: 0; transform: translateY(-50%); }
+.cardSE { position: absolute; bottom: 0.5rem; right: 0; }
 
 .menuItem {
   display: flex;
@@ -194,6 +209,7 @@
   line-height: 1.05;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -262,12 +278,37 @@
   }
 
   .contentOverlay {
-    padding: 1.8rem 0.6rem 0.8rem 0.6rem;
+    padding: 2.8rem 0.5rem 0.6rem 0.5rem;
+  }
+
+  .itemsCardWrapper {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .quadGridWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: flex-start;
+    height: auto;
+    inset: auto;
+  }
+
+  .cardNW, .cardEC, .cardWC, .cardSE {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+    width: 95%;
   }
 
   .categoryHeader {
-    top: 0.75rem;
-    left: 1rem;
+    top: 0.7rem;
+    left: 0.75rem;
   }
 
   .categoryTitle { 

@@ -95,8 +95,41 @@ export default function Home() {
               </div>
 
               <div className={styles.itemsCardWrapper}>
-                <div className={styles.itemsCard}>
-                  {section.layoutType === 'columns' && (
+                {section.layoutType === 'quad-grid' ? (
+                  <div className={styles.quadGridWrapper}>
+                    {section.subSections.map((sub, sIndex) => {
+                      const posClass = sIndex === 0 ? styles.cardNW : 
+                                       sIndex === 1 ? styles.cardEC : 
+                                       sIndex === 2 ? styles.cardWC : 
+                                       styles.cardSE;
+                      return (
+                        <div key={sIndex} className={`${styles.itemsCard} ${posClass}`}>
+                          {sub.title && (
+                            <div className={styles.subSectionTitle}>{sub.title}</div>
+                          )}
+                          {sub.items.map((item, itemIndex) => (
+                            <div key={itemIndex} className={styles.menuItem}>
+                              <div className={styles.itemInfo}>
+                                <div className={styles.itemNameRow}>
+                                  <span className={styles.itemName}>{item.name}</span>
+                                  {item.subName && <span className={styles.itemSubName}>{item.subName}</span>}
+                                </div>
+                                {item.description && <p className={styles.itemDescription}>{item.description}</p>}
+                              </div>
+                              <div className={styles.itemPrice}>
+                                {item.price && item.price.includes('TL') ? (
+                                  <>{item.price.replace('TL', '')}<small>TL</small></>
+                                ) : item.price}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className={styles.itemsCard}>
+                    {section.layoutType === 'columns' && (
                     <div className={styles.columnHeaders}>
                       <div className={styles.spacer}></div>
                       <div className={styles.headersRow}>
