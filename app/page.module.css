@@ -126,13 +126,14 @@
 .alignCenter .itemsCardWrapper { align-items: center; }
 
 .itemsCard {
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.65); /* Increased contrast for readability */
   padding: 0.5rem 1rem;
   border-radius: 2px;
   width: auto;
   min-width: 200px;
   max-width: 230px; /* Zepto-size width */
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .alignLeft .itemsCard {
@@ -172,7 +173,7 @@
 }
 
 .itemName {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #fff;
 }
@@ -182,12 +183,12 @@
   font-weight: 300;
   color: #d1d1d6;
   font-style: italic;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .itemDescription {
-  font-size: 0.52rem;
-  color: #a1a1aa;
+  font-size: 0.55rem;
+  color: #d1d1d6;
   margin-top: 0.08rem;
   line-height: 1.15;
 }
@@ -195,7 +196,7 @@
 .itemPrice {
   white-space: nowrap;
   font-weight: 700;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
 }
 
 .itemPrice small {
@@ -245,55 +246,80 @@
 }
 
 @media (max-width: 768px) {
+  .menuPage {
+    min-height: 100vh; /* Force full screen per section on mobile for fit */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .backgroundImageWrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .backgroundImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Background style to ensure card always fits */
+  }
+
   .menuWrapper {
     margin-top: 85px;
-    padding: 0 0.2rem;
+    padding: 0;
   }
 
   .contentOverlay {
-    padding: 0.5rem 0.3rem;
+    padding: 1rem 0.5rem;
+    z-index: 1;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .categoryHeader {
+    margin-bottom: 0.5rem; /* Tighter header on mobile */
   }
 
   .categoryTitle { 
-    font-size: 1.1rem; 
-    margin-bottom: 0.1rem;
+    font-size: 1.25rem; 
+    margin-bottom: 0.05rem;
     letter-spacing: 0.05em;
   }
   
   .categorySubTitle { 
-    font-size: 0.65rem; 
-    opacity: 0.8;
+    font-size: 0.75rem; 
+    opacity: 0.9;
   }
 
   .itemsCard { 
-    padding: 0.65rem 0.45rem; 
-    margin-top: 0.75rem;
-    width: 92%;
-    max-width: 260px;
+    padding: 0.6rem 0.6rem; 
+    margin-top: 0.5rem;
+    width: 90%;
+    max-width: 260px; /* Slightly wider on mobile for text room */
     border-radius: 4px;
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.7); /* Even more contrast on mobile */
   }
 
   .menuItem {
     gap: 0.4rem;
-    margin-bottom: 0.45rem;
+    margin-bottom: 0.4rem;
   }
 
-  .itemName { font-size: 0.62rem; line-height: 1.1; }
-  .itemSubName { font-size: 0.58rem; line-height: 1.1; }
-  .itemPrice { font-size: 0.62rem; font-weight: 700; width: auto; min-width: 40px; text-align: right; }
-  .itemDescription { font-size: 0.48rem; line-height: 1.2; margin-top: 0.08rem; }
+  .itemName { font-size: 0.72rem; line-height: 1.15; }
+  .itemSubName { font-size: 0.65rem; line-height: 1.1; }
+  .itemPrice { font-size: 0.72rem; font-weight: 700; width: auto; min-width: 45px; text-align: right; }
+  .itemDescription { font-size: 0.55rem; line-height: 1.25; margin-top: 0.08rem; }
 
   .headersRow, .columnPrices {
-    width: 80px;
+    width: 85px;
     gap: 0.4rem;
   }
 
   .columnHeader, .columnPrice {
-    width: 24px;
-    font-size: 0.55rem;
+    width: 26px;
+    font-size: 0.58rem;
   }
 }
