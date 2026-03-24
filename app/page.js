@@ -134,7 +134,11 @@ export default function Home() {
                               ))}
                             </div>
                           ) : (
-                            <div className={styles.itemPrice}>{item.price}</div>
+                            <div className={styles.itemPrice}>
+                              {item.price && item.price.includes('TL') ? (
+                                <>{item.price.replace('TL', '')}<small>TL</small></>
+                              ) : item.price}
+                            </div>
                           )}
                         </div>
                       ))}
@@ -157,7 +161,11 @@ export default function Home() {
                           ))}
                         </div>
                       ) : (
-                        <div className={styles.itemPrice}>{item.price}</div>
+                        <div className={styles.itemPrice}>
+                          {item.price && item.price.includes('TL') ? (
+                            <>{item.price.replace('TL', '')}<small>TL</small></>
+                          ) : item.price}
+                        </div>
                       )}
                     </div>
                   ))
