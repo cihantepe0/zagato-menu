@@ -94,82 +94,84 @@ export default function Home() {
                 <h3 className={styles.categorySubTitle}>{section.subCategory}</h3>
               </div>
 
-              <div className={styles.itemsCard}>
-                {section.layoutType === 'columns' && (
-                  <div className={styles.columnHeaders}>
-                    <div className={styles.spacer}></div>
-                    <div className={styles.headersRow}>
-                      {section.columns.map((col, cIndex) => (
-                        <span key={cIndex} className={styles.columnHeader}>{col}</span>
-                      ))}
+              <div className={styles.itemsCardWrapper}>
+                <div className={styles.itemsCard}>
+                  {section.layoutType === 'columns' && (
+                    <div className={styles.columnHeaders}>
+                      <div className={styles.spacer}></div>
+                      <div className={styles.headersRow}>
+                        {section.columns.map((col, cIndex) => (
+                          <span key={cIndex} className={styles.columnHeader}>{col}</span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-                {section.subSections ? (
-                  section.subSections.map((sub, subIndex) => (
-                    <div key={subIndex} className={styles.subSection}>
-                      {sub.layoutType === 'columns' && (
-                        <div className={styles.headersRow}>
-                          <div className={styles.spacer}></div>
-                          <div className={styles.columnHeaders}>
-                            {sub.columns.map((col, i) => (
-                              <div key={i} className={styles.columnHeader}>{col}</div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                      {sub.items.map((item, itemIndex) => (
-                        <div key={itemIndex} className={styles.menuItem}>
-                          <div className={styles.itemInfo}>
-                            <div className={styles.itemNameRow}>
-                              <span className={styles.itemName}>{item.name}</span>
-                              {item.subName && <span className={styles.itemSubName}>{item.subName}</span>}
-                            </div>
-                            {item.description && <p className={styles.itemDescription}>{item.description}</p>}
-                          </div>
-                          {sub.layoutType === 'columns' ? (
-                            <div className={styles.columnPrices}>
-                              {item.prices.map((p, pIndex) => (
-                                <div key={pIndex} className={styles.columnPrice}>{p || '-'}</div>
+                  )}
+                  {section.subSections ? (
+                    section.subSections.map((sub, subIndex) => (
+                      <div key={subIndex} className={styles.subSection}>
+                        {sub.layoutType === 'columns' && (
+                          <div className={styles.headersRow}>
+                            <div className={styles.spacer}></div>
+                            <div className={styles.columnHeaders}>
+                              {sub.columns.map((col, i) => (
+                                <div key={i} className={styles.columnHeader}>{col}</div>
                               ))}
                             </div>
-                          ) : (
-                            <div className={styles.itemPrice}>
-                              {item.price && item.price.includes('TL') ? (
-                                <>{item.price.replace('TL', '')}<small>TL</small></>
-                              ) : item.price}
+                          </div>
+                        )}
+                        {sub.items.map((item, itemIndex) => (
+                          <div key={itemIndex} className={styles.menuItem}>
+                            <div className={styles.itemInfo}>
+                              <div className={styles.itemNameRow}>
+                                <span className={styles.itemName}>{item.name}</span>
+                                {item.subName && <span className={styles.itemSubName}>{item.subName}</span>}
+                              </div>
+                              {item.description && <p className={styles.itemDescription}>{item.description}</p>}
                             </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  ))
-                ) : (
-                  section.items.map((item, itemIndex) => (
-                    <div key={itemIndex} className={styles.menuItem}>
-                      <div className={styles.itemInfo}>
-                        <div className={styles.itemNameRow}>
-                          <span className={styles.itemName}>{item.name}</span>
-                          {item.subName && <span className={styles.itemSubName}>{item.subName}</span>}
-                        </div>
-                        {item.description && <p className={styles.itemDescription}>{item.description}</p>}
+                            {sub.layoutType === 'columns' ? (
+                              <div className={styles.columnPrices}>
+                                {item.prices.map((p, pIndex) => (
+                                  <div key={pIndex} className={styles.columnPrice}>{p || '-'}</div>
+                                ))}
+                              </div>
+                            ) : (
+                              <div className={styles.itemPrice}>
+                                {item.price && item.price.includes('TL') ? (
+                                  <>{item.price.replace('TL', '')}<small>TL</small></>
+                                ) : item.price}
+                              </div>
+                            )}
+                          </div>
+                        ))}
                       </div>
-                      {section.layoutType === 'columns' ? (
-                        <div className={styles.columnPrices}>
-                          {item.prices.map((p, pIndex) => (
-                            <div key={pIndex} className={styles.columnPrice}>{p || '-'}</div>
-                          ))}
+                    ))
+                  ) : (
+                    section.items.map((item, itemIndex) => (
+                      <div key={itemIndex} className={styles.menuItem}>
+                        <div className={styles.itemInfo}>
+                          <div className={styles.itemNameRow}>
+                            <span className={styles.itemName}>{item.name}</span>
+                            {item.subName && <span className={styles.itemSubName}>{item.subName}</span>}
+                          </div>
+                          {item.description && <p className={styles.itemDescription}>{item.description}</p>}
                         </div>
-                      ) : (
-                        <div className={styles.itemPrice}>
-                          {item.price && item.price.includes('TL') ? (
-                            <>{item.price.replace('TL', '')}<small>TL</small></>
-                          ) : item.price}
-                        </div>
-                      )}
-                    </div>
-                  ))
-                )}
+                        {section.layoutType === 'columns' ? (
+                          <div className={styles.columnPrices}>
+                            {item.prices.map((p, pIndex) => (
+                              <div key={pIndex} className={styles.columnPrice}>{p || '-'}</div>
+                            ))}
+                          </div>
+                        ) : (
+                          <div className={styles.itemPrice}>
+                            {item.price && item.price.includes('TL') ? (
+                              <>{item.price.replace('TL', '')}<small>TL</small></>
+                            ) : item.price}
+                          </div>
+                        )}
+                      </div>
+                    ))
+                  )}
+                </div>
               </div>
             </div>
           </section>
