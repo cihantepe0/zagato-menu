@@ -55,9 +55,27 @@ export default function ItemEditor() {
   };
 
   const updateItem = (index, field, value) => {
-    const newItems = [...category.items];
+    const newItems = [...(category.items || [])];
     newItems[index] = { ...newItems[index], [field]: value };
     setCategory({ ...category, items: newItems });
+  };
+
+  const updateSubItem = (subIndex, itemIndex, field, value) => {
+    const newSubSections = [...category.subSections];
+    const newItems = [...newSubSections[subIndex].items];
+    newItems[itemIndex] = { ...newItems[itemIndex], [field]: value };
+    newSubSections[subIndex] = { ...newSubSections[subIndex], items: newItems };
+    setCategory({ ...category, subSections: newSubSections });
+  };
+
+  const updateSubItemPrice = (subIndex, itemIndex, pIndex, value) => {
+    const newSubSections = [...category.subSections];
+    const newItems = [...newSubSections[subIndex].items];
+    const newPrices = [...newItems[itemIndex].prices];
+    newPrices[pIndex] = value;
+    newItems[itemIndex] = { ...newItems[itemIndex], prices: newPrices };
+    newSubSections[subIndex] = { ...newSubSections[subIndex], items: newItems };
+    setCategory({ ...category, subSections: newSubSections });
   };
 
   const addItem = () => {
@@ -65,9 +83,22 @@ export default function ItemEditor() {
     setCategory({ ...category, items: [...(category.items || []), newItem] });
   };
 
+  const addSubItem = (subIndex) => {
+    const newItem = { name: 'Yeni Ürün', subName: '', price: '0TL', description: '' };
+    const newSubSections = [...category.subSections];
+    newSubSections[subIndex].items = [...(newSubSections[subIndex].items || []), newItem];
+    setCategory({ ...category, subSections: newSubSections });
+  };
+
   const removeItem = (index) => {
-    const newItems = category.items.filter((_, i) => i !== index);
+    const newItems = (category.items || []).filter((_, i) => i !== index);
     setCategory({ ...category, items: newItems });
+  };
+
+  const removeSubItem = (subIndex, itemIndex) => {
+    const newSubSections = [...category.subSections];
+    newSubSections[subIndex].items = newSubSections[subIndex].items.filter((_, i) => i !== itemIndex);
+    setCategory({ ...category, subSections: newSubSections });
   };
 
   if (loading) return <div className={styles.adminContainer}>Yükleniyor...</div>;
@@ -112,49 +143,66 @@ export default function ItemEditor() {
 
         <h3 style={{marginTop: '3rem', marginBottom: '1.5rem'}}>Ürün Listesi</h3>
         
-        {(category.items || []).map((item, index) => (
-          <div key={index} className={styles.itemEditor}>
+        {/* Standard Items */}
+        {category.items && category.items.length > 0 && category.items.map((item, index) => (
+          <div key={`item-${index}`} className={styles.itemEditor}>
             <button type="button" onClick={() => removeItem(index)} className={styles.removeBtn}>Sil</button>
-            
             <div className={styles.formGroup}>
               <label>Ürün Adı</label>
-              <input 
-                type="text" 
-                value={item.name} 
-                onChange={(e) => updateItem(index, 'name', e.target.value)} 
-              />
+              <input type="text" value={item.name} onChange={(e) => updateItem(index, 'name', e.target.value)} />
             </div>
-            
             <div className={styles.formGroup}>
               <label>Alt İsim / İngilizce</label>
-              <input 
-                type="text" 
-                value={item.subName} 
-                onChange={(e) => updateItem(index, 'subName', e.target.value)} 
-              />
+              <input type="text" value={item.subName} onChange={(e) => updateItem(index, 'subName', e.target.value)} />
             </div>
-            
             <div className={styles.formGroup}>
               <label>Fiyat</label>
-              <input 
-                type="text" 
-                value={item.price} 
-                onChange={(e) => updateItem(index, 'price', e.target.value)} 
-              />
+              <input type="text" value={item.price} onChange={(e) => updateItem(index, 'price', e.target.value)} />
             </div>
-            
             <div className={styles.formGroup}>
               <label>Açıklama</label>
-              <textarea 
-                rows="2"
-                value={item.description} 
-                onChange={(e) => updateItem(index, 'description', e.target.value)} 
-              />
+              <textarea rows="2" value={item.description} onChange={(e) => updateItem(index, 'description', e.target.value)} />
             </div>
           </div>
         ))}
 
-        <button type="button" onClick={addItem} className={styles.saveBtn} style={{background: '#333', color: '#fff', marginBottom: '2rem'}}>+ Yeni Ürün Ekle</button>
+        {/* SubSections (Beers, Wines, etc) */}
+        {category.subSections && category.subSections.map((sub, sIndex) => (
+          <div key={`sub-${sIndex}`} className={styles.subSectionEditor}>
+            <h4 className={styles.subTitle}>{sub.title}</h4>
+            {sub.items.map((item, iIndex) => (
+              <div key={`sub-item-${sIndex}-${iIndex}`} className={styles.itemEditor}>
+                <button type="button" onClick={() => removeSubItem(sIndex, iIndex)} className={styles.removeBtn}>Sil</button>
+                <div className={styles.formGroup}>
+                  <label>Ürün Adı</label>
+                  <input type="text" value={item.name} onChange={(e) => updateSubItem(sIndex, iIndex, 'name', e.target.value)} />
+                </div>
+                {item.prices ? (
+                  <div className={styles.priceGrid}>
+                    {item.prices.map((p, pIndex) => (
+                      <div key={pIndex} className={styles.formGroup}>
+                        <label>Fiyat ({sub.columns ? sub.columns[pIndex] : `Sütun ${pIndex+1}`})</label>
+                        <input type="text" value={p} onChange={(e) => updateSubItemPrice(sIndex, iIndex, pIndex, e.target.value)} />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className={styles.formGroup}>
+                    <label>Fiyat</label>
+                    <input type="text" value={item.price} onChange={(e) => updateSubItem(sIndex, iIndex, 'price', e.target.value)} />
+                  </div>
+                )}
+                <div className={styles.formGroup}>
+                  <label>Açıklama</label>
+                  <textarea rows="2" value={item.description} onChange={(e) => updateSubItem(sIndex, iIndex, 'description', e.target.value)} />
+                </div>
+              </div>
+            ))}
+            <button type="button" onClick={() => addSubItem(sIndex)} className={styles.addItemBtn}>+ {sub.title} Bölümüne Ekle</button>
+          </div>
+        ))}
+
+        {category.items && <button type="button" onClick={addItem} className={styles.saveBtn} style={{background: '#333', color: '#fff', marginBottom: '2rem'}}>+ Yeni Ürün Ekle</button>}
 
         <div className={styles.actionRow}>
           <button type="submit" className={styles.saveBtn}>Değişiklikleri Kaydet</button>

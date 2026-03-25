@@ -256,3 +256,52 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+/* SubSection & Price Grid Extensions */
+.subSectionEditor {
+  border: 1px solid #333;
+  padding: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  background: #080808;
+}
+
+.subTitle {
+  color: #c9a86a;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.priceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  background: #1a1a1a;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.addItemBtn {
+  background: #333;
+  color: #fff;
+  border: 1px dashed #555;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.addItemBtn:hover {
+  background: #444;
+  border-color: #c9a86a;
+}
