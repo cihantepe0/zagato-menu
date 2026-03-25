@@ -200,7 +200,7 @@ export default function Home() {
                         ) : (
                           <div className={styles.itemPrice}>
                             {item.price && item.price.includes('TL') ? (
-                              <>{item.price.replace('TL', '')}<small>TL</small></>
+                              <span>{item.price.replace('TL', '')}<small>TL</small></span>
                             ) : item.price}
                           </div>
                         )}
