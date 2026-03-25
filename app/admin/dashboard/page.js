@@ -52,7 +52,18 @@ export default function AdminDashboard() {
             <h2 className={styles.catName}>{cat.category}</h2>
             <p className={styles.catSub}>{cat.subCategory}</p>
             <div className={styles.itemCount}>
-              <span>{cat.items ? cat.items.length : 0} Ürün</span>
+              <span>
+                {(() => {
+                  let count = 0;
+                  if (cat.items) count += cat.items.length;
+                  if (cat.subSections) {
+                    cat.subSections.forEach(sub => {
+                      if (sub.items) count += sub.items.length;
+                    });
+                  }
+                  return count;
+                })()} Ürün
+              </span>
               <span style={{color: '#c9a86a'}}>Düzenle →</span>
             </div>
           </Link>
