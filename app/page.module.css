@@ -62,7 +62,7 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  padding: 4.8rem 2.2rem 1.2rem 2.2rem; /* Reduced top padding for top-left cards */
+  padding: 6.2rem 2.2rem 1.2rem 2.2rem; /* Lowered to avoid background logo */
   box-sizing: border-box;
 }
 
@@ -278,7 +278,7 @@
   }
 
   .contentOverlay {
-    padding: 2.8rem 0.5rem 0.6rem 0.5rem;
+    padding: 4.5rem 0.5rem 0.6rem 0.5rem; /* Lowered on mobile to avoid logo */
   }
 
   .itemsCardWrapper {
@@ -339,9 +339,24 @@
   .itemDescription { font-size: 0.45rem; line-height: 1.05; margin-top: 0.02rem; }
   
   .menuItem {
-    margin-bottom: 0.1rem;
-    gap: 0.35rem;
-    line-height: 1.1;
+    margin-bottom: 0.05rem;
+    gap: 0.25rem;
+    line-height: 1.05;
+  }
+
+  /* Ultra-Shrink for mobile Wine Grid */
+  .quadGridWrapper .itemsCard {
+    max-width: 170px;
+    width: 82%;
+    padding: 0.1rem 0.3rem;
+  }
+  
+  .quadGridWrapper .itemName {
+    font-size: 0.58rem;
+  }
+  
+  .quadGridWrapper .itemPrice {
+    font-size: 0.58rem;
   }
 
   .headersRow, .columnPrices {
