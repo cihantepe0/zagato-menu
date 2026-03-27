@@ -69,14 +69,14 @@ export default function Home() {
         {menuData.map((section, index) => (
           <section 
             key={section.id} 
-            className={styles.menuPage}
+            className={`${styles.menuPage} ${section.id === 31 ? styles.nargilePage : ''}`}
             ref={(el) => (sectionRefs.current[section.id] = el)} // Store ref by section.id
           >
             <div className={styles.backgroundImageWrapper}>
               <Image 
                 src={section.backgroundImage} 
                 alt={section.category} 
-                className={styles.backgroundImage}
+                className={`${styles.backgroundImage} ${section.id === 31 ? styles.nargileImage : ''}`}
                 width={section.id === 31 ? 1200 : 1200}
                 height={section.id === 31 ? 3000 : 800}
                 priority={index === 0 || section.id === 31}

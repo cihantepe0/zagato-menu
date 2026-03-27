@@ -44,6 +44,19 @@
   background: #000;
 }
 
+.nargilePage {
+  min-height: auto !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.nargileImage {
+  height: auto !important;
+  width: 100% !important;
+  object-fit: initial !important;
+}
+
 .backgroundImageWrapper {
   width: 100%;
   position: relative;
