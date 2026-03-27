@@ -57,6 +57,34 @@
   object-fit: initial !important;
 }
 
+.priceOverlaysWrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.priceTag {
+  position: absolute;
+  color: #fff;
+  font-weight: 800;
+  font-size: 2.4rem;
+  letter-spacing: 0.1rem;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 5px #000;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+
+.aquaMenthaBox {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  padding: 0.5rem 1rem;
+  font-size: 2.2rem;
+  font-weight: 900;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  text-shadow: none;
+}
+
 .backgroundImageWrapper {
   width: 100%;
   position: relative;
@@ -380,5 +408,15 @@
   .columnHeader, .columnPrice {
     width: 18px;
     font-size: 0.45rem;
+  }
+
+  .priceTag {
+    font-size: 0.85rem;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  }
+
+  .aquaMenthaBox {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.35rem;
   }
 }

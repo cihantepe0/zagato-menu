@@ -1993,6 +1993,14 @@
     "category": "NARGİLE",
     "subCategory": "SHISHA",
     "backgroundImage": "/menu/31.webp",
-    "items": []
+    "items": [],
+    "priceOverlays": [
+      { "id": 1, "name": "ADALYA", "price": "500TL", "top": "5.4%", "left": "78%" },
+      { "id": 2, "name": "JIBIAR", "price": "500TL", "top": "17.1%", "left": "10%" },
+      { "id": 3, "name": "REVOSHI", "price": "500TL", "top": "28.3%", "left": "10%" },
+      { "id": 4, "name": "HOLSTER", "price": "600TL", "top": "47.7%", "left": "10%" },
+      { "id": 5, "name": "AQUA MENTHA", "price": "600TL", "top": "63.3%", "left": "52%" },
+      { "id": 6, "name": "MUSTHAVE", "price": "700TL", "top": "78.9%", "left": "48%" }
+    ]
   }
 ]

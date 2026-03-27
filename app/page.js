@@ -82,6 +82,19 @@ export default function Home() {
                 priority={index === 0 || section.id === 31}
                 loading={index === 0 || section.id === 31 ? undefined : 'lazy'}
               />
+              {section.priceOverlays && (
+                <div className={styles.priceOverlaysWrapper}>
+                  {section.priceOverlays.map((overlay) => (
+                    <div 
+                      key={overlay.id} 
+                      className={`${styles.priceTag} ${overlay.name === 'AQUA MENTHA' ? styles.aquaMenthaBox : ''}`}
+                      style={{ top: overlay.top, left: overlay.left }}
+                    >
+                      {overlay.price}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div className={`${styles.contentOverlay} ${

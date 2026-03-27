@@ -55,9 +55,13 @@ export default function ItemEditor() {
   };
 
   const updateItem = (index, field, value) => {
-    const newItems = [...(category.items || [])];
-    newItems[index] = { ...newItems[index], [field]: value };
     setCategory({ ...category, items: newItems });
+  };
+    
+  const updatePriceOverlay = (index, value) => {
+    const newOverlays = [...category.priceOverlays];
+    newOverlays[index] = { ...newOverlays[index], price: value };
+    setCategory({ ...category, priceOverlays: newOverlays });
   };
 
   const updateSubItem = (subIndex, itemIndex, field, value) => {
@@ -144,7 +148,7 @@ export default function ItemEditor() {
         <h3 style={{marginTop: '3rem', marginBottom: '1.5rem'}}>Ürün Listesi</h3>
         
         {/* Standard Items */}
-        {category.items && category.items.length > 0 && category.items.map((item, index) => (
+        {category.id.toString() !== '31' && category.items && category.items.length > 0 && category.items.map((item, index) => (
           <div key={`item-${index}`} className={styles.itemEditor}>
             <button type="button" onClick={() => removeItem(index)} className={styles.removeBtn}>Sil</button>
             <div className={styles.formGroup}>
@@ -165,6 +169,27 @@ export default function ItemEditor() {
             </div>
           </div>
         ))}
+
+        {/* Nargile Brand Prices (ID 31) */}
+        {category.id.toString() === '31' && category.priceOverlays && (
+          <div className={styles.subSectionEditor}>
+            <h4 className={styles.subTitle}>Nargile Marka Fiyatları</h4>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '1rem'}}>
+              {category.priceOverlays.map((overlay, index) => (
+                <div key={`nargile-price-${index}`} className={styles.formGroup} style={{display: 'flex', alignItems: 'center', gap: '1rem', background: '#333', padding: '1rem', borderRadius: '8px'}}>
+                  <span style={{color: '#fff', fontWeight: 'bold', minWidth: '30px'}}>{index + 1}.</span>
+                  <label style={{color: '#ccc', minWidth: '120px', margin: 0}}>{overlay.name}</label>
+                  <input 
+                    type="text" 
+                    value={overlay.price} 
+                    onChange={(e) => updatePriceOverlay(index, e.target.value)}
+                    style={{flex: 1, padding: '0.8rem', background: '#222', border: '1px solid #444', color: '#fff'}}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* SubSections (Beers, Wines, etc) */}
         {category.subSections && category.subSections.map((sub, sIndex) => (
@@ -202,7 +227,7 @@ export default function ItemEditor() {
           </div>
         ))}
 
-        {category.items && <button type="button" onClick={addItem} className={styles.saveBtn} style={{background: '#333', color: '#fff', marginBottom: '2rem'}}>+ Yeni Ürün Ekle</button>}
+        {category.id.toString() !== '31' && category.items && <button type="button" onClick={addItem} className={styles.saveBtn} style={{background: '#333', color: '#fff', marginBottom: '2rem'}}>+ Yeni Ürün Ekle</button>}
 
         <div className={styles.actionRow}>
           <button type="submit" className={styles.saveBtn}>Değişiklikleri Kaydet</button>
