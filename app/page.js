@@ -78,7 +78,7 @@ export default function Home() {
                 alt={section.category} 
                 className={`${styles.backgroundImage} ${section.id === 31 ? styles.nargileImage : ''}`}
                 width={section.id === 31 ? 1200 : 1200}
-                height={section.id === 31 ? 3000 : 800}
+                height={section.id === 31 ? 8894 : 800}
                 priority={index === 0 || section.id === 31}
                 loading={index === 0 || section.id === 31 ? undefined : 'lazy'}
               />
