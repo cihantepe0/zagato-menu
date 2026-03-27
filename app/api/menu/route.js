@@ -13,7 +13,7 @@ export async function GET() {
     // Safety fix: Ensure all background images use .webp extension
     const sanitizedData = data.map(section => ({
       ...section,
-      backgroundImage: section.backgroundImage.replace('.png', '.webp')
+      backgroundImage: (section.backgroundImage || '').replace('.png', '.webp')
     }));
     
     return NextResponse.json(sanitizedData);
@@ -29,7 +29,7 @@ export async function POST(request) {
     // Normalize data before saving
     const sanitizedData = newData.map(section => ({
       ...section,
-      backgroundImage: section.backgroundImage.replace('.png', '.webp')
+      backgroundImage: (section.backgroundImage || '').replace('.png', '.webp')
     }));
 
     await fs.writeFile(DATA_PATH, JSON.stringify(sanitizedData, null, 2), 'utf8');
