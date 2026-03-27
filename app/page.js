@@ -77,10 +77,10 @@ export default function Home() {
                 src={section.backgroundImage} 
                 alt={section.category} 
                 className={styles.backgroundImage}
-                width={1200}
-                height={800}
-                priority={index === 0}
-                loading={index === 0 ? undefined : "lazy"}
+                width={section.id === 31 ? 1200 : 1200}
+                height={section.id === 31 ? 3000 : 800}
+                priority={index === 0 || section.id === 31}
+                loading={index === 0 || section.id === 31 ? undefined : 'lazy'}
               />
             </div>
 
