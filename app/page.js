@@ -88,7 +88,12 @@ export default function Home() {
                     <div 
                       key={overlay.id} 
                       className={`${styles.priceTag} ${overlay.name === 'AQUA MENTHA' ? styles.aquaMenthaBox : ''}`}
-                      style={{ top: overlay.top, left: overlay.left }}
+                      style={{ 
+                        '--top': overlay.top, 
+                        '--left': overlay.left,
+                        '--mobile-top': overlay.mobileTop || overlay.top,
+                        '--mobile-left': overlay.mobileLeft || overlay.left
+                      }}
                     >
                       {overlay.price}
                     </div>
