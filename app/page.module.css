@@ -413,10 +413,16 @@
     font-size: 0.45rem;
   }
 
+  .nargileImage {
+    height: auto !important;
+    width: 100% !important;
+    object-fit: contain !important;
+  }
+
   .priceTag {
     top: var(--mobile-top);
     left: var(--mobile-left);
-    font-size: 1.4rem;
+    font-size: 1.15rem;
     color: #fff;
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
     border: none !important;
