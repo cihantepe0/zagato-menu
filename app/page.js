@@ -1,4 +1,4 @@
-'use client';
+"use client"; // Redeploy: 2026-03-30 00:50 BakuBase
 
 import Header from '@/components/Header';
 import { useRef, useState, useEffect } from 'react';
