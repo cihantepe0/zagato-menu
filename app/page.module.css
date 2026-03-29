@@ -417,7 +417,9 @@
     top: var(--mobile-top);
     left: var(--mobile-left);
     font-size: 1.4rem;
+    color: #fff;
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+    border: none !important;
   }
 
   .aquaMenthaBox {

@@ -2000,7 +2000,7 @@
       { "id": 3, "name": "REVOSHI", "price": "500TL", "top": "28.3%", "left": "10%", "mobileTop": "28.3%", "mobileLeft": "15%" },
       { "id": 4, "name": "HOLSTER", "price": "600TL", "top": "47.7%", "left": "10%", "mobileTop": "47.7%", "mobileLeft": "25%" },
       { "id": 5, "name": "AQUA MENTHA", "price": "600TL", "top": "65.5%", "left": "48.5%", "mobileTop": "65.5%", "mobileLeft": "43%" },
-      { "id": 6, "name": "MUSTHAVE", "price": "700TL", "top": "81.8%", "left": "47.5%", "mobileTop": "79.5%", "mobileLeft": "35%" }
+      { "id": 6, "name": "MUSTHAVE", "price": "700TL", "top": "81.8%", "left": "47.5%", "mobileTop": "79.5%", "mobileLeft": "38%" }
     ]
   }
 ]
