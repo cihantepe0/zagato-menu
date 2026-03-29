@@ -1995,7 +1995,7 @@
     "backgroundImage": "/menu/31.webp",
     "items": [],
     "priceOverlays": [
-      { "id": 1, "name": "ADALYA", "price": "500TL", "top": "5.4%", "left": "78%", "mobileTop": "12.4%", "mobileLeft": "40%" },
+      { "id": 1, "name": "ADALYA", "price": "500TL", "top": "5.4%", "left": "78%", "mobileTop": "12.4%", "mobileLeft": "75%" },
       { "id": 2, "name": "JIBIAR", "price": "500TL", "top": "17.1%", "left": "10%", "mobileTop": "18.1%", "mobileLeft": "15%" },
       { "id": 3, "name": "REVOSHI", "price": "500TL", "top": "28.3%", "left": "10%", "mobileTop": "28.3%", "mobileLeft": "15%" },
       { "id": 4, "name": "HOLSTER", "price": "600TL", "top": "47.7%", "left": "10%", "mobileTop": "47.7%", "mobileLeft": "25%" },
