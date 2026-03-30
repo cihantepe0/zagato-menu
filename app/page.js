@@ -92,7 +92,8 @@ export default function Home() {
                         '--top': overlay.top, 
                         '--left': overlay.left,
                         '--mobile-top': overlay.mobileTop || overlay.top,
-                        '--mobile-left': overlay.mobileLeft || overlay.left
+                        '--mobile-left': overlay.mobileLeft || overlay.left,
+                        ...(overlay.fontSize ? { fontSize: overlay.fontSize } : {})
                       }}
                     >
                       {overlay.price}
