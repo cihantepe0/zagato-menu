@@ -1995,12 +1995,12 @@
     "backgroundImage": "/menu/31.webp",
     "items": [],
     "priceOverlays": [
-      { "id": 1, "name": "ADALYA", "price": "500TL", "top": "5.4%", "left": "78%", "mobileTop": "5.2%", "mobileLeft": "85%" },
-      { "id": 2, "name": "JIBIAR", "price": "500TL", "top": "17.1%", "left": "10%", "mobileTop": "16.3%", "mobileLeft": "12%" },
-      { "id": 3, "name": "REVOSHI", "price": "500TL", "top": "28.3%", "left": "10%", "mobileTop": "22.7%", "mobileLeft": "12%" },
-      { "id": 4, "name": "HOLSTER", "price": "600TL", "top": "47.7%", "left": "10%", "mobileTop": "45.6%", "mobileLeft": "12%" },
-      { "id": 5, "name": "AQUA MENTHA", "price": "600TL", "top": "65.5%", "left": "48.5%", "mobileTop": "65.5%", "mobileLeft": "82%" },
-      { "id": 6, "name": "MUSTHAVE", "price": "700TL", "top": "81.8%", "left": "47.5%", "mobileTop": "81.5%", "mobileLeft": "53%" }
+      { "id": 1, "name": "ADALYA", "price": "500TL", "top": "5.4%", "left": "78%", "mobileTop": "5.2%", "mobileLeft": "80%" },
+      { "id": 2, "name": "JIBIAR", "price": "500TL", "top": "17.1%", "left": "10%", "mobileTop": "17%", "mobileLeft": "12%" },
+      { "id": 3, "name": "REVOSHI", "price": "500TL", "top": "28.3%", "left": "10%", "mobileTop": "29%", "mobileLeft": "12%" },
+      { "id": 4, "name": "HOLSTER", "price": "600TL", "top": "47.7%", "left": "10%", "mobileTop": "50%", "mobileLeft": "12%" },
+      { "id": 5, "name": "AQUA MENTHA", "price": "600TL", "top": "65.5%", "left": "48.5%", "mobileTop": "65.5%", "mobileLeft": "49%" },
+      { "id": 6, "name": "MUSTHAVE", "price": "700TL", "top": "81.8%", "left": "47.5%", "mobileTop": "82.1%", "mobileLeft": "43%" }
     ]
   }
 ]
