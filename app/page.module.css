@@ -422,14 +422,13 @@
   .priceTag {
     top: var(--mobile-top);
     left: var(--mobile-left);
-    font-size: 1.15rem;
+    font-size: 1.0rem;
     color: #fff;
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
     border: none !important;
   }
 
   .aquaMenthaBox {
-    font-size: 1.4rem;
     padding: 2px 6px !important;
     min-width: 80px;
     min-height: 40px;
