@@ -404,12 +404,12 @@
   }
 
   .headersRow, .columnPrices {
-    width: 65px;
-    gap: 0.25rem;
+    width: 85px;
+    gap: 0.4rem;
   }
 
   .columnHeader, .columnPrice {
-    width: 18px;
+    width: 22px;
     font-size: 0.45rem;
   }
 
