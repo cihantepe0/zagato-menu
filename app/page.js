@@ -1,240 +1,28 @@
-"use client"; // Redeploy: 2026-03-30 00:50 BakuBase
-
-import Header from '@/components/Header';
-import { useRef, useState, useEffect } from 'react';
+import fs from 'fs/promises';
+import path from 'path';
+import MenuClient from '@/components/MenuClient';
 import styles from '@/app/page.module.css';
-import Image from 'next/image';
 
-export default function Home() {
-  const [menuData, setMenuData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const sectionRefs = useRef({}); 
+export default async function Home() {
+  const DATA_PATH = path.join(process.cwd(), 'data', 'menuData.json');
+  let menuData = [];
 
-  useEffect(() => {
-    fetch('/api/menu')
-      .then(res => res.json())
-      .then(data => {
-        setMenuData(data);
-        setLoading(false);
-      });
-  }, []);
-
-  const scrollToSection = (id) => {
-    const element = sectionRefs.current[id];
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
-  };
-
-  if (loading) {
-    return (
-      <main className={styles.container}>
-        <div className={styles.loadingWrapper}>
-          <div className={styles.spinner}></div>
-        </div>
-      </main>
-    );
+  try {
+    const dataStr = await fs.readFile(DATA_PATH, 'utf8');
+    const data = JSON.parse(dataStr);
+    
+    // Safety fix: Ensure all background images use .webp extension
+    menuData = data.map(section => ({
+      ...section,
+      backgroundImage: (section.backgroundImage || '').replace('.png', '.webp')
+    }));
+  } catch (error) {
+    console.error('Failed to load menu data:', error);
   }
-
-  // Group unique categories for navigation
-  const navigationCategories = [];
-  const seenCategories = new Set();
-
-  menuData.forEach(section => {
-    if (!seenCategories.has(section.category)) {
-      navigationCategories.push({
-        id: section.id,
-        name: section.category,
-        subName: section.subCategory
-      });
-      seenCategories.add(section.category);
-    }
-  });
 
   return (
     <main className={styles.container}>
-      <Header 
-        categories={navigationCategories} 
-        onNavigate={scrollToSection} 
-      />
-      
-      <div className={styles.menuWrapper}>
-        {menuData.map((section, index) => (
-          <section 
-            key={section.id} 
-            className={`${styles.menuPage} ${section.id === 31 ? styles.nargilePage : ''}`}
-            ref={(el) => (sectionRefs.current[section.id] = el)} // Store ref by section.id
-          >
-            <div className={styles.backgroundImageWrapper}>
-              <Image 
-                src={section.backgroundImage} 
-                alt={section.category} 
-                className={`${styles.backgroundImage} ${section.id === 31 ? styles.nargileImage : ''}`}
-                width={section.id === 31 ? 1200 : 1200}
-                height={section.id === 31 ? 8894 : 800}
-                priority={index === 0 || section.id === 31}
-                loading={index === 0 || section.id === 31 ? undefined : 'lazy'}
-              />
-              {section.priceOverlays && (
-                <div className={styles.priceOverlaysWrapper}>
-                  {section.priceOverlays.map((overlay) => (
-                    <div 
-                      key={overlay.id} 
-                      className={`${styles.priceTag} ${overlay.name === 'AQUA MENTHA' ? styles.aquaMenthaBox : ''}`}
-                      style={{ 
-                        '--top': overlay.top, 
-                        '--left': overlay.left,
-                        '--mobile-top': overlay.mobileTop || overlay.top,
-                        '--mobile-left': overlay.mobileLeft || overlay.left,
-                        ...(overlay.fontSize ? { fontSize: overlay.fontSize } : {})
-                      }}
-                    >
-                      {overlay.price}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <div className={`${styles.contentOverlay} ${
-              section.layoutAlign === 'center' ? styles.alignCenter : 
-              section.layoutAlign === 'right' ? styles.alignRight : 
-              styles.alignLeft
-            }`}>
-              <div className={styles.categoryHeader}>
-                <h2 className={styles.categoryTitle}>{section.category}</h2>
-                <h3 className={styles.categorySubTitle}>{section.subCategory}</h3>
-              </div>
-
-              {(section.items?.length > 0 || section.subSections?.length > 0) && (
-                <div className={styles.itemsCardWrapper}>
-                  {section.layoutType === 'quad-grid' ? (
-                    <div className={styles.quadGridWrapper}>
-                      {section.subSections.map((sub, sIndex) => {
-                        const posClass = sIndex === 0 ? styles.cardNW : 
-                                         sIndex === 1 ? styles.cardEC : 
-                                         sIndex === 2 ? styles.cardWC : 
-                                         styles.cardSE;
-                        return (
-                          <div key={sIndex} className={`${styles.itemsCard} ${posClass}`}>
-                            {sub.title && (
-                              <div className={styles.subSectionTitle}>{sub.title}</div>
-                            )}
-                            {sub.items.map((item, itemIndex) => (
-                              <div key={itemIndex} className={styles.menuItem}>
-                                <div className={styles.itemInfo}>
-                                  <div className={styles.itemNameRow}>
-                                    <span className={styles.itemName}>{item.name}</span>
-                                    {item.subName && <span className={styles.itemSubName}>{item.subName}</span>}
-                                  </div>
-                                  {item.description && <p className={styles.itemDescription}>{item.description}</p>}
-                                </div>
-                                <div className={styles.itemPrice}>
-                                  {item.price && item.price.includes('TL') ? (
-                                    <span>{item.price.replace('TL', '')}<small>TL</small></span>
-                                  ) : item.price}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        );
-                      })}
-                    </div>
-                  ) : (
-                    <div className={styles.itemsCard}>
-                      {section.layoutType === 'columns' && (
-                      <div className={styles.columnHeaders}>
-                        <div className={styles.spacer}></div>
-                        <div className={styles.headersRow}>
-                          {section.columns.map((col, cIndex) => (
-                            <span key={cIndex} className={styles.columnHeader}>{col}</span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    {section.subSections ? (
-                      section.subSections.map((sub, subIndex) => (
-                        <div key={subIndex} className={styles.subSection}>
-                          {sub.title && (
-                            <div className={styles.subSectionTitle}>{sub.title}</div>
-                          )}
-                          {sub.layoutType === 'columns' && (
-                            <div className={styles.headersRow}>
-                              <div className={styles.spacer}></div>
-                              <div className={styles.columnHeaders}>
-                                {sub.columns.map((col, i) => (
-                                  <div key={i} className={styles.columnHeader}>{col}</div>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-                          {sub.items.map((item, itemIndex) => (
-                            <div key={itemIndex} className={styles.menuItem}>
-                              <div className={styles.itemInfo}>
-                                <div className={styles.itemNameRow}>
-                                  <span className={styles.itemName}>{item.name}</span>
-                                  {item.subName && <span className={styles.itemSubName}>{item.subName}</span>}
-                                </div>
-                                {item.description && <p className={styles.itemDescription}>{item.description}</p>}
-                              </div>
-                              {sub.layoutType === 'columns' ? (
-                                <div className={styles.columnPrices}>
-                                  {item.prices.map((p, pIndex) => (
-                                    <div key={pIndex} className={styles.columnPrice}>{p || '-'}</div>
-                                  ))}
-                                </div>
-                              ) : (
-                                <div className={styles.itemPrice}>
-                                  {item.price && item.price.includes('TL') ? (
-                                    <span>{item.price.replace('TL', '')}<small>TL</small></span>
-                                  ) : item.price}
-                                </div>
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      ))
-                    ) : (
-                      section.items.map((item, itemIndex) => (
-                        <div key={itemIndex} className={styles.menuItem}>
-                          <div className={styles.itemInfo}>
-                            <div className={styles.itemNameRow}>
-                              <span className={styles.itemName}>{item.name}</span>
-                              {item.subName && <span className={styles.itemSubName}>{item.subName}</span>}
-                            </div>
-                            {item.description && <p className={styles.itemDescription}>{item.description}</p>}
-                          </div>
-                          {section.layoutType === 'columns' ? (
-                            <div className={styles.columnPrices}>
-                              {item.prices.map((p, pIndex) => (
-                                <div key={pIndex} className={styles.columnPrice}>{p || '-'}</div>
-                              ))}
-                            </div>
-                          ) : (
-                            <div className={styles.itemPrice}>
-                              {item.price && item.price.includes('TL') ? (
-                                <span>{item.price.replace('TL', '')}<small>TL</small></span>
-                              ) : item.price}
-                            </div>
-                          )}
-                        </div>
-                      ))
-                    )}
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-          </section>
-        ))}
-      </div>
+      <MenuClient initialData={menuData} />
     </main>
   );
 }
