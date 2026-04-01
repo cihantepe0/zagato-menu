@@ -264,7 +264,7 @@
   font-size: 1.1rem;
 }
 
-.itemPrice small {
+.itemPrice small, .columnPrice small {
   font-size: 0.7em;
   font-weight: 400;
   margin-left: 1px;
@@ -313,6 +313,15 @@
   text-align: center;
   font-size: 0.75rem;
   font-weight: 600;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.tinyTl {
+  font-size: 0.55rem !important;
+  margin-left: 1px;
+  vertical-align: super;
 }
 
 @media (max-width: 768px) {
