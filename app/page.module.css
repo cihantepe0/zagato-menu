@@ -261,7 +261,7 @@
 .itemPrice {
   white-space: nowrap;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 0.75rem;
 }
 
 .itemPrice small, .columnPrice small {
@@ -396,7 +396,7 @@
 
   .itemName { font-size: 0.65rem; }
   .itemSubName { font-size: 0.55rem; }
-  .itemPrice { font-size: 0.65rem; min-width: 30px; }
+  .itemPrice { font-size: 0.45rem; min-width: 30px; }
   .itemDescription { font-size: 0.45rem; line-height: 1.05; margin-top: 0.02rem; }
   
   .menuItem {
@@ -417,7 +417,7 @@
   }
   
   .quadGridWrapper .itemPrice {
-    font-size: 0.58rem;
+    font-size: 0.45rem;
   }
 
   .headersRow {
