@@ -129,6 +129,15 @@ export default function MenuClient({ initialData }) {
                     </div>
                   ) : (
                     <div className={styles.itemsCard}>
+                      {section.layoutType === 'columns' && (
+                        <div className={styles.headersRow}>
+                          <div className={styles.spacer}></div>
+                          {section.columns.map((col, cIndex) => (
+                            <div key={cIndex} className={styles.columnHeader}>{col}</div>
+                          ))}
+                        </div>
+                      )}
+                      
                       {section.subSections ? (
                         section.subSections.map((sub, sIndex) => (
                           <div key={sIndex} className={styles.subSection}>
@@ -142,11 +151,21 @@ export default function MenuClient({ initialData }) {
                                   </div>
                                   {item.description && <p className={styles.itemDescription}>{item.description}</p>}
                                 </div>
-                                <div className={styles.itemPrice}>
-                                  {item.price && item.price.includes('TL') ? (
-                                    <span>{item.price.replace('TL', '')}<small>TL</small></span>
-                                  ) : item.price}
-                                </div>
+                                {section.layoutType === 'columns' ? (
+                                  <div className={styles.columnPrices}>
+                                    {item.prices.map((p, pIndex) => (
+                                      <div key={pIndex} className={styles.columnPrice}>
+                                        {p ? (p.includes('TL') ? p.replace('TL', '') : p) : '-'}
+                                      </div>
+                                    ))}
+                                  </div>
+                                ) : (
+                                  <div className={styles.itemPrice}>
+                                    {item.price && item.price.includes('TL') ? (
+                                      <span>{item.price.replace('TL', '')}<small>TL</small></span>
+                                    ) : item.price}
+                                  </div>
+                                )}
                               </div>
                             ))}
                           </div>
@@ -161,11 +180,21 @@ export default function MenuClient({ initialData }) {
                               </div>
                               {item.description && <p className={styles.itemDescription}>{item.description}</p>}
                             </div>
-                            <div className={styles.itemPrice}>
-                              {item.price && item.price.includes('TL') ? (
-                                <span>{item.price.replace('TL', '')}<small>TL</small></span>
-                              ) : item.price}
-                            </div>
+                            {section.layoutType === 'columns' ? (
+                              <div className={styles.columnPrices}>
+                                {item.prices.map((p, pIndex) => (
+                                  <div key={pIndex} className={styles.columnPrice}>
+                                    {p ? (p.includes('TL') ? p.replace('TL', '') : p) : '-'}
+                                  </div>
+                                ))}
+                              </div>
+                            ) : (
+                              <div className={styles.itemPrice}>
+                                {item.price && item.price.includes('TL') ? (
+                                  <span>{item.price.replace('TL', '')}<small>TL</small></span>
+                                ) : item.price}
+                              </div>
+                            )}
                           </div>
                         ))
                       )}
