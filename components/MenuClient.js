@@ -159,7 +159,7 @@ export default function MenuClient({ initialData }) {
                                       <div key={pIndex} className={styles.columnPrice}>
                                         {p ? (
                                           p.includes('TL') ? (
-                                            <span>{p.replace('TL', '')}<small className={styles.tinyTl}>TL</small></span>
+                                            <span>{p.split('TL').join('')}<small className={styles.tinyTl}>TL</small></span>
                                           ) : p
                                         ) : '-'}
                                       </div>
@@ -168,7 +168,7 @@ export default function MenuClient({ initialData }) {
                                 ) : (
                                   <div className={styles.itemPrice}>
                                     {item.price && item.price.includes('TL') ? (
-                                      <span>{item.price.replace('TL', '')}<small>TL</small></span>
+                                      <span>{item.price.split('TL').join('')}<small>TL</small></span>
                                     ) : item.price}
                                   </div>
                                 )}
@@ -193,7 +193,7 @@ export default function MenuClient({ initialData }) {
                                   <div key={pIndex} className={styles.columnPrice}>
                                     {p ? (
                                       p.includes('TL') ? (
-                                        <span>{p.replace('TL', '')}<small className={styles.tinyTl}>TL</small></span>
+                                        <span>{p.split('TL').join('')}<small className={styles.tinyTl}>TL</small></span>
                                       ) : p
                                     ) : '-'}
                                   </div>
@@ -202,7 +202,7 @@ export default function MenuClient({ initialData }) {
                             ) : (
                               <div className={styles.itemPrice}>
                                 {item.price && item.price.includes('TL') ? (
-                                  <span>{item.price.replace('TL', '')}<small>TL</small></span>
+                                  <span>{item.price.split('TL').join('')}<small>TL</small></span>
                                 ) : item.price}
                               </div>
                             )}
