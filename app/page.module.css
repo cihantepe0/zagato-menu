@@ -284,16 +284,21 @@
 
 .headersRow {
   display: flex;
+  width: 100%;
   gap: 0.8rem;
-  width: 100px;
   justify-content: flex-end;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .columnHeader {
   width: 30px;
   text-align: center;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
   font-weight: 800;
+  color: #fff;
+  opacity: 0.9;
 }
 
 .columnPrices {
@@ -403,7 +408,14 @@
     font-size: 0.58rem;
   }
 
-  .headersRow, .columnPrices {
+  .headersRow {
+    width: 100%;
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+    padding-bottom: 0.2rem;
+  }
+
+  .columnPrices {
     width: 85px;
     gap: 0.4rem;
   }
