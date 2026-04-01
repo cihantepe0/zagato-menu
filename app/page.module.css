@@ -304,15 +304,16 @@
 .columnPrices {
   display: flex;
   gap: 1.2rem;
-  width: 140px;
+  width: 220px;
   justify-content: flex-end;
 }
 
 .columnPrice {
-  width: 30px;
+  width: 50px;
   text-align: center;
   font-size: 0.75rem;
   font-weight: 600;
+  white-space: nowrap;
   display: flex;
   align-items: baseline;
   justify-content: center;
@@ -427,13 +428,14 @@
   }
 
   .columnPrices {
-    width: 110px;
-    gap: 0.8rem;
+    width: 160px;
+    gap: 0.5rem;
   }
 
   .columnHeader, .columnPrice {
-    width: 22px;
+    width: 35px;
     font-size: 0.45rem;
+    white-space: nowrap;
   }
 
   .nargileImage {
