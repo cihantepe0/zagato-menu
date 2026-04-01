@@ -285,7 +285,7 @@
 .headersRow {
   display: flex;
   width: 100%;
-  gap: 0.8rem;
+  gap: 1.2rem;
   justify-content: flex-end;
   margin-bottom: 0.6rem;
   padding-bottom: 0.3rem;
@@ -303,8 +303,8 @@
 
 .columnPrices {
   display: flex;
-  gap: 0.8rem;
-  width: 100px;
+  gap: 1.2rem;
+  width: 140px;
   justify-content: flex-end;
 }
 
@@ -319,9 +319,11 @@
 }
 
 .tinyTl {
-  font-size: 0.55rem !important;
-  margin-left: 1px;
-  vertical-align: super;
+  font-size: 0.65rem !important;
+  margin-left: 2px;
+  vertical-align: baseline;
+  display: inline-block;
+  transform: translateY(-0.05em); /* Subtle nudge to feel aligned with caps height */
 }
 
 @media (max-width: 768px) {
@@ -419,14 +421,14 @@
 
   .headersRow {
     width: 100%;
-    gap: 0.4rem;
+    gap: 0.8rem;
     margin-bottom: 0.4rem;
     padding-bottom: 0.2rem;
   }
 
   .columnPrices {
-    width: 85px;
-    gap: 0.4rem;
+    width: 110px;
+    gap: 0.8rem;
   }
 
   .columnHeader, .columnPrice {
