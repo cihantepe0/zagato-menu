@@ -190,7 +190,11 @@ export default function MenuClient({ initialData }) {
                               <div className={styles.columnPrices}>
                                 {item.prices.map((p, pIndex) => (
                                   <div key={pIndex} className={styles.columnPrice}>
-                                    {p ? (p.includes('TL') ? p.replace('TL', '') : p) : '-'}
+                                    {p ? (
+                                      p.includes('TL') ? (
+                                        <span>{p.replace('TL', '')}<small className={styles.tinyTl}>TL</small></span>
+                                      ) : p
+                                    ) : '-'}
                                   </div>
                                 ))}
                               </div>
