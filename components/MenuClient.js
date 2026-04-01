@@ -131,10 +131,12 @@ export default function MenuClient({ initialData }) {
                     <div className={styles.itemsCard}>
                       {section.layoutType === 'columns' && (
                         <div className={styles.headersRow}>
-                          <div className={styles.spacer}></div>
-                          {section.columns.map((col, cIndex) => (
-                            <div key={cIndex} className={styles.columnHeader}>{col}</div>
-                          ))}
+                          <div className={styles.itemInfo}></div>
+                          <div className={styles.columnPrices}>
+                            {section.columns.map((col, cIndex) => (
+                              <div key={cIndex} className={styles.columnHeader}>{col}</div>
+                            ))}
+                          </div>
                         </div>
                       )}
                       
