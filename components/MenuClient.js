@@ -178,16 +178,6 @@ export default function MenuClient({ initialData }) {
                         ))
                       ) : (
                         <>
-                          {section.layoutType === 'columns' && (
-                            <div className={styles.headersRow}>
-                              <div className={styles.itemInfo}></div>
-                              <div className={styles.columnPrices}>
-                                {section.columns.map((col, cIndex) => (
-                                  <div key={cIndex} className={styles.columnHeader}>{col}</div>
-                                ))}
-                              </div>
-                            </div>
-                          )}
                           {section.items.map((item, itemIndex) => (
                           <div key={itemIndex} className={styles.menuItem}>
                             <div className={styles.itemInfo}>

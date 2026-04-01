@@ -265,9 +265,9 @@
 }
 
 .itemPrice small, .columnPrice small {
-  font-size: 0.7em;
-  font-weight: 400;
-  margin-left: 1px;
+  font-size: 1em;
+  font-weight: inherit;
+  margin-left: 2px;
 }
 
 .columnHeaders {
@@ -320,11 +320,11 @@
 }
 
 .tinyTl {
-  font-size: 0.65rem !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
   margin-left: 2px;
   vertical-align: baseline;
   display: inline-block;
-  transform: translateY(-0.05em); /* Subtle nudge to feel aligned with caps height */
 }
 
 @media (max-width: 768px) {
