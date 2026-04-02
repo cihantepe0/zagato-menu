@@ -1,5 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
+export const dynamic = 'force-dynamic';
 import MenuClient from '@/components/MenuClient';
 import styles from '@/app/page.module.css';
 

@@ -55,6 +55,8 @@ export default function ItemEditor() {
   };
 
   const updateItem = (index, field, value) => {
+    const newItems = [...category.items];
+    newItems[index] = { ...newItems[index], [field]: value };
     setCategory({ ...category, items: newItems });
   };
     
