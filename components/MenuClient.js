@@ -144,6 +144,16 @@ export default function MenuClient({ initialData }) {
                         section.subSections.map((sub, sIndex) => (
                           <div key={sIndex} className={styles.subSection}>
                             {sub.title && <div className={styles.subSectionTitle}>{sub.title}</div>}
+                            {sub.layoutType === 'columns' && sub.columns && (
+                              <div className={styles.headersRow}>
+                                <div className={styles.itemInfo}></div>
+                                <div className={styles.columnPrices}>
+                                  {sub.columns.map((col, cIndex) => (
+                                    <div key={cIndex} className={styles.columnHeader}>{col}</div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
                             {sub.items.map((item, itemIndex) => (
                               <div key={itemIndex} className={styles.menuItem}>
                                 <div className={styles.itemInfo}>
@@ -153,7 +163,7 @@ export default function MenuClient({ initialData }) {
                                   </div>
                                   {item.description && <p className={styles.itemDescription}>{item.description}</p>}
                                 </div>
-                                {section.layoutType === 'columns' ? (
+                                {(sub.layoutType || section.layoutType) === 'columns' ? (
                                   <div className={styles.columnPrices}>
                                     {item.prices.map((p, pIndex) => (
                                       <div key={pIndex} className={styles.columnPrice}>

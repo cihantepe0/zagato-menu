@@ -5,81 +5,102 @@
     "subCategory": "SNACKS",
     "backgroundImage": "/menu/1.webp",
     "layoutAlign": "left",
-    "items": [
+    "subSections": [
       {
-        "name": "Patates Kızartması (ithal)",
-        "subName": "French Fries(Export)",
-        "price": "350TL / 400TL / 450TL",
-        "description": "Küçük / Orta / Büyük"
+        "title": "PATATES KIZARTMASI FRENCH FRIES",
+        "layoutType": "columns",
+        "columns": [
+          "Küçük",
+          "Orta",
+          "Büyük"
+        ],
+        "items": [
+          {
+            "name": "Patates Kızartması (ithal)",
+            "subName": "French Fries (Imported)",
+            "prices": [
+              "350TL",
+              "400TL",
+              "450TL"
+            ],
+            "description": "Small / Medium / Large"
+          }
+        ]
       },
       {
-        "name": "Fıstık",
-        "subName": "Peanut",
-        "price": "110TL"
-      },
-      {
-        "name": "Lüks Karışık Çerez",
-        "subName": "Mixed Nuts",
-        "price": "150TL"
-      },
-      {
-        "name": "Süper Lüks Karışık Çerez",
-        "subName": "Premium Mixed Nuts",
-        "price": "300TL"
-      },
-      {
-        "name": "Turşu Tabağı",
-        "subName": "Pickle Platter",
-        "price": "230TL"
-      },
-      {
-        "name": "Pringles",
-        "subName": "Original, Salt & Vinegar, Paprika, Texas BBQ, Sour Crem & Onion",
-        "price": "135TL"
-      },
-      {
-        "name": "Cajun Chips",
-        "price": "490TL"
-      },
-      {
-        "name": "Onion Rings & Chips",
-        "price": "530TL"
-      },
-      {
-        "name": "Peynir Tabağı",
-        "subName": "Cheese Platter",
-        "price": "690TL",
-        "description": "İthal ve Yerli Peynir Çeşitleri (Kırmızı Çedar, Beyaz Çedar, Füme Peynir, Keçi Peyniri), Grissini"
-      },
-      {
-        "name": "Meyve Tabağı",
-        "subName": "Fruit Platter",
-        "price": "570TL / 780TL",
-        "description": "Orta / Büyük"
-      },
-      {
-        "name": "Acılı Tavuk Parçaları",
-        "subName": "Spicy Pop Chicken",
-        "price": "590TL",
-        "description": "Patates kızartması ile servis edilir."
-      },
-      {
-        "name": "The Shamrock Bira Tabağı (2 Kişilik)",
-        "subName": "Beer Platter (For 2)",
-        "price": "780TL",
-        "description": "Kızarmış Tavuk Parçaları, Tavuk Strip, Patates Kızartması, Soğan Halkası."
-      },
-      {
-        "name": "The Shamrock Combo Tabağı (2 Kişilik)",
-        "subName": "The Shamrock Combo Platter (For 2)",
-        "price": "1780TL",
-        "description": "Cheeseburger, Popchicken, Buffalo Wings, Patates Kızartması, Soğan Halkası, Ananas Sos, Yeşil Sos, Chutney Sos, Barbekü Sos."
-      },
-      {
-        "name": "The Shamrock Combo Tabağı (4 Kişilik)",
-        "subName": "The Shamrock Combo Platter (For 4)",
-        "price": "2295TL",
-        "description": "Zinger Burger, Cheeseburger, Ballı Çıtır Kanat, Popchicken, Buffalo Wings, Patates Kızartması, Soğan Halkası, Ananas Sos, Yeşil Sos, Chutney Sos, Barbekü Sos."
+        "items": [
+          {
+            "name": "Fıstık",
+            "subName": "Peanut",
+            "price": "110TL"
+          },
+          {
+            "name": "Lüks Karışık Çerez",
+            "subName": "Mixed Nuts",
+            "price": "150TL"
+          },
+          {
+            "name": "Süper Lüks Karışık Çerez",
+            "subName": "Premium Mixed Nuts",
+            "price": "300TL"
+          },
+          {
+            "name": "Turşu Tabağı",
+            "subName": "Pickle Platter",
+            "price": "230TL"
+          },
+          {
+            "name": "Pringles",
+            "subName": "Original, Salt & Vinegar, Paprika, Texas BBQ, Sour Cream & Onion",
+            "price": "135TL"
+          },
+          {
+            "name": "Cajun Chips",
+            "subName": "Cajun Chips",
+            "price": "490TL"
+          },
+          {
+            "name": "Onion Rings & Chips",
+            "subName": "Onion Rings & Chips",
+            "price": "530TL"
+          },
+          {
+            "name": "Peynir Tabağı",
+            "subName": "Cheese Platter",
+            "price": "690TL",
+            "description": "İthal ve Yerli Peynir Çeşitleri (Kırmızı Çedar, Beyaz Çedar, Füme Peynir, Keçi Peyniri), Grissini. / Imported and Local Cheese Varieties (Red Cheddar, White Cheddar, Smoked Cheese, Goat Cheese), Grissini."
+          },
+          {
+            "name": "Meyve Tabağı",
+            "subName": "Fruit Platter",
+            "price": "570TL / 780TL",
+            "description": "Orta / Büyük (Medium / Large)"
+          },
+          {
+            "name": "Acılı Tavuk Parçaları",
+            "subName": "Spicy Pop Chicken",
+            "price": "590TL",
+            "description": "Patates kızartması ile servis edilir. / Served with french fries."
+          },
+          {
+            "name": "The Shamrock Bira Tabağı (2 Kişilik)",
+            "subName": "Beer Platter (For 2)",
+            "price": "780TL",
+            "description": "Kızarmış Tavuk Parçaları, Tavuk Strip, Patates Kızartması, Soğan Halkası. / Fried Chicken Pieces, Chicken Strip, French Fries, Onion Ring."
+          },
+          {
+            "name": "The Shamrock Combo Tabağı (2 Kişilik)",
+            "subName": "The Shamrock Combo Platter (For 2)",
+            "price": "1780TL",
+            "description": "Cheeseburger, Popchicken, Buffalo Wings, Patates Kızartması, Soğan Halkası, Soslar. / Cheeseburger, Popchicken, Buffalo Wings, French Fries, Onion Ring, Sauces."
+          },
+          {
+            "name": "The Shamrock Combo Tabağı (4 Kişilik)",
+            "subName": "The Shamrock Combo Platter (For 4)",
+            "price": "2295TL",
+            "description": "Zinger Burger, Cheeseburger, Ballı Çıtır Kanat, Popchicken, Buffalo Wings, Patates Kızartması, Soğan Halkası, Soslar. / Zinger Burger, Cheeseburger, Honey Crispy Wings, Popchicken, Buffalo Wings, French Fries, Onion Ring, Sauces."
+          }
+        ]
       }
     ]
   },
