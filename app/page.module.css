@@ -251,11 +251,7 @@
   color: #d1d1d6;
   margin-top: 0.2rem;
   line-height: 1.4;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  display: block;
 }
 
 .itemPrice {
