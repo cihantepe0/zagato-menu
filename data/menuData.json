@@ -1,2027 +1,349 @@
 [
   {
-    "id": 1,
-    "category": "ATIŞTIRMALIKLAR",
-    "subCategory": "SNACKS",
-    "backgroundImage": "/menu/1.webp",
-    "layoutAlign": "left",
-    "subSections": [
+    "id": "baslangic",
+    "category": "Başlangıçlar",
+    "icon": "starter",
+    "items": [
       {
-        "title": "PATATES KIZARTMASI FRENCH FRIES",
-        "layoutType": "columns",
-        "columns": [
-          "Küçük",
-          "Orta",
-          "Büyük"
-        ],
-        "items": [
-          {
-            "name": "Patates Kızartması (ithal)",
-            "subName": "French Fries (Imported)",
-            "prices": [
-              "350TL",
-              "400TL",
-              "450TL"
-            ],
-            "description": "Small / Medium / Large"
-          }
-        ]
+        "name": "Sarımsaklı Ekmek",
+        "desc": "Sarımsaklı tereyağı",
+        "price": "",
+        "img": null
       },
       {
-        "items": [
-          {
-            "name": "Fıstık",
-            "subName": "Peanut",
-            "price": "110TL"
-          },
-          {
-            "name": "Lüks Karışık Çerez",
-            "subName": "Mixed Nuts",
-            "price": "150TL"
-          },
-          {
-            "name": "Süper Lüks Karışık Çerez",
-            "subName": "Premium Mixed Nuts",
-            "price": "300TL"
-          },
-          {
-            "name": "Turşu Tabağı",
-            "subName": "Pickle Platter",
-            "price": "230TL"
-          },
-          {
-            "name": "Pringles",
-            "subName": "Original, Salt & Vinegar, Paprika, Texas BBQ, Sour Cream & Onion",
-            "price": "135TL"
-          },
-          {
-            "name": "Cajun Chips",
-            "subName": "Cajun Chips",
-            "price": "490TL"
-          },
-          {
-            "name": "Onion Rings & Chips",
-            "subName": "Onion Rings & Chips",
-            "price": "530TL"
-          },
-          {
-            "name": "Peynir Tabağı",
-            "subName": "Cheese Platter",
-            "price": "690TL",
-            "description": "İthal ve Yerli Peynir Çeşitleri (Kırmızı Çedar, Beyaz Çedar, Füme Peynir, Keçi Peyniri), Grissini. / Imported and Local Cheese Varieties (Red Cheddar, White Cheddar, Smoked Cheese, Goat Cheese), Grissini."
-          },
-          {
-            "name": "Meyve Tabağı",
-            "subName": "Fruit Platter",
-            "price": "570TL / 780TL",
-            "description": "Orta / Büyük (Medium / Large)"
-          },
-          {
-            "name": "Acılı Tavuk Parçaları",
-            "subName": "Spicy Pop Chicken",
-            "price": "590TL",
-            "description": "Patates kızartması ile servis edilir. / Served with french fries."
-          },
-          {
-            "name": "The Shamrock Bira Tabağı (2 Kişilik)",
-            "subName": "Beer Platter (For 2)",
-            "price": "780TL",
-            "description": "Kızarmış Tavuk Parçaları, Tavuk Strip, Patates Kızartması, Soğan Halkası. / Fried Chicken Pieces, Chicken Strip, French Fries, Onion Ring."
-          },
-          {
-            "name": "The Shamrock Combo Tabağı (2 Kişilik)",
-            "subName": "The Shamrock Combo Platter (For 2)",
-            "price": "1780TL",
-            "description": "Cheeseburger, Popchicken, Buffalo Wings, Patates Kızartması, Soğan Halkası, Ananas Sos, Yeşil Sos, Chutney Sos, Barbekü Sos. / Cheeseburger, Popchicken, Buffalo Wings, French Fries, Onion Rings, Pineapple Sauce, Green Sauce, Chutney Sauce, BBQ Sauce."
-          },
-          {
-            "name": "The Shamrock Combo Tabağı (4 Kişilik)",
-            "subName": "The Shamrock Combo Platter (For 4)",
-            "price": "2295TL",
-            "description": "Zinger Burger, Cheeseburger, Ballı Çıtır Kanat, Popchicken, Buffalo Wings, Patates Kızartması, Soğan Halkası, Ananas Sos, Yeşil Sos, Chutney Sos, Barbekü Sos. / Zinger Burger, Cheeseburger, Honey Crispy Wings, Popchicken, Buffalo Wings, French Fries, Onion Rings, Pineapple Sauce, Green Sauce, Chutney Sauce, BBQ Sauce."
-          }
-        ]
+        "name": "Somon Gravlaks",
+        "desc": "Ekşi mayalı ekmek üzerine şefin özel sosu, somon gravlaks, kapari çiçeği, dereotu",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Muhteşem 4'lü",
+        "desc": "Somon gravlaks, sarımsaklı ekmek, kuru domates sos, tartar sos",
+        "price": "",
+        "img": null
       }
     ]
   },
   {
-    "id": 2,
-    "category": "BURGER",
-    "subCategory": "BURGER",
-    "backgroundImage": "/menu/2.webp",
-    "layoutAlign": "left",
+    "id": "salata",
+    "category": "Salatalar",
+    "icon": "salad",
     "items": [
       {
-        "name": "The Shamrock Burger",
-        "subName": "200. gr. Homemade Burger Patty, Caramelized Onion, with French Fries.",
-        "price": "680TL",
-        "description": "200 gr. El Yapımı Burger Köftesi, Karamelize Soğan, Patates Kızartması ile."
+        "name": "Vegan Salata",
+        "desc": "Roka, havuç, avokado, cherry domates, nohut, siyah zeytin, dereotu, ceviz, mor lahana",
+        "price": "",
+        "img": null
       },
-      {
-        "name": "The Shamrock Cheeseburger",
-        "subName": "200 gr. Homemade Burger Patty, Caramelized Onion, Cheese, with French Fries.",
-        "price": "695TL",
-        "description": "200 gr. El Yapımı Burger Köftesi, Karamelize Soğan, Peynir, Patates Kızartması ile."
-      },
-      {
-        "name": "Hot Chili Burger",
-        "subName": "200 gr. Gourmet Burger Patty with Hot Chili Sauce, Cheddar Cheese, Caramelized Onion, with French Fries.",
-        "price": "705TL",
-        "description": "Hot Chili Soslu 200 gr. Gurme Burger Köftesi, Çedar Peyniri, Karamelize Soğan, Patates Kızartması ile."
-      },
-      {
-        "name": "Zinger Burger",
-        "subName": "Kentucky Style Chicken Fillet, Greens, Coleslaw, with French Fries.",
-        "price": "705TL",
-        "description": "Kentucky Usulü Tavuk Fileto, Yeşillik, Coleslaw, Patates Kızartması ile."
-      },
-      {
-        "name": "Smoked Egg Burger",
-        "subName": "200 gr. Homemade Burger Patty, Fried Egg, Caramelized Onion, Cheese, with French Fries.",
-        "price": "780TL",
-        "description": "200 gr. El Yapımı Burger Köftesi, Göz Yumurta, Karamelize Soğan, Peynir, Patates Kızartması ile."
-      },
-      {
-        "name": "Jack Daniel's Burger",
-        "subName": "200 gr. Burger Patty with Jack Daniel's Sauce, Tomato, Caramelized Onion, with French Fries.",
-        "price": "780TL",
-        "description": "Jack Daniel's Soslu 200 gr. Burger Köftesi, Domates, Karamelize Soğan, Patates Kızartması ile."
-      },
-      {
-        "name": "Rich Man's Burger",
-        "subName": "Double Burger Patty, Smoked Beef, Cheddar Cheese, Pickle, Lettuce, Caramelized Onion, with French Fries.",
-        "price": "895TL",
-        "description": "Double Burger Köftesi, İsli Et, Çedar Peyniri, Turşu, Marul, Karamelize Soğan, Patates Kızartması ile."
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "category": "WRAP",
-    "subCategory": "WRAP",
-    "backgroundImage": "/menu/3.webp",
-    "layoutAlign": "left",
-    "items": [
-      {
-        "name": "Vejeteryan Wrap",
-        "subName": "Vegetarian Wrap",
-        "price": "620TL",
-        "description": "Patates Kızartması ile servis edilir. (Served with French Fries.)"
-      },
-      {
-        "name": "Tavuklu Wrap",
-        "subName": "Chicken Wrap",
-        "price": "630TL",
-        "description": "Patates Kızartması ile servis edilir. (Served with French Fries.)"
-      },
-      {
-        "name": "Mexican Wrap",
-        "price": "645TL",
-        "description": "Patates Kızartması ile servis edilir. (Served with French Fries.)"
-      },
-      {
-        "name": "Kıymalı Wrap",
-        "subName": "Minced Meat Wrap",
-        "price": "670TL",
-        "description": "Patates Kızartması ile servis edilir. (Served with French Fries.)"
-      },
-      {
-        "name": "Steak Wrap",
-        "price": "690TL",
-        "description": "Patates Kızartması ile servis edilir. (Served with French Fries.)"
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "category": "KENTUCKY STYLE",
-    "subCategory": "FRIED CHICKEN",
-    "backgroundImage": "/menu/4.webp",
-    "layoutAlign": "left",
-    "items": [
-      {
-        "name": "6 Acılı Kanat",
-        "subName": "6 Hot Wings",
-        "price": "610TL",
-        "description": "Çıtır Tavuk Parçaları, Patates Kızartması. (Crispy Chicken Wings, French Fries.)"
-      },
-      {
-        "name": "10 Acılı Kanat",
-        "subName": "10 Hot Wings",
-        "price": "680TL",
-        "description": "Çıtır Tavuk Parçaları, Patates Kızartması. (Crispy Chicken Wings, French Fries.)"
-      },
-      {
-        "name": "Buffalo Wings",
-        "price": "715TL",
-        "description": "8 Barbekü Soslu Kanat, Patates Kızartması. (8 BBQ Sauced Chicken Wings, French Fries.)"
-      },
-      {
-        "name": "Honey Wings",
-        "price": "730TL",
-        "description": "10 Ballı Soslu Kanat, Patates Kızartması. (10 Honey Chicken Wings, French Fries.)"
-      },
-      {
-        "name": "The Shamrock Bucket",
-        "price": "1740TL",
-        "description": "25 Adet Çıtır Tavuk Parçası, Patates Kızartması. (25 Pcs. Crispy Chicken Wings, French Fries.)"
-      },
-      {
-        "name": "The Shamrock Big Bucket",
-        "price": "2040TL",
-        "description": "35 Adet Çıtır Tavuk Parçası, Patates Kızartması. (35 Pcs. Crispy Chicken Wings, French Fries.)"
-      },
-      {
-        "name": "Kentucky Strips",
-        "price": "670TL",
-        "description": "5 Tavuk Strip, Patates Kızartması. (5 Chicken Strip, French Fries.)"
-      },
-      {
-        "name": "Kentucky Hot Strips",
-        "price": "685TL",
-        "description": "5 Acılı Tavuk Strip, Patates Kızartması. (5 Hot Chicken Strip, French Fries.)"
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "category": "PIZZA",
-    "subCategory": "PIZZA",
-    "backgroundImage": "/menu/5.webp",
-    "layoutAlign": "left",
-    "layoutType": "columns",
-    "columns": [
-      "S",
-      "M",
-      "L"
-    ],
-    "items": [
-      {
-        "name": "Full Karışık İtalyan",
-        "subName": "Full Mix Italian",
-        "prices": [
-          "640TL",
-          "745TL",
-          "935TL"
-        ],
-        "description": "Mozarella, Sucuk, Salam, Sosis, Mantar, Mısır, Zeytin, Domates, Biber."
-      },
-      {
-        "name": "Tavuklu Pizza",
-        "subName": "Chicken Pizza",
-        "prices": [
-          "640TL",
-          "745TL",
-          "935TL"
-        ],
-        "description": "Tavuk Küpleri, Mozarella, Mantar, Mısır, Zeytin, Domates, Biber."
-      },
-      {
-        "name": "Vejeteryan Pizza",
-        "subName": "Vegetarian Pizza",
-        "prices": [
-          "640TL",
-          "745TL",
-          "935TL"
-        ],
-        "description": "Mozarella, Mantar, Mısır, Domates, Biber."
-      },
-      {
-        "name": "Pizza Margherita",
-        "subName": "",
-        "prices": [
-          "640TL",
-          "745TL",
-          "935TL"
-        ],
-        "description": "Mozarella, Domates."
-      },
-      {
-        "name": "Mexican Pizza",
-        "subName": "",
-        "prices": [
-          "650TL",
-          "780TL",
-          "970TL"
-        ],
-        "description": "Kıyma, Mozarella, Mantar, Mısır, Domates, Jalapeno Biber."
-      },
-      {
-        "name": "Barbekü Tavuk Pizza",
-        "subName": "BBQ Chicken Pizza",
-        "prices": [
-          "650TL",
-          "780TL",
-          "970TL"
-        ],
-        "description": "Tavuk, Barbekü Sos, Mozarella, Mantar, Mısır, Domates, Kapya Biber."
-      },
-      {
-        "name": "Pepperoni Pizza",
-        "subName": "",
-        "prices": [
-          "695TL",
-          "815TL",
-          "980TL"
-        ],
-        "description": "Pepperoni, Mozarella, Roka."
-      },
-      {
-        "name": "Mangal Pizza",
-        "subName": "Barbecue Pizza",
-        "prices": [
-          "735TL",
-          "815TL",
-          "980TL"
-        ],
-        "description": "Misket Köfte, Biftek Parçaları, Mozarella, Mantar, Domates, Biber."
-      },
-      {
-        "name": "Akdeniz Pizza",
-        "subName": "Mediterranean Pizza",
-        "prices": [
-          "695TL",
-          "815TL",
-          "980TL"
-        ],
-        "description": "Mozarella, Hellim, Beyaz Peynir, Mantar, Mısır, Zeytin, Domates, Biber."
-      },
-      {
-        "name": "Pastırmalı Pizza",
-        "subName": "Cypriot Sausage Pizza",
-        "prices": [
-          "735TL",
-          "830TL",
-          "980TL"
-        ],
-        "description": "Mozarella, Kıbrıs Pastırması."
-      },
-      {
-        "name": "Simit Kenar Pizza",
-        "subName": "Bagel Crust Pizza",
-        "prices": [
-          "",
-          "840TL",
-          "980TL"
-        ],
-        "description": "Mozarella, Sucuk, Salam, Sosis, Mantar, Mısır, Zeytin, Domates, Biber."
-      },
-      {
-        "name": "4 Mevsim Pizza",
-        "subName": "4 Seasons Pizza",
-        "prices": [
-          "",
-          "840TL",
-          "980TL"
-        ],
-        "description": "Margherita, Mexican, Tavuklu ve Karışık Pizza."
-      }
-    ]
-  },
-  {
-    "id": 7,
-    "category": "TAVUK MENÜ",
-    "subCategory": "CHICKEN MENU",
-    "backgroundImage": "/menu/7.webp",
-    "layoutAlign": "left",
-    "items": [
-      {
-        "name": "Tavuk Şnitzel",
-        "subName": "Chicken Schnitzel",
-        "price": "685TL",
-        "description": "Patates Kızartması, Pilav, Salata. (French Fries, Rice, Salad.)"
-      },
-      {
-        "name": "Tavuk Goujon",
-        "subName": "Chicken Goujons",
-        "price": "685TL",
-        "description": "Patates Kızartması, Pilav, Salata. (French Fries, Rice, Salad.)"
-      },
-      {
-        "name": "Köri Soslu Tavuk",
-        "subName": "Chicken Curry",
-        "price": "690TL",
-        "description": "Patates Kızartması, Pilav, Salata. (French Fries, Rice, Salad.)"
-      },
-      {
-        "name": "Tavuk Sote",
-        "subName": "Sauteed Chicken",
-        "price": "685TL",
-        "description": "Patates Kızartması, Pilav, Salata. (French Fries, Rice, Salad.)"
-      },
-      {
-        "name": "Kremalı Mantarlı Tavuk",
-        "subName": "Cream and Mushroom Chicken",
-        "price": "690TL",
-        "description": "Patates Kızartması, Pilav, Salata. (French Fries, Rice, Salad.)"
-      },
-      {
-        "name": "Tavuk Şiş",
-        "subName": "Chicken Skewers",
-        "price": "720TL",
-        "description": "Patates Kızartması, Pilav, Salata. (French Fries, Rice, Salad.)"
-      },
-      {
-        "name": "Izgara Tavuk Kanat",
-        "subName": "Grilled Chicken Wings",
-        "price": "730TL",
-        "description": "Patates Kızartması, Pilav, Salata. (French Fries, Rice, Salad.)"
-      },
-      {
-        "name": "Izgara Tavuk Göğsü",
-        "subName": "Grilled Chicken Breast",
-        "price": "720TL",
-        "description": "Patates Kızartması, Pilav, Salata. (French Fries, Rice, Salad.)"
-      },
-      {
-        "name": "Meksika Tavuk",
-        "subName": "Mexican Chicken",
-        "price": "730TL",
-        "description": "Patates Kızartması, Pilav, Salata. (French Fries, Rice, Salad.)"
-      },
-      {
-        "name": "Tavuklu Krep",
-        "subName": "Chicken Crepe",
-        "price": "740TL",
-        "description": "Patates Kızartması, Salata. (French Fries, Salad.)"
-      },
-      {
-        "name": "Tavuk Fajita",
-        "subName": "Chicken Fajita",
-        "price": "760TL",
-        "description": "Fajita Sosları, Yoğurt, Patates Kızartması. (Fajita Sauces, Yoghurt, French Fries.)"
-      },
-      {
-        "name": "Marry Me Chicken",
-        "subName": "Grilled Chicken Breast, Potato Puree, Cherry Tomato, Baby Corn, Carrot.",
-        "price": "730TL",
-        "description": "Izgara Tavuk Göğsü, Patates Püresi, Çeri Domates, Minik Mısır, Havuç."
-      },
-      {
-        "name": "Shamrock Healthy Life Chicken",
-        "subName": "Grilled Chicken Breast, Boiled Vegetables, Salad, Grilled Onion, Pepper.",
-        "price": "760TL",
-        "description": "Izgara Tavuk Göğsü, Haşlanmış Sebze, Salata, Közlenmiş Soğan, Biber."
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "category": "ET MENÜ",
-    "subCategory": "BEEF MENU",
-    "backgroundImage": "/menu/6.webp",
-    "layoutAlign": "left",
-    "items": [
-      {
-        "name": "Fajita",
-        "subName": "Beef, California Peppers, Red Onion, Tomato Sauce, Mexican Sauce, Cheese, Sweet Corn Sauce.",
-        "price": "895TL",
-        "description": "Dana Eti, Kaliforniya Biberleri, Kırmızı Soğan, Domates Sosu, Meksika Sosu, Peynir, Mısır Sosu."
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "category": "SALATA",
-    "subCategory": "SALAD",
-    "backgroundImage": "/menu/8.webp",
-    "layoutAlign": "left",
-    "items": [
       {
         "name": "Sezar Salata",
-        "subName": "Cesar Salad",
-        "price": "640TL",
-        "description": "Izgara Tavuk Bonfile, Göbek Marul, Grissini, Mısır, Parmesan, Sos. (Grilled Chicken Fillet, iceberg Lettuce, Grissini, Corn, Parmesan, Sauce.)"
+        "desc": "Sezar sos, göbek salata, cherry domates, kruton ekmek, ızgara tavuk, parmesan peyniri",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Tavuklu Salata",
-        "subName": "Chicken Salad",
-        "price": "640TL",
-        "description": "Tavuk, Yeşil-Kırmızı Biber, Mantar, Soğan, Özel Sos. (Chicken, Green-Red Pepper, Mushroom, Onion Special Sauce.)"
+        "name": "Yeşil Elmalı Somon Gravlaks",
+        "desc": "Mevsim yeşillikleri, somon gravlaks, pancar, cherry domates, ceviz, dereotu, şefin özel sosu",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Ton Balıklı Salata",
-        "subName": "Tuna Fish Salad",
-        "price": "640TL",
-        "description": "Ton Balığı, Göbek Marul, Domates, Salatalık, Mısır, Zeytin, Turşu, Sos. (Tuna Fish, Iceberg Lettuce, Tomato, Cucumber, Corn, Olive, Pickle, Sauce.)"
-      },
-      {
-        "name": "Peynirli Salata",
-        "subName": "Cheese Salad",
-        "price": "645TL",
-        "description": "Mevsim Yeşillikleri, Domates, Salatalık, Küp Beyaz Peynir. (Seasonal Greens, Tomato, Cucumber, White Cheese Cubes.)"
+        "name": "Zagato Tütsülenmiş Hellimli",
+        "desc": "Mısır, cherry domates, mevsim yeşillikleri, ceviz, tütsülenmiş hellim, yeşil elma, şefin özel sosu",
+        "price": "",
+        "img": null
       }
     ]
   },
   {
-    "id": 9,
-    "category": "MAKARNA",
-    "subCategory": "PASTA",
-    "backgroundImage": "/menu/9.webp",
-    "layoutAlign": "right",
+    "id": "arasicak",
+    "category": "Ara Sıcaklar",
+    "icon": "hot",
     "items": [
       {
-        "name": "Spaghetti Bolognese",
-        "price": "690TL",
-        "description": "Kıyma, Soğan, Domates, Biber. (Minced Meat, Onion, Tomato, Pepper.)"
+        "name": "Çıtır Tabak",
+        "desc": "4 kişilik ve 2 kişilik kombo tabağı — Panelenmiş çıtır tavuk, panelenmiş çıtır hellim, soğan halkası, dana sosis, patates tava, börek",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Mantar Soslu Makarna",
-        "subName": "Mushroom Sauced Pasta",
-        "price": "680TL",
-        "description": "Taze Mantar, Özel Sos. (Fresh Mushroom, Special Sauce.)"
-      },
-      {
-        "name": "Neapolitan Pasta",
-        "price": "690TL",
-        "description": "Domates Sos. (Tomato Sauce.)"
-      },
-      {
-        "name": "Tavuklu Penne",
-        "subName": "Chicken Penne",
-        "price": "690TL",
-        "description": "Tavuk, Mantar, Fesleğen, Krema. (Chicken, Mushroom, Basil, Cream.)"
-      },
-      {
-        "name": "Etli Penne",
-        "subName": "Steak Penne",
-        "price": "760TL",
-        "description": "Et, Mantar, Özel Sos. (Et, Mantar, Özel Sos.)"
-      }
-    ]
-  },
-  {
-    "id": 10,
-    "category": "BALIK",
-    "subCategory": "FISH",
-    "backgroundImage": "/menu/10.webp",
-    "layoutAlign": "left",
-    "items": [
-      {
-        "name": "Chili Fish",
-        "price": "970TL",
-        "description": "Özel Acı Sosla Marine Edilmiş Çipura, Patates Kızartması ve Salata. (Sea Bream Marinated with Special Sauce, French Fries and Salad.)"
+        "name": "Patates Tava",
+        "desc": "Parmesan, fesleğen, kekik, biberiye",
+        "price": "",
+        "img": null
       },
       {
         "name": "Kalamar Tava",
-        "subName": "Fried Calamari",
-        "price": "930TL",
-        "description": "Çıtır Kalamar Halkaları, Tartar Sos, Roka Demeti. (Crispy Calamari Rings, Tartar Sauce, Bunch of Rocket.)"
+        "desc": "Çıtır maydanoz, kalamar, tartar sos",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Karides Tava",
-        "subName": "Fried Shrimp",
-        "price": "985TL",
-        "description": "Tereyağında Sotelenmiş Sarımsaklı Çil Karides, Mantar, Fırınlanmış Çeri Domates, Maydanoz, Acuka Sos. (Sauteed Shrimp in Butter, Mushroom, Baked Cherry Tomato, Parsley, Ajika Sauce.)"
+        "name": "Karides Güveç",
+        "desc": "Sarımsak, tereyağı, mantar, maydanoz",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Izgara Somon",
-        "subName": "Grilled Salmon",
-        "price": "985TL",
-        "description": "Izgara Somon, Patates Püresi, Közlenmiş Havuç ve Bezelye, Dereotlu Hardal Sosu. (Grilled Salmon, Mashed Potatoes, Roasted Carrot and Peas, Dill Mustard Dressing.)"
+        "name": "Güveçte İlikli Ahtapot",
+        "desc": "Cherry domates, sarımsak, fesleğen, kekik",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Paçanga Böreği (2 Adet)",
+        "desc": "Pastırma, kaşar peyniri, mevsim yeşillikleri, cherry domates",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Misket Köfte (3 Adet)",
+        "desc": "Yoğurt, domates sos, kızarmış yufka",
+        "price": "",
+        "img": null
       }
     ]
   },
   {
-    "id": 11,
-    "category": "ÇOCUK MENÜSÜ",
-    "subCategory": "KIDS MENU",
-    "backgroundImage": "/menu/11.webp",
-    "layoutAlign": "left",
+    "id": "burger-dana",
+    "category": "Burgerler (Dana)",
+    "icon": "burger",
     "items": [
       {
-        "name": "Nuggets",
-        "price": "520TL",
-        "description": "Patates Kızartması ile servis edilir. (Served with French Fries.)"
+        "name": "Zagato Jack Daniel's Smoke Burger",
+        "desc": "Jack Daniel's sos, karamelize soğan, yeşillik, domates, patates tava",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Hamburger",
-        "price": "520TL",
-        "description": "Patates Kızartması ile servis edilir. (Served with French Fries.)"
+        "name": "Cheese Burger",
+        "desc": "Cheddar peyniri, karamelize soğan, yeşillik, domates, turşu, red sos, patates tava",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Pop Chicken",
-        "price": "520TL",
-        "description": "Patates Kızartması ile servis edilir. (Served with French Fries.)"
+        "name": "Garlic Mushroom & Cheese Burger",
+        "desc": "Karamelize mantar, sarımsak, domates, turşu, yeşillik, cheddar peyniri, karamelize soğan, red sos, patates tava",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Bacon Cheese Burger",
+        "desc": "Dana bacon, cheddar peyniri, karamelize soğan, yeşillik, domates, turşu, red sos, patates tava",
+        "price": "",
+        "img": null
       }
     ]
   },
   {
-    "id": 12,
-    "category": "TATLI",
-    "subCategory": "DESSERT",
-    "backgroundImage": "/menu/12.webp",
-    "layoutAlign": "left",
+    "id": "burger-tavuk",
+    "category": "Burgerler (Tavuk)",
+    "icon": "chicken",
     "items": [
       {
-        "name": "Souflé",
-        "price": "380TL",
-        "description": "Dondurma ile servis edilir. (Served with Ice Cream.)"
+        "name": "Çıtır Chicken Burger",
+        "desc": "Panelenmiş tavuk, yeşillik, domates, karamelize soğan, özel gusto sos, patates tava",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Sade Waffle",
-        "subName": "Plain Waffle",
-        "price": "390TL",
-        "description": "Nutella."
+        "name": "Chicken Cheese Burger",
+        "desc": "Izgara tavuk, cheddar peyniri, yeşillik, domates, karamelize soğan, özel gusto sos, patates tava",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Karışık Waffle",
-        "subName": "Mixed Waffle",
-        "price": "430TL",
-        "description": "Nutella ve Karışık Meyveler. (Nutella and Mixed Fruits.)"
+        "name": "Garlic Mushroom & Cheese Burger",
+        "desc": "Karamelize mantar, sarımsak, domates, turşu, yeşillik, patates tava",
+        "price": "",
+        "img": null
       }
     ]
   },
   {
-    "id": 13,
-    "category": "SOĞUK İÇECEK",
-    "subCategory": "COLD DRINKS",
-    "backgroundImage": "/menu/13.webp",
-    "layoutAlign": "center",
+    "id": "makarna",
+    "category": "Makarna & Risotto",
+    "icon": "pasta",
     "items": [
       {
-        "name": "Coca-Cola, Coca-Cola Light, Coca-Cola Zero, Fanta, Sprite",
-        "price": "95TL",
-        "description": ""
+        "name": "Frutti di Mare Fettuccine",
+        "desc": "Kalamar, ahtapot, karides, fesleğen, parmesan, domates sos, krema",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Fuse Tea",
-        "price": "100TL",
-        "description": "Limon, Şeftali, Mango-Karpuz. (Lemon, Peach, Mango-Watermelon.)"
+        "name": "Rigatoni Bolognese",
+        "desc": "Klasik Bolonez sos, fesleğen",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Meyve Suyu",
-        "price": "100TL",
-        "description": "Vişne, Portakal, Şeftali, Kayısı, Ananas, Elma, Mango, Karışık. (Cherry, Orange, Peach, Apricot, Pineapple, Apple, Mango, Mixed.)"
+        "name": "Fettuccine Bonfile",
+        "desc": "Domates soslu bonfile",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Sade Soda",
-        "subName": "Sparkling Water",
-        "price": "90TL",
-        "description": ""
+        "name": "Fettuccine Alfredo",
+        "desc": "Tavuk, mantar, krema",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Meyveli Soda",
-        "subName": "Fruit Mineral Water",
-        "price": "110TL",
-        "description": "Limon, Elma, Vişne, Çilek, Şeftali. (Lemon, Apple, Cherry, Strawberry, Peach.)"
-      },
-      {
-        "name": "Taze Sıkılmış Portakal Suyu",
-        "subName": "Fresh Orange Juice",
-        "price": "200TL",
-        "description": ""
-      },
-      {
-        "name": "Ev Yapımı Limonata",
-        "subName": "Homemade Lemonade",
-        "price": "220TL",
-        "description": ""
-      },
-      {
-        "name": "Aromalı Limonata",
-        "subName": "Aromatic Lemonade",
-        "price": "240TL",
-        "description": ""
-      },
-      {
-        "name": "Ev Yapımı Ayran",
-        "subName": "Homemade Ayran",
-        "price": "190TL",
-        "description": ""
-      },
-      {
-        "name": "Churchill",
-        "price": "130TL",
-        "description": ""
-      },
-      {
-        "name": "Enerji İçeceği",
-        "subName": "Energy Drink",
-        "price": "180TL",
-        "description": ""
-      },
-      {
-        "name": "Redbull, Shark",
-        "price": "200TL",
-        "description": ""
-      },
-      {
-        "name": "Su (50cl)",
-        "subName": "Water (50cl)",
-        "price": "40TL",
-        "description": ""
+        "name": "Mantarlı Risotto",
+        "desc": "Porcini ve kestane mantarı, sarımsak, beyaz şarap, parmesan",
+        "price": "",
+        "img": null
       }
     ]
   },
   {
-    "id": 19,
-    "category": "ÇAY",
-    "subCategory": "TEA",
-    "backgroundImage": "/menu/19.webp",
-    "layoutAlign": "center",
+    "id": "pizza",
+    "category": "Pizzatesler",
+    "icon": "pizza",
     "items": [
       {
-        "name": "Küçük Demli Çay",
-        "subName": "Brewed Tea",
-        "price": "50TL",
-        "description": ""
+        "name": "Pizza Margherita",
+        "desc": "Domates sos, mozzarella peyniri",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Büyük Demli Çay",
-        "subName": "Cup Brewed Tea",
-        "price": "70TL",
-        "description": ""
+        "name": "Pizza Romana",
+        "desc": "Domates sos, mozzarella peyniri, sucuk",
+        "price": "",
+        "img": null
       },
       {
-        "name": "English Tea",
-        "price": "130TL",
-        "description": ""
+        "name": "Pizza Frutti di Mare",
+        "desc": "Karides, kalamar, ahtapot, domates sos, mozzarella peyniri",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Demleme Bitki Çayı",
-        "subName": "Brewed Herbal Tea",
-        "price": "165TL",
-        "description": "Ihlamur, Nane-Limon, yeşil Çay, Rezene, Papatya, Adaçayı. (Linden, Mint-Lemon, Green Tea, Fennel, Camomile, Sage.)"
+        "name": "Pizza Alaturca",
+        "desc": "Mantar, renkli biberler, sucuk, salam, zeytin, mısır, cherry domates",
+        "price": "",
+        "img": null
       }
     ]
   },
   {
-    "id": 15,
-    "category": "KAHVE",
-    "subCategory": "COFFEE",
-    "backgroundImage": "/menu/15.webp",
-    "layoutAlign": "left",
+    "id": "et",
+    "category": "Et Yemekleri",
+    "icon": "steak",
     "items": [
       {
-        "name": "Espresso Single / Double",
-        "price": "175TL / 195TL",
-        "description": ""
+        "name": "Kuzu Pirzola",
+        "desc": "Mevsim sebzeleri, patates graten",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Espresso Macchiato",
-        "price": "185TL",
-        "description": ""
+        "name": "Antrikot Izgara",
+        "desc": "Buharda mevsim sebzeleri, patates graten, mantar sos",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Espresso Con Panna",
-        "price": "185TL",
-        "description": ""
+        "name": "Black Pepper Antrikot",
+        "desc": "Buharda mevsim sebzeleri, patates graten, Black Pepper sos",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Americano",
-        "price": "180TL",
-        "description": ""
+        "name": "Rokfor Soslu Bonfile",
+        "desc": "Mevsim sebzeleri, kumpir patates, ızgara bonfile",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Latte",
-        "price": "200TL",
-        "description": ""
+        "name": "Trüflü Mantar Soslu Bonfile",
+        "desc": "Izgara bonfile, buharda mevsim sebzeleri, kumpir patates",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Latte Macchiato",
-        "price": "200TL",
-        "description": ""
-      },
-      {
-        "name": "Latte Vanilla",
-        "price": "210TL",
-        "description": ""
-      },
-      {
-        "name": "Latte Caramel",
-        "price": "210TL",
-        "description": ""
-      },
-      {
-        "name": "Cappuccino",
-        "price": "200TL",
-        "description": ""
-      },
-      {
-        "name": "Oreo Coffee",
-        "price": "189TL",
-        "description": ""
-      },
-      {
-        "name": "Caramel Macchiato",
-        "price": "210TL",
-        "description": ""
-      },
-      {
-        "name": "Mocha",
-        "price": "210TL",
-        "description": ""
-      },
-      {
-        "name": "Beyaz Çikolatalı Mocha",
-        "subName": "White Chocolate Mocha",
-        "price": "210TL",
-        "description": ""
-      },
-      {
-        "name": "Caramel Mocha",
-        "price": "210TL",
-        "description": ""
-      },
-      {
-        "name": "Irish Coffee (Alkollü)",
-        "subName": "(Alcoholic)",
-        "price": "230TL",
-        "description": ""
-      },
-      {
-        "name": "Filtre Kahve",
-        "subName": "Filter Coffee",
-        "price": "200TL",
-        "description": ""
-      },
-      {
-        "name": "Granül Kahve",
-        "subName": "Instant Coffee",
-        "price": "170TL",
-        "description": ""
-      },
-      {
-        "name": "Sütlü Granül Kahve",
-        "subName": "Instant Coffee with Milk",
-        "price": "190TL",
-        "description": ""
-      },
-      {
-        "name": "Türk Kahvesi",
-        "subName": "Turkish Coffee",
-        "price": "100TL",
-        "description": ""
-      },
-      {
-        "name": "Sıcak Çikolata",
-        "subName": "Hot Chocolate",
-        "price": "190TL",
-        "description": ""
-      },
-      {
-        "name": "Muzlu Sıcak Çikolata",
-        "subName": "Banana Hot Chocolate",
-        "price": "200TL",
-        "description": ""
-      },
-      {
-        "name": "Ballı Sıcak Süt",
-        "subName": "Hot Milk with Honey",
-        "price": "200TL",
-        "description": ""
-      },
-      {
-        "name": "Sahlep",
-        "price": "190TL",
-        "description": ""
-      },
-      {
-        "name": "Ekstra Süt",
-        "subName": "Extra Milk",
-        "price": "65TL",
-        "description": ""
+        "name": "Zagato Barbekü Tabağı (2 Kişilik)",
+        "desc": "Kuzu pirzola, antrikot, steak, kanat, but, Adana, patates kızartması, soğan, domates, biber",
+        "price": "",
+        "img": null
       }
     ]
   },
   {
-    "id": 16,
-    "category": "SOĞUK KAHVE",
-    "subCategory": "ICED COFFEE",
-    "backgroundImage": "/menu/16.webp",
-    "layoutAlign": "left",
+    "id": "tavuk",
+    "category": "Tavuk Yemekleri",
+    "icon": "chicken",
     "items": [
       {
-        "name": "Frappe",
-        "price": "200TL",
-        "description": ""
+        "name": "Alpino Kebap",
+        "desc": "Izgara tavuk but, beğendi, Cafe de Paris sos, kızarmış domates, yeşil biber, patates kızartması",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Frappuccino",
-        "price": "210TL",
-        "description": ""
-      },
-      {
-        "name": "Iced Americano",
-        "price": "190TL",
-        "description": ""
-      },
-      {
-        "name": "Iced Latte",
-        "price": "200TL",
-        "description": ""
-      },
-      {
-        "name": "Iced Mocha",
-        "price": "210TL",
-        "description": ""
-      },
-      {
-        "name": "Affogato",
-        "price": "210TL",
-        "description": ""
-      },
-      {
-        "name": "Iced Latte Caramel",
-        "price": "210TL",
-        "description": ""
-      },
-      {
-        "name": "Iced White Latte",
-        "price": "210TL",
-        "description": ""
-      },
-      {
-        "name": "Iced White Mocha",
-        "price": "210TL",
-        "description": ""
+        "name": "Mantar Soslu Tavuk",
+        "desc": "But ve tavuk göğsü, mevsim salatası, patates kızartması, soğan halkası",
+        "price": "",
+        "img": null
       }
     ]
   },
   {
-    "id": 14,
-    "category": "FROSTY",
-    "subCategory": "FROSTY",
-    "backgroundImage": "/menu/14.webp",
-    "layoutAlign": "left",
-    "subSections": [
-      {
-        "title": "MILKSHAKE",
-        "items": [
-          {
-            "name": "Milkshake",
-            "subName": "Banana, Strawberry, Chocolate, Lemon, Vanilla, Caramel.",
-            "price": "260TL",
-            "description": "Muz, Çilek, Çikolata, Limon, Vanilya, Karamel."
-          },
-          {
-            "name": "Irish Milkshake (%5 Alkollü)",
-            "subName": "(5% Alcohol)",
-            "price": "330TL",
-            "description": ""
-          },
-          {
-            "name": "Magnum Milkshake",
-            "price": "330TL",
-            "description": ""
-          },
-          {
-            "name": "Twix Milkshake",
-            "price": "330TL",
-            "description": ""
-          }
-        ]
-      },
-      {
-        "title": "SMOOTHIE",
-        "items": [
-          {
-            "name": "Meyveli Smoothie",
-            "subName": "Fruit Smoothie",
-            "price": "270TL",
-            "description": ""
-          },
-          {
-            "name": "Alkollü Smoothie",
-            "subName": "Alcholic Smoothie",
-            "price": "290TL",
-            "description": ""
-          }
-        ]
-      },
-      {
-        "title": "FROZEN",
-        "items": [
-          {
-            "name": "Meyveli Frozen",
-            "subName": "Fruit Frozen",
-            "price": "260TL",
-            "description": ""
-          },
-          {
-            "name": "Alkollü Frozen",
-            "subName": "Alcholic Frozen",
-            "price": "290TL",
-            "description": ""
-          }
-        ]
-      },
-      {
-        "title": "DONDURMA ICE-CREAM",
-        "items": [
-          {
-            "name": "Dondurma (1 Top)",
-            "subName": "Ice-Cream (1 Scoop)",
-            "price": "90TL",
-            "description": ""
-          },
-          {
-            "name": "Dondurma (4 Top)",
-            "subName": "Vanilla, Chocolate, Caramel, Banana, Strawberry, Lemon, Pistachio.",
-            "price": "320TL",
-            "description": "Vanilya, Çikolata, Karamel, Muz, Çilek, Limon, Antep Fıstığı."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 17,
-    "category": "BEER",
-    "subCategory": "BEER",
-    "backgroundImage": "/menu/17.webp",
-    "layoutAlign": "left",
-    "subSections": [
-      {
-        "title": "33cl",
-        "items": [
-          {
-            "name": "Efes",
-            "price": "160TL",
-            "description": ""
-          },
-          {
-            "name": "Tuborg",
-            "price": "160TL",
-            "description": ""
-          },
-          {
-            "name": "Carlsberg",
-            "price": "160TL",
-            "description": ""
-          },
-          {
-            "name": "Bud",
-            "price": "160TL",
-            "description": ""
-          },
-          {
-            "name": "Beck's",
-            "price": "160TL",
-            "description": ""
-          },
-          {
-            "name": "Heineken",
-            "price": "220TL",
-            "description": ""
-          },
-          {
-            "name": "Miller",
-            "price": "220TL",
-            "description": ""
-          },
-          {
-            "name": "Corona",
-            "price": "220TL",
-            "description": ""
-          },
-          {
-            "name": "Brewart",
-            "subName": "(Cadus, Surreal, Naturalist, Pop)",
-            "price": "200TL",
-            "description": ""
-          },
-          {
-            "name": "Stella Artois",
-            "price": "220TL",
-            "description": ""
-          }
-        ]
-      },
-      {
-        "title": "50cl",
-        "items": [
-          {
-            "name": "Bomonti Filtresiz",
-            "price": "175TL",
-            "description": ""
-          },
-          {
-            "name": "Tuborg",
-            "price": "175TL",
-            "description": ""
-          },
-          {
-            "name": "Efes Özel Seri",
-            "price": "175TL",
-            "description": ""
-          },
-          {
-            "name": "Carlsberg",
-            "price": "175TL",
-            "description": ""
-          },
-          {
-            "name": "Bud",
-            "price": "175TL",
-            "description": ""
-          },
-          {
-            "name": "Belfast",
-            "price": "175TL",
-            "description": ""
-          },
-          {
-            "name": "Van Pur",
-            "price": "200TL",
-            "description": ""
-          },
-          {
-            "name": "Van Pur (Alkolsüz)",
-            "subName": "(Non-Alcoholic)",
-            "price": "180TL",
-            "description": ""
-          },
-          {
-            "name": "Amsterdam",
-            "price": "220TL",
-            "description": ""
-          },
-          {
-            "name": "Guniess",
-            "price": "220TL",
-            "description": ""
-          },
-          {
-            "name": "Guiness Foreign Extra Stout",
-            "price": "230TL",
-            "description": ""
-          },
-          {
-            "name": "Jhon Smith's",
-            "price": "220TL",
-            "description": ""
-          },
-          {
-            "name": "Murphy's",
-            "price": "220TL",
-            "description": ""
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 18,
-    "category": "BEER",
-    "subCategory": "BEER",
-    "backgroundImage": "/menu/18.webp",
-    "layoutAlign": "left",
-    "subSections": [
-      {
-        "title": "FIÇI BİRA DRAFT BEER",
-        "layoutType": "columns",
-        "columns": [
-          "33cl",
-          "50cl"
-        ],
-        "items": [
-          {
-            "name": "Efes",
-            "prices": [
-              "140TL",
-              "155TL"
-            ]
-          },
-          {
-            "name": "Tuborg",
-            "prices": [
-              "140TL",
-              "155TL"
-            ]
-          },
-          {
-            "name": "Carlsberg",
-            "prices": [
-              "140TL",
-              "155TL"
-            ]
-          },
-          {
-            "name": "Bud",
-            "prices": [
-              "140TL",
-              "155TL"
-            ]
-          },
-          {
-            "name": "Beck's",
-            "prices": [
-              "140TL",
-              "155TL"
-            ]
-          },
-          {
-            "name": "Bomonti Filtresiz",
-            "prices": [
-              "140TL",
-              "155TL"
-            ]
-          }
-        ]
-      },
-      {
-        "title": "CIDER",
-        "items": [
-          {
-            "name": "Rekorderlig",
-            "price": "190TL"
-          },
-          {
-            "name": "Strongbow",
-            "price": "170TL"
-          },
-          {
-            "name": "Kopparberg",
-            "price": "170TL"
-          }
-        ]
-      },
-      {
-        "title": "BİRA KOKTEYL BEER COCKTAIL",
-        "items": [
-          {
-            "name": "Mexican Beer",
-            "price": "210TL",
-            "description": "Beer, Lemon"
-          },
-          {
-            "name": "Mexican Beer with Tequila",
-            "price": "240TL",
-            "description": "Beer, Lemon, Tequila"
-          },
-          {
-            "name": "Shandy",
-            "price": "180TL",
-            "description": "Beer, Sprite"
-          },
-          {
-            "name": "Diesel",
-            "price": "210TL",
-            "description": "Beer, Coke"
-          },
-          {
-            "name": "Euro-Diesel",
-            "price": "220TL",
-            "description": "Beer, Jägermeister, Coke"
-          },
-          {
-            "name": "Beer Buster",
-            "price": "210TL",
-            "description": "Beer, Tabasco, Vodka"
-          },
-          {
-            "name": "Strawberry Beer",
-            "price": "220TL",
-            "description": "Beer, Lemonade, Strawberry"
-          },
-          {
-            "name": "Deep Shot",
-            "price": "220TL",
-            "description": "Beer, Jägermeister"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 25,
-    "category": "ALKOLSÜZ KOKTEYL",
-    "subCategory": "ALCOHOL-FREE COCKTAIL",
-    "backgroundImage": "/menu/25.webp",
-    "layoutAlign": "center",
+    "id": "balik",
+    "category": "Balıklar",
+    "icon": "fish",
     "items": [
       {
-        "name": "Mojito",
-        "price": "290TL"
+        "name": "Pazıya Sarılı Somon",
+        "desc": "Mevsim sebzeleri, bebek patates, arpacık soğan, nar ekşisi, cherry domates, beyaz şarap ile pazı içerisinde ızgara somon",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Jamaica",
-        "price": "290TL"
+        "name": "Levrek Izgara",
+        "desc": "Izgara limon, roka, ızgara bebek patates, kırmızı soğan",
+        "price": "",
+        "img": null
       },
       {
-        "name": "After Glow",
-        "price": "290TL"
-      },
-      {
-        "name": "Carribean",
-        "price": "290TL"
-      },
-      {
-        "name": "Meyve Preisi",
-        "subName": "Fruit Fairy",
-        "price": "290TL"
-      },
-      {
-        "name": "Narcissist Cocktail",
-        "price": "290TL"
-      },
-      {
-        "name": "Shamrock Special",
-        "price": "320TL"
+        "name": "Chili Fish",
+        "desc": "Çupra, cherry domates, patates kızartması, roka, limon ve chili sos",
+        "price": "",
+        "img": null
       }
     ]
   },
   {
-    "id": 23,
-    "category": "KOKTEYL",
-    "subCategory": "COCKTAIL",
-    "backgroundImage": "/menu/23.webp",
-    "layoutAlign": "center",
+    "id": "tatli",
+    "category": "Tatlılar",
+    "icon": "dessert",
     "items": [
       {
-        "name": "Jäger Bomb",
-        "price": "310TL"
+        "name": "San Sebastian Cheesecake",
+        "desc": "",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Whisky Sour",
-        "price": "360TL"
+        "name": "Brownie",
+        "desc": "",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Apperol Spritz",
-        "price": "360TL"
+        "name": "Sufle",
+        "desc": "",
+        "price": "",
+        "img": null
       },
       {
-        "name": "Margarita",
-        "price": "360TL"
-      },
-      {
-        "name": "Cosmopolitan",
-        "price": "360TL"
-      },
-      {
-        "name": "Safe Sex on the Beach",
-        "price": "360TL"
-      },
-      {
-        "name": "Sex on the Beach",
-        "price": "360TL"
-      },
-      {
-        "name": "Mojito",
-        "price": "360TL"
-      },
-      {
-        "name": "After Sex",
-        "price": "360TL"
-      },
-      {
-        "name": "Sex in the Jungle",
-        "price": "360TL"
-      },
-      {
-        "name": "Blue Bomb",
-        "price": "360TL"
-      },
-      {
-        "name": "The Peach Princess",
-        "price": "360TL"
-      },
-      {
-        "name": "Long Island",
-        "price": "360TL"
-      },
-      {
-        "name": "Adios Mother Fucker",
-        "price": "360TL"
-      },
-      {
-        "name": "Seasonal Mojito",
-        "price": "370TL"
-      },
-      {
-        "name": "Gold Mojito",
-        "price": "370TL"
-      },
-      {
-        "name": "Pina Colada",
-        "price": "370TL"
-      },
-      {
-        "name": "Cuba Libre",
-        "price": "360TL"
+        "name": "Meyve Tabağı",
+        "desc": "",
+        "price": "",
+        "img": null
       }
-    ]
-  },
-  {
-    "id": 24,
-    "category": "KOKTEYL",
-    "subCategory": "COCKTAIL",
-    "backgroundImage": "/menu/24.webp",
-    "layoutAlign": "center",
-    "items": [
-      {
-        "name": "Balyoz",
-        "price": "420TL"
-      },
-      {
-        "name": "Jack Daniel's Lynchburg",
-        "price": "370TL"
-      },
-      {
-        "name": "Jäger Mojito",
-        "price": "370TL"
-      },
-      {
-        "name": "Jäger Tonic",
-        "price": "370TL"
-      },
-      {
-        "name": "Jäger Mericano",
-        "price": "370TL"
-      },
-      {
-        "name": "Jäger Negroni",
-        "price": "370TL"
-      },
-      {
-        "name": "Jägermeister Fresh Orange",
-        "price": "370TL"
-      },
-      {
-        "name": "Corona Red",
-        "price": "370TL"
-      },
-      {
-        "name": "Ice World",
-        "price": "360TL"
-      },
-      {
-        "name": "Corona Cocktail",
-        "price": "370TL"
-      },
-      {
-        "name": "Lava Lamp",
-        "price": "360TL"
-      },
-      {
-        "name": "Cranberry Lime Ice Tea",
-        "price": "360TL"
-      },
-      {
-        "name": "Coronita",
-        "price": "370TL"
-      },
-      {
-        "name": "Chivas Cocktail",
-        "price": "380TL"
-      },
-      {
-        "name": "Smirnoff Ice Cocktail",
-        "price": "380TL"
-      },
-      {
-        "name": "Shamrock Special",
-        "price": "390TL"
-      },
-      {
-        "name": "Pineapple Cocktail",
-        "price": "440TL"
-      },
-      {
-        "name": "Espresso Martini",
-        "price": "360TL"
-      },
-      {
-        "name": "Tiramisu Martini",
-        "price": "360TL"
-      }
-    ]
-  },
-  {
-    "id": 29,
-    "category": "KOKTEYL",
-    "subCategory": "COCKTAIL",
-    "backgroundImage": "/menu/29.webp",
-    "layoutAlign": "left",
-    "items": [
-      {
-        "name": "Touch Down 🍸🍸",
-        "price": "390TL",
-        "description": "Infused Grapefruit Peel Malf Gin, Skinoss Mastic Liquer, Fresh Green Apple, Fresh Sorrel Leaf, Cucumber, Citrus Blend Sweet & Sour Mix, Earl Grey Bittter, Vegan Cocktail Foamer."
-      },
-      {
-        "name": "Forrest Gum 🍸🍸",
-        "price": "390TL",
-        "description": "Infused Vanilla Vodka, Peach Puree, Citrus Blend Sweet & Sour Mix, Fresh Sage Leaf, Chocolate Bitter, Vegan Cocktail Foamer."
-      },
-      {
-        "name": "Sicily Chilli Passion 🍸🍸",
-        "price": "390TL",
-        "description": "Infused Chili Pepper Malfy Gin, Passionfruit Puree, Citrus Blend Sweet & Sour Mix, Orange Bitter, Vanilla Bitter, Vegan Cocktail Foamer, with Special Spices."
-      },
-      {
-        "name": "Maggies 🍸",
-        "price": "390TL",
-        "description": "Infused Grapefruit Peel with Tequila, St.German Elderflower Liquer, Passion Fruit Puree, Citrus Blend Sweet & Sour Mix, Vegan Cocktail Foamer, Orange Bitter."
-      },
-      {
-        "name": "Lago Di Como 🍸",
-        "price": "390TL",
-        "description": "Infused Rosemary and Orange Peel Malfy Gin, Aperol, Passionfruit Puree, Organic Agave Syrup, Grapefruit Bitter, Citrus Blend Sweet & Sour Mix, Vegan Cocktail Foamer."
-      },
-      {
-        "name": "Porn Star Martini 🍸🍸",
-        "price": "390TL",
-        "description": "Infused Vanilla Vodka, Passionfruit Puree, Red Apple Juice, Citrus Blend Sweet & Sour Mix, Vanilla Bitter, Vegan Cocktail Foamer, Prosecco."
-      },
-      {
-        "name": "Pisa 🍸",
-        "price": "390TL",
-        "description": "Jameson Cask Mates Whisky, Amaretto Liquer, Mango Pure, Vanilla Bitter, Angastura Bitter, Citrus Blend Sweet & Sour Mix, Orange Bitter, Vanilla Bitter, Vegan Cocktail Foamer, with Pine Nuts."
-      },
-      {
-        "name": "Lady Walker 🍸🍸",
-        "price": "390TL",
-        "description": "Infused Chili Pepper Honey Ginger Vanilla Black Pepper Malfy Gin, Orange Liquer, Passion Fruit Puree, Mango Puree, Citrus Blend Sweet & Sour Mix, Vegan Cocktail Foamer, Aromatic Bitter."
-      },
-      {
-        "name": "Paul Walker 🍸🍸🍸",
-        "price": "390TL",
-        "description": "Infused Vanilla Stick Bourbon Whisky, St.German Elderflower Liquer, Passionfruit Puree, Citrus Blend Sweet & Sour Mix, Earl Grey Bitter, Vegan Cocktail Foamer."
-      }
-    ]
-  },
-  {
-    "id": 26,
-    "category": "SHOT",
-    "subCategory": "SHOT",
-    "backgroundImage": "/menu/26.webp",
-    "layoutAlign": "left",
-    "items": [
-      {
-        "name": "Tequila",
-        "price": "150TL"
-      },
-      {
-        "name": "Tequila Rosé",
-        "price": "190TL"
-      },
-      {
-        "name": "Jägermeister",
-        "price": "190TL"
-      },
-      {
-        "name": "Bloody Brain",
-        "price": "190TL"
-      },
-      {
-        "name": "B-52",
-        "price": "190TL"
-      },
-      {
-        "name": "T-52",
-        "price": "190TL"
-      },
-      {
-        "name": "Alien Nipple",
-        "price": "190TL"
-      },
-      {
-        "name": "Orgasm",
-        "price": "190TL"
-      },
-      {
-        "name": "Kamikaze",
-        "price": "190TL"
-      },
-      {
-        "name": "Blowjob",
-        "price": "190TL"
-      },
-      {
-        "name": "Absinthe",
-        "price": "190TL"
-      },
-      {
-        "name": "Ghostbusters",
-        "price": "190TL"
-      },
-      {
-        "name": "Rainbow (7 Shot)",
-        "price": "945TL"
-      }
-    ]
-  },
-  {
-    "id": 28,
-    "category": "ALKOLLÜ İÇECEK",
-    "subCategory": "ALCOHOLIC DRINKS",
-    "backgroundImage": "/menu/28.webp",
-    "layoutAlign": "center",
-    "items": [
-      {
-        "name": "Baileys",
-        "price": "250TL"
-      },
-      {
-        "name": "Bacardi + Meşrubat",
-        "subName": "Bacardi + Drink",
-        "price": "300TL"
-      },
-      {
-        "name": "Archers + Meşrubat",
-        "subName": "Archers + Drink",
-        "price": "240TL"
-      },
-      {
-        "name": "Malibu + Meşrubat",
-        "subName": "Malibu + Drink",
-        "price": "240TL"
-      },
-      {
-        "name": "Campari + Meşrubat",
-        "subName": "Campari + Drink",
-        "price": "240TL"
-      },
-      {
-        "name": "Martini",
-        "price": "240TL"
-      },
-      {
-        "name": "Sheridan's",
-        "price": "240TL"
-      },
-      {
-        "name": "Safari",
-        "price": "240TL"
-      },
-      {
-        "name": "Smirnoff Ice",
-        "price": "240TL"
-      },
-      {
-        "name": "Sangria",
-        "price": "250TL"
-      }
-    ]
-  },
-  {
-    "id": 20,
-    "category": "VİSKİ",
-    "subCategory": "WHISKY",
-    "backgroundImage": "/menu/20.webp",
-    "layoutAlign": "left",
-    "items": [
-      {
-        "name": "Monkey Shoulder",
-        "price": "370TL",
-        "description": ""
-      },
-      {
-        "name": "Chivas Regal 12 Years",
-        "price": "350TL",
-        "description": ""
-      },
-      {
-        "name": "Chivas Regal 18 Years",
-        "price": "750TL",
-        "description": ""
-      },
-      {
-        "name": "Chivas Regal Extra",
-        "price": "370TL",
-        "description": ""
-      },
-      {
-        "name": "Jhonnie Walker Red Label",
-        "price": "330TL",
-        "description": ""
-      },
-      {
-        "name": "Jhonnie Walker Black Label",
-        "price": "350TL",
-        "description": ""
-      },
-      {
-        "name": "Jhonnie Walker Gold Label",
-        "price": "520TL",
-        "description": ""
-      },
-      {
-        "name": "Jack Daniel's",
-        "price": "350TL",
-        "description": ""
-      },
-      {
-        "name": "Jack Daniel's Gentleman Jack",
-        "price": "390TL",
-        "description": ""
-      },
-      {
-        "name": "Jack Daniel's Single Barrel",
-        "price": "390TL",
-        "description": ""
-      },
-      {
-        "name": "Jack Daniel's Honey",
-        "price": "380TL",
-        "description": ""
-      },
-      {
-        "name": "Jack Daniel's Fire",
-        "price": "380TL",
-        "description": ""
-      },
-      {
-        "name": "Ballantine's",
-        "price": "300TL",
-        "description": ""
-      },
-      {
-        "name": "Jim Beam",
-        "price": "300TL",
-        "description": ""
-      },
-      {
-        "name": "Dimple",
-        "price": "350TL",
-        "description": ""
-      },
-      {
-        "name": "Jameson",
-        "price": "300TL",
-        "description": ""
-      },
-      {
-        "name": "Ardmore",
-        "price": "350TL",
-        "description": ""
-      },
-      {
-        "name": "Oban",
-        "price": "520TL",
-        "description": ""
-      }
-    ]
-  },
-  {
-    "id": 21,
-    "category": "ALKOL",
-    "subCategory": "ALCOHOL",
-    "backgroundImage": "/menu/21.webp",
-    "layoutAlign": "left",
-    "subSections": [
-      {
-        "title": "VODKA with any mix",
-        "items": [
-          {
-            "name": "Absolut",
-            "price": "260TL"
-          },
-          {
-            "name": "Absolut Elyx",
-            "price": "340TL"
-          },
-          {
-            "name": "Smirnoff",
-            "price": "250TL"
-          },
-          {
-            "name": "Grey Goose",
-            "price": "380TL"
-          },
-          {
-            "name": "Ciroc",
-            "price": "360TL"
-          },
-          {
-            "name": "Belvedere",
-            "price": "360TL"
-          }
-        ]
-      },
-      {
-        "title": "GIN with any mix",
-        "items": [
-          {
-            "name": "Gordon's",
-            "price": "250TL"
-          },
-          {
-            "name": "Gordon's Pink",
-            "price": "290TL"
-          },
-          {
-            "name": "Beefeater",
-            "price": "260TL"
-          },
-          {
-            "name": "Bombay Sapphire",
-            "price": "290TL"
-          },
-          {
-            "name": "Hendrick's",
-            "price": "380TL"
-          },
-          {
-            "name": "Bulldog",
-            "price": "360TL"
-          },
-          {
-            "name": "Plymouth",
-            "price": "350TL"
-          },
-          {
-            "name": "Botanist",
-            "price": "350TL"
-          }
-        ]
-      },
-      {
-        "title": "COGNAC",
-        "items": [
-          {
-            "name": "Hennessy",
-            "price": "430TL"
-          },
-          {
-            "name": "Hennessy V.S.O.P",
-            "price": "520TL"
-          },
-          {
-            "name": "Hennessy Cocktail",
-            "price": "640TL"
-          },
-          {
-            "name": "Courvoisier",
-            "price": "510TL"
-          },
-          {
-            "name": "Remy Martin",
-            "price": "510TL"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 22,
-    "category": "ŞARAP", "layoutType": "quad-grid",
-    "subCategory": "WINE",
-    "backgroundImage": "/menu/22.webp",
-    "layoutAlign": "left",
-    "subSections": [
-      {
-        "title": "KIRMIZI ŞARAP RED WINE",
-        "items": [
-          {
-            "name": "Le Bistro Rouge (France)",
-            "price": "250TL"
-          },
-          {
-            "name": "Kavaklıdere Angora (Turkey)",
-            "price": "230TL"
-          },
-          {
-            "name": "Kavaklıdere Çankaya (Turkey)",
-            "price": "240TL"
-          },
-          {
-            "name": "Kavaklıdere Yakut (Turkey)",
-            "price": "240TL"
-          },
-          {
-            "name": "Kavaklıdere Selection Öküzgözü (Turkey)",
-            "price": "250TL"
-          },
-          {
-            "name": "Maison Castel Cabernet Sauvignon (France)",
-            "price": "250TL"
-          },
-          {
-            "name": "Pasqua Merlot (Italy)",
-            "price": "250TL"
-          },
-          {
-            "name": "Pasqua Romeo & Juliet (Italy)",
-            "price": "290TL"
-          },
-          {
-            "name": "Silverboom Shiraz Merlot (South Africa)",
-            "price": "250TL"
-          },
-          {
-            "name": "Casa Ferreirinha Estava (Portugal)",
-            "price": "290TL"
-          },
-          {
-            "name": "Château du Lort (France)",
-            "price": "290TL"
-          },
-          {
-            "name": "Château Malbec (France)",
-            "price": "290TL"
-          },
-          {
-            "name": "Sıcak Şarap (Mulled Wine)",
-            "price": "280TL"
-          }
-        ]
-      },
-      {
-        "title": "BEYAZ ŞARAP WHITE WINE",
-        "items": [
-          {
-            "name": "Le Bistro Blanc (France)",
-            "price": "290TL"
-          },
-          {
-            "name": "Kavaklıdere Angora (Turkey)",
-            "price": "240TL"
-          },
-          {
-            "name": "Kavaklıdere Çankaya (Turkey)",
-            "price": "250TL"
-          },
-          {
-            "name": "Kavaklıdere Selection Narince (Turkey)",
-            "price": "250TL"
-          },
-          {
-            "name": "Maison Castel Sauvignon Blanc (France)",
-            "price": "250TL"
-          },
-          {
-            "name": "Pasqua Romeo & Juliet Passimento (Italy)",
-            "price": "290TL"
-          },
-          {
-            "name": "Casa Ferreirinha Planalto (Portugal)",
-            "price": "290TL"
-          },
-          {
-            "name": "Château de l'Hyvernière (France)",
-            "price": "290TL"
-          }
-        ]
-      },
-      {
-        "title": "ROSÉ ŞARAP ROSÉ WINE",
-        "items": [
-          {
-            "name": "Le Bistro Rosé (France)",
-            "price": "290TL"
-          },
-          {
-            "name": "Mateus Temp Rosé (Portugal)",
-            "price": "240TL"
-          },
-          {
-            "name": "Kavaklıdere Lal (Turkey)",
-            "price": "250TL"
-          },
-          {
-            "name": "Kayra Leona Blush (Turkey)",
-            "price": "250TL"
-          },
-          {
-            "name": "Pinot Grigio (Italy)",
-            "price": "250TL"
-          },
-          {
-            "name": "Casal Mendes Rosé (Portugal)",
-            "price": "250TL"
-          },
-          {
-            "name": "N.V. Hillside Valley Zinfandel Rosé (USA)",
-            "price": "250TL"
-          }
-        ]
-      },
-      {
-        "title": "ŞİŞE ŞARAPLAR BOTTLE OF WINES",
-        "items": [
-          {
-            "name": "Cielo",
-            "price": "1390TL"
-          },
-          {
-            "name": "Le Bistro",
-            "price": "1600TL"
-          },
-          {
-            "name": "Extroso Appassimento",
-            "price": "3000TL"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 31,
-    "category": "NARGİLE",
-    "subCategory": "SHISHA",
-    "backgroundImage": "/menu/31.webp",
-    "items": [],
-    "priceOverlays": [
-      { "id": 1, "name": "ADALYA", "price": "500TL", "top": "5.4%", "left": "78%", "mobileTop": "5.2%", "mobileLeft": "80%" },
-      { "id": 2, "name": "JIBIAR", "price": "500TL", "top": "17.1%", "left": "10%", "mobileTop": "17%", "mobileLeft": "12%" },
-      { "id": 3, "name": "REVOSHI", "price": "500TL", "top": "28.3%", "left": "10%", "mobileTop": "29%", "mobileLeft": "12%" },
-      { "id": 4, "name": "HOLSTER", "price": "600TL", "top": "47.7%", "left": "10%", "mobileTop": "50%", "mobileLeft": "12%" },
-      { "id": 5, "name": "AQUA MENTHA", "price": "600TL", "top": "65.5%", "left": "48.5%", "mobileTop": "65.5%", "mobileLeft": "47.5%", "fontSize": "1.1rem" },
-      { "id": 6, "name": "MUSTHAVE", "price": "700TL", "top": "81.8%", "left": "47.5%", "mobileTop": "82.1%", "mobileLeft": "41.5%", "fontSize": "1.15rem" }
     ]
   }
 ]

@@ -1,8 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    // Optimization enabled
-  }
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'zagato.solus.studio',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

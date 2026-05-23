@@ -1,51 +1,19 @@
-:root {
-  --background: #000000;
-  --foreground: #ffffff;
-  --header-height: 80px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap');
 
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: #080604;
+  color: #f0ead8;
   font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-}
-
-.menu-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.menu-page {
-  width: 100%;
-  max-width: 1200px; /* Reduced from 1920px to ensure visible side margins on most screens */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  background: #000;
-  margin: 0 auto;
-  padding: 2rem 0; /* Vertical spacing between pages */
-}
-
-.menu-image {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-}
-
-@media (max-width: 1080px) {
-  .menu-page {
-    aspect-ratio: auto;
-    height: auto;
-  }
 }

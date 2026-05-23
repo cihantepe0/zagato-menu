@@ -1,233 +1,468 @@
-"use client";
+'use client';
 
-import { useRef, useState, useEffect } from 'react';
-import Header from '@/components/Header';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import styles from '@/app/page.module.css';
+
+// SVG Icons for categories
+const icons = {
+  starter: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M3 2l1 10h16l1-10M8 12v10m8-10v10M5 22h14"/>
+      <circle cx="12" cy="7" r="3"/>
+    </svg>
+  ),
+  salad: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <ellipse cx="12" cy="15" rx="9" ry="5"/>
+      <path d="M3 15c0-4 4-9 9-9s9 5 9 9"/>
+      <path d="M9 9c0-3 1.5-5 3-7"/>
+    </svg>
+  ),
+  hot: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M12 2c0 6-6 6-6 12a6 6 0 0012 0c0-6-6-6-6-12z"/>
+      <path d="M12 12c0 3-3 3-3 6a3 3 0 006 0c0-3-3-3-3-6z"/>
+    </svg>
+  ),
+  burger: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M3 12h18M3 16h18M7 8a5 5 0 0110 0"/>
+      <path d="M5 16v2a2 2 0 002 2h10a2 2 0 002-2v-2"/>
+    </svg>
+  ),
+  chicken: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M20 10c0 6-4 10-8 10S4 16 4 10c0-3 2-6 4-7l1 3c1-2 3-3 3-3s2 1 3 3l1-3c2 1 4 4 4 7z"/>
+      <path d="M9 17c1 1 2 1 3 1"/>
+    </svg>
+  ),
+  pasta: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M3 15c0 3 9 5 9 5s9-2 9-5"/>
+      <path d="M3 11c0 3 9 5 9 5s9-2 9-5"/>
+      <ellipse cx="12" cy="8" rx="9" ry="3"/>
+    </svg>
+  ),
+  pizza: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M12 2L2 20h20L12 2z"/>
+      <path d="M12 2v18"/>
+      <circle cx="9" cy="12" r="1" fill="currentColor"/>
+      <circle cx="15" cy="14" r="1" fill="currentColor"/>
+    </svg>
+  ),
+  steak: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M6 12c0-4 2-8 6-8s6 4 6 8-2 6-6 6-6-2-6-6z"/>
+      <path d="M3 18h18M6 20h12"/>
+    </svg>
+  ),
+  fish: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6S2 12 2 12z"/>
+      <path d="M20 6l2-4M20 18l2 4"/>
+      <circle cx="10" cy="12" r="1.5" fill="currentColor"/>
+    </svg>
+  ),
+  dessert: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M3 11c0-4.4 4-8 9-8s9 3.6 9 8"/>
+      <path d="M3 11h18v2a9 9 0 01-18 0v-2z"/>
+      <path d="M12 13v8M8 21h8"/>
+    </svg>
+  ),
+  share: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <circle cx="18" cy="5" r="3"/>
+      <circle cx="6" cy="12" r="3"/>
+      <circle cx="18" cy="19" r="3"/>
+      <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/>
+    </svg>
+  ),
+  drink: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M8 2h8l-2 9H10L8 2zM10 11l-2 11h8l-2-11"/>
+      <path d="M7 6h10"/>
+    </svg>
+  ),
+};
+
 
 export default function MenuClient({ initialData }) {
   const [menuData, setMenuData] = useState(initialData || []);
-  const sectionRefs = useRef({});
+  const [activeCategory, setActiveCategory] = useState(initialData?.[0]?.id || 'baslangic');
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [animating, setAnimating] = useState(false);
+  const listRef = useRef(null);
+  const navRef = useRef(null);
 
-  const scrollToSection = (id) => {
-    const element = sectionRefs.current[id];
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  // Reload data periodically to pick up admin changes
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch('/api/menu', { cache: 'no-store' });
+        const data = await res.json();
+        setMenuData(data);
+      } catch (e) {}
+    };
+    fetchData();
+  }, []);
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
+  const currentCategory = menuData.find(c => c.id === activeCategory) || menuData[0];
+
+  const switchCategory = (id) => {
+    if (id === activeCategory || animating) return;
+    setAnimating(true);
+    if (listRef.current) listRef.current.style.opacity = '0';
+    setTimeout(() => {
+      setActiveCategory(id);
+      setAnimating(false);
+      if (listRef.current) {
+        listRef.current.style.opacity = '1';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 220);
+    // Scroll nav to active button
+    setTimeout(() => {
+      const activeBtn = navRef.current?.querySelector(`[data-id="${id}"]`);
+      if (activeBtn) activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }, 50);
   };
 
-  // Group unique categories for navigation
-  const navigationCategories = [];
-  const seenCategories = new Set();
-
-  menuData.forEach(section => {
-    if (!seenCategories.has(section.category)) {
-      navigationCategories.push({
-        id: section.id,
-        name: section.category,
-        subName: section.subCategory
-      });
-      seenCategories.add(section.category);
-    }
-  });
+  const closeDrawer = () => setDrawerOpen(false);
 
   return (
-    <>
-      <Header 
-        categories={navigationCategories} 
-        onNavigate={scrollToSection} 
-      />
-      
-      <div className={styles.menuWrapper}>
-        {menuData.map((section, index) => (
-          <section 
-            key={section.id} 
-            className={`${styles.menuPage} ${section.id === 31 ? styles.nargilePage : ''}`}
-            ref={(el) => (sectionRefs.current[section.id] = el)}
+    <div style={{ maxWidth: '480px', margin: '0 auto', minHeight: '100vh', position: 'relative' }}>
+
+      {/* ── HERO HEADER ── */}
+      <header style={{
+        position: 'relative',
+        background: 'radial-gradient(ellipse at top, #2a0d0d 0%, #120606 40%, #080604 100%)',
+        padding: '20px 20px 24px',
+        textAlign: 'center',
+        overflow: 'hidden',
+      }}>
+        {/* side glows */}
+        <div style={{
+          position: 'absolute', inset: 0, pointerEvents: 'none',
+          background: 'radial-gradient(ellipse at -10% 60%, rgba(100,10,10,0.35) 0%, transparent 55%), radial-gradient(ellipse at 110% 60%, rgba(100,10,10,0.35) 0%, transparent 55%)',
+        }} />
+
+        {/* Top bar */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, position: 'relative', zIndex: 1 }}>
+          <button
+            id="hamburger-btn"
+            onClick={() => setDrawerOpen(true)}
+            aria-label="Menü"
+            style={{
+              width: 40, height: 40,
+              border: '1px solid rgba(201,168,76,0.25)',
+              borderRadius: '50%',
+              background: 'rgba(201,168,76,0.06)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              cursor: 'pointer', transition: 'background 0.3s',
+              color: '#c9a84c',
+            }}
           >
-            <div className={styles.backgroundImageWrapper}>
-              <Image 
-                src={section.backgroundImage} 
-                alt={section.category} 
-                className={`${styles.backgroundImage} ${section.id === 31 ? styles.nargileImage : ''}`}
-                width={section.id === 31 ? 1200 : 1200}
-                height={section.id === 31 ? 8894 : 800}
-                priority={index < 2} // Preload first two images
-                sizes="(max-width: 768px) 100vw, 1200px" // Optimized sizes
-              />
-              {section.priceOverlays && (
-                <div className={styles.priceOverlaysWrapper}>
-                  {section.priceOverlays.map((overlay) => (
-                    <div 
-                      key={overlay.id} 
-                      className={`${styles.priceTag} ${overlay.name === 'AQUA MENTHA' ? styles.aquaMenthaBox : ''}`}
-                      style={{ 
-                        '--top': overlay.top, 
-                        '--left': overlay.left,
-                        '--mobile-top': overlay.mobileTop || overlay.top,
-                        '--mobile-left': overlay.mobileLeft || overlay.left,
-                        ...(overlay.fontSize ? { fontSize: overlay.fontSize } : {})
-                      }}
-                    >
-                      {overlay.price}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+            <svg viewBox="0 0 24 24" width={18} height={18} fill="none" stroke="#c9a84c" strokeWidth="2">
+              <path d="M3 12h18M3 6h18M3 18h18"/>
+            </svg>
+          </button>
 
-            <div className={`${styles.contentOverlay} ${
-              section.layoutAlign === 'center' ? styles.alignCenter : 
-              section.layoutAlign === 'right' ? styles.alignRight : 
-              styles.alignLeft
-            }`}>
-              <div className={styles.categoryHeader}>
-                <h2 className={styles.categoryTitle}>{section.category}</h2>
-                <h3 className={styles.categorySubTitle}>{section.subCategory}</h3>
+          {/* Spacer */}
+          <div style={{ width: 40, height: 40 }} />
+        </div>
+
+        {/* Ornament */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginBottom: 8, position: 'relative', zIndex: 1 }}>
+          <span style={{ display: 'block', height: 1, width: 50, background: 'linear-gradient(to right, transparent, rgba(201,168,76,0.25))' }} />
+          <svg viewBox="0 0 24 24" width={14} height={14} fill="#c9a84c" style={{ opacity: 0.6 }}>
+            <path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"/>
+          </svg>
+          <span style={{ display: 'block', height: 1, width: 50, background: 'linear-gradient(to left, transparent, rgba(201,168,76,0.25))' }} />
+        </div>
+
+        {/* Brand Logo */}
+        <div style={{ position: 'relative', zIndex: 1, width: 280, height: 120, margin: '0 auto' }}>
+          <Image src="/logo.png" alt="Zagato Palazzo" fill style={{ objectFit: 'contain' }} priority />
+        </div>
+
+        <p style={{
+          marginTop: 12, fontSize: '0.72rem', letterSpacing: 3,
+          color: 'rgba(240,234,216,0.5)', textTransform: 'uppercase',
+          fontFamily: "'Outfit', sans-serif", fontWeight: 300,
+          position: 'relative', zIndex: 1,
+        }}>İyi Yemek &nbsp;·&nbsp; İyi Müzik</p>
+      </header>
+
+      {/* ── CATEGORY NAV ── */}
+      <nav style={{
+        position: 'sticky', top: 0, zIndex: 100,
+        background: 'rgba(8,6,4,0.92)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderBottom: '1px solid rgba(201,168,76,0.2)',
+      }}>
+        <div
+          ref={navRef}
+          style={{
+            display: 'flex',
+            overflowX: 'auto',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+          }}
+        >
+          {menuData.map(cat => (
+            <button
+              key={cat.id}
+              data-id={cat.id}
+              onClick={() => switchCategory(cat.id)}
+              style={{
+                flex: '0 0 auto',
+                display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6,
+                padding: '14px 18px 12px',
+                background: 'transparent', border: 'none',
+                cursor: 'pointer', position: 'relative',
+                transition: 'all 0.25s',
+                minWidth: 70,
+              }}
+            >
+              {/* Active indicator line */}
+              <div style={{
+                position: 'absolute', bottom: 0, left: '10%', right: '10%',
+                height: 2, background: '#c9a84c',
+                borderRadius: 1,
+                transform: cat.id === activeCategory ? 'scaleX(1)' : 'scaleX(0)',
+                transition: 'transform 0.3s ease',
+              }} />
+              <div style={{
+                width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                color: cat.id === activeCategory ? '#c9a84c' : 'rgba(240,234,216,0.35)',
+                transition: 'color 0.25s',
+              }}>
+                <div style={{ width: 22, height: 22 }}>{icons[cat.icon]}</div>
               </div>
+              <span style={{
+                fontSize: '0.6rem', fontWeight: 500, letterSpacing: '0.8px',
+                textTransform: 'uppercase',
+                color: cat.id === activeCategory ? '#c9a84c' : 'rgba(240,234,216,0.35)',
+                whiteSpace: 'nowrap',
+                transition: 'color 0.25s',
+                fontFamily: "'Outfit', sans-serif",
+              }}>{cat.category}</span>
+            </button>
+          ))}
+        </div>
+      </nav>
 
-              {(section.items?.length > 0 || section.subSections?.length > 0) && (
-                <div className={styles.itemsCardWrapper}>
-                  {section.layoutType === 'quad-grid' ? (
-                    <div className={styles.quadGridWrapper}>
-                      {section.subSections.map((sub, sIndex) => {
-                        const posClass = sIndex === 0 ? styles.cardNW : 
-                                         sIndex === 1 ? styles.cardEC : 
-                                         sIndex === 2 ? styles.cardWC : 
-                                         styles.cardSE;
-                        return (
-                          <div key={sIndex} className={`${styles.itemsCard} ${posClass}`}>
-                            {sub.title && (
-                              <div className={styles.subSectionTitle}>{sub.title}</div>
-                            )}
-                            {sub.items.map((item, itemIndex) => (
-                              <div key={itemIndex} className={styles.menuItem}>
-                                <div className={styles.itemInfo}>
-                                  <div className={styles.itemNameRow}>
-                                    <span className={styles.itemName}>{item.name}</span>
-                                    {item.subName && <span className={styles.itemSubName}>{item.subName}</span>}
-                                  </div>
-                                  {item.description && <p className={styles.itemDescription}>{item.description}</p>}
-                                </div>
-                                <div className={styles.itemPrice}>
-                                  {item.price && item.price.includes('TL') ? (
-                                    <span>{item.price.replace('TL', '')}<small>TL</small></span>
-                                  ) : item.price}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        );
-                      })}
-                    </div>
-                  ) : (
-                    <div className={styles.itemsCard}>
-                      {section.layoutType === 'columns' && (
-                        <div className={styles.headersRow}>
-                          <div className={styles.itemInfo}></div>
-                          <div className={styles.columnPrices}>
-                            {section.columns.map((col, cIndex) => (
-                              <div key={cIndex} className={styles.columnHeader}>{col}</div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                      
-                      {section.subSections ? (
-                        section.subSections.map((sub, sIndex) => (
-                          <div key={sIndex} className={styles.subSection}>
-                            {sub.title && <div className={styles.subSectionTitle}>{sub.title}</div>}
-                            {sub.layoutType === 'columns' && sub.columns && (
-                              <div className={styles.headersRow}>
-                                <div className={styles.itemInfo}></div>
-                                <div className={styles.columnPrices}>
-                                  {sub.columns.map((col, cIndex) => (
-                                    <div key={cIndex} className={styles.columnHeader}>{col}</div>
-                                  ))}
-                                </div>
-                              </div>
-                            )}
-                            {sub.items.map((item, itemIndex) => (
-                              <div key={itemIndex} className={styles.menuItem}>
-                                <div className={styles.itemInfo}>
-                                  <div className={styles.itemNameRow}>
-                                    <span className={styles.itemName}>{item.name}</span>
-                                    {item.subName && <span className={styles.itemSubName}>{item.subName}</span>}
-                                  </div>
-                                  {item.description && <p className={styles.itemDescription}>{item.description}</p>}
-                                </div>
-                                {(sub.layoutType || section.layoutType) === 'columns' ? (
-                                  <div className={styles.columnPrices}>
-                                    {item.prices.map((p, pIndex) => (
-                                      <div key={pIndex} className={styles.columnPrice}>
-                                        {p ? (
-                                          p.includes('TL') ? (
-                                            <span>{p.split('TL').join('')}<small className={styles.tinyTl}>TL</small></span>
-                                          ) : p
-                                        ) : '-'}
-                                      </div>
-                                    ))}
-                                  </div>
-                                ) : (
-                                  <div className={styles.itemPrice}>
-                                    {item.price && item.price.includes('TL') ? (
-                                      <span>{item.price.split('TL').join('')}<small>TL</small></span>
-                                    ) : item.price}
-                                  </div>
-                                )}
-                              </div>
-                            ))}
-                          </div>
-                        ))
-                      ) : (
-                        <>
-                          {section.items.map((item, itemIndex) => (
-                          <div key={itemIndex} className={styles.menuItem}>
-                            <div className={styles.itemInfo}>
-                              <div className={styles.itemNameRow}>
-                                <span className={styles.itemName}>{item.name}</span>
-                                {item.subName && <span className={styles.itemSubName}>{item.subName}</span>}
-                              </div>
-                              {item.description && <p className={styles.itemDescription}>{item.description}</p>}
-                            </div>
-                            {section.layoutType === 'columns' ? (
-                              <div className={styles.columnPrices}>
-                                {item.prices.map((p, pIndex) => (
-                                  <div key={pIndex} className={styles.columnPrice}>
-                                    {p ? (
-                                      p.includes('TL') ? (
-                                        <span>{p.split('TL').join('')}<small className={styles.tinyTl}>TL</small></span>
-                                      ) : p
-                                    ) : '-'}
-                                  </div>
-                                ))}
-                              </div>
-                            ) : (
-                              <div className={styles.itemPrice}>
-                                {item.price && item.price.includes('TL') ? (
-                                  <span>{item.price.split('TL').join('')}<small>TL</small></span>
-                                ) : item.price}
-                              </div>
-                            )}
-                          </div>
-                          ))}
-                        </>
-                      )}
-                    </div>
-                  )}
+      {/* ── MAIN CONTENT ── */}
+      <main>
+        {/* Section Title */}
+        <div style={{
+          display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12,
+          padding: '28px 20px 20px',
+        }}>
+          <div style={{ flex: 1, height: 1, background: 'linear-gradient(to right, transparent, rgba(201,168,76,0.25))' }} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+            <svg viewBox="0 0 24 24" width={16} height={16} fill="#c9a84c" style={{ opacity: 0.5 }}>
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+            <h2 style={{
+              fontFamily: "'Cinzel', serif", fontSize: '1.1rem', fontWeight: 700,
+              letterSpacing: 3, color: '#c9a84c', textTransform: 'uppercase', whiteSpace: 'nowrap',
+            }}>{currentCategory?.category}</h2>
+            <svg viewBox="0 0 24 24" width={16} height={16} fill="#c9a84c" style={{ opacity: 0.5, transform: 'scaleX(-1)' }}>
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div style={{ flex: 1, height: 1, background: 'linear-gradient(to left, transparent, rgba(201,168,76,0.25))' }} />
+        </div>
+
+        {/* Menu List */}
+        <div
+          ref={listRef}
+          style={{
+            padding: '0 16px 16px',
+            transition: 'opacity 0.25s ease',
+          }}
+        >
+          {(currentCategory?.items || []).map((item, i) => (
+            <MenuItem key={i} item={item} index={i} />
+          ))}
+        </div>
+
+        {/* KDV Note */}
+        <div style={{
+          textAlign: 'center', padding: '16px 20px',
+          color: 'rgba(240,234,216,0.55)', fontSize: '0.72rem', letterSpacing: 1,
+          display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12,
+        }}>
+          <span style={{ flex: 1, height: 1, display: 'block', background: 'linear-gradient(to right, transparent, rgba(201,168,76,0.2))' }} />
+          Fiyatlarımıza KDV dahildir
+          <span style={{ flex: 1, height: 1, display: 'block', background: 'linear-gradient(to left, transparent, rgba(201,168,76,0.2))' }} />
+        </div>
+
+
+      </main>
+
+      {/* ── HAMBURGER DRAWER ── */}
+      {/* Overlay */}
+      <div
+        onClick={closeDrawer}
+        style={{
+          position: 'fixed', inset: 0, zIndex: 200,
+          background: 'rgba(0,0,0,0.7)',
+          backdropFilter: 'blur(4px)',
+          opacity: drawerOpen ? 1 : 0,
+          pointerEvents: drawerOpen ? 'all' : 'none',
+          transition: 'opacity 0.35s ease',
+        }}
+      />
+      {/* Drawer */}
+      <div style={{
+        position: 'fixed', top: 0, left: 0, height: '100%',
+        width: 280, zIndex: 210,
+        background: 'linear-gradient(160deg, #100a06 0%, #080604 100%)',
+        borderRight: '1px solid rgba(201,168,76,0.2)',
+        transform: drawerOpen ? 'translateX(0)' : 'translateX(-100%)',
+        transition: 'transform 0.35s cubic-bezier(0.4,0,0.2,1)',
+        display: 'flex', flexDirection: 'column',
+        overflow: 'hidden',
+      }}>
+        {/* Drawer header */}
+        <div style={{
+          padding: '28px 24px 20px',
+          borderBottom: '1px solid rgba(201,168,76,0.15)',
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        }}>
+          <div style={{ width: 90, height: 36, position: 'relative' }}>
+            <Image src="/logo.png" alt="Zagato Palazzo" fill style={{ objectFit: 'contain' }} />
+          </div>
+          <button
+            onClick={closeDrawer}
+            style={{
+              width: 36, height: 36,
+              border: '1px solid rgba(201,168,76,0.2)',
+              borderRadius: '50%', background: 'transparent',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              cursor: 'pointer', color: '#c9a84c',
+            }}
+          >
+            <svg viewBox="0 0 24 24" width={16} height={16} fill="none" stroke="#c9a84c" strokeWidth="2">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        {/* Drawer Category List */}
+        <div style={{ flex: 1, overflowY: 'auto', padding: '16px 0' }}>
+          <div style={{ padding: '8px 24px 12px', fontSize: '0.65rem', letterSpacing: 2, color: 'rgba(201,168,76,0.45)', textTransform: 'uppercase', fontFamily: "'Outfit', sans-serif" }}>
+            Menü Kategorileri
+          </div>
+          {menuData.map((cat, i) => (
+            <button
+              key={cat.id}
+              onClick={() => { switchCategory(cat.id); closeDrawer(); }}
+              style={{
+                display: 'flex', alignItems: 'center', gap: 14,
+                width: '100%', padding: '14px 24px',
+                background: cat.id === activeCategory ? 'rgba(201,168,76,0.08)' : 'transparent',
+                border: 'none',
+                borderLeft: cat.id === activeCategory ? '2px solid #c9a84c' : '2px solid transparent',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+                textAlign: 'left',
+              }}
+            >
+              <div style={{ width: 22, height: 22, color: cat.id === activeCategory ? '#c9a84c' : 'rgba(240,234,216,0.4)', flexShrink: 0, transition: 'color 0.2s' }}>
+                {icons[cat.icon]}
+              </div>
+              <div>
+                <div style={{
+                  fontFamily: "'Cinzel', serif", fontSize: '0.85rem', fontWeight: 600,
+                  color: cat.id === activeCategory ? '#c9a84c' : '#f0ead8',
+                  letterSpacing: 1, transition: 'color 0.2s',
+                }}>{cat.category}</div>
+                <div style={{ fontSize: '0.7rem', color: 'rgba(240,234,216,0.4)', marginTop: 2 }}>
+                  {cat.items?.length} ürün
                 </div>
-              )}
-            </div>
-          </section>
-        ))}
+              </div>
+            </button>
+          ))}
+        </div>
+
+        {/* Drawer footer */}
+        <div style={{
+          padding: '20px 24px',
+          borderTop: '1px solid rgba(201,168,76,0.15)',
+          fontSize: '0.7rem', color: 'rgba(201,168,76,0.5)',
+          letterSpacing: 1, textAlign: 'center',
+          fontFamily: "'Outfit', sans-serif",
+        }}>
+          — SINCE 2020 —
+        </div>
       </div>
-    </>
+    </div>
+  );
+}
+
+// Single menu item component with animation
+function MenuItem({ item, index }) {
+  return (
+    <div style={{
+      display: 'flex', alignItems: 'flex-start', gap: 14,
+      padding: '16px 0',
+      borderBottom: '1px dashed rgba(201,168,76,0.2)',
+      opacity: 0,
+      animation: `slideIn 0.5s ease ${index * 0.07}s forwards`,
+    }}>
+      <style>{`
+        @keyframes slideIn {
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
+
+      {/* Image */}
+      <div style={{
+        flexShrink: 0, width: 90, height: 90,
+        borderRadius: 8, overflow: 'hidden',
+        border: '1px solid rgba(201,168,76,0.25)',
+        background: item.img ? 'transparent' : 'linear-gradient(135deg, #1a1410, #100d09)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+      }}>
+        {item.img ? (
+          <img
+            src={item.img}
+            alt={item.name}
+            loading="lazy"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
+            onMouseEnter={e => e.target.style.transform = 'scale(1.08)'}
+            onMouseLeave={e => e.target.style.transform = 'scale(1)'}
+          />
+        ) : (
+          <svg viewBox="0 0 24 24" width={30} height={30} fill="none" stroke="rgba(201,168,76,0.25)" strokeWidth="1">
+            <path d="M3 3l18 18M3 8l4-4h10l4 4v10M3 8v10a2 2 0 002 2h14"/>
+          </svg>
+        )}
+      </div>
+
+      {/* Body */}
+      <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 5 }}>
+        <div style={{
+          fontFamily: "'Cinzel', serif", fontSize: '0.95rem', fontWeight: 700,
+          color: '#e8cc7a', letterSpacing: 1, textTransform: 'uppercase', lineHeight: 1.2,
+        }}>{item.name}</div>
+        <div style={{
+          fontSize: '0.8rem', color: 'rgba(240,234,216,0.55)', fontWeight: 300, lineHeight: 1.5,
+        }}>{item.desc}</div>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 4 }}>
+          <span style={{
+            fontFamily: "'Cinzel', serif", fontSize: '1.1rem', fontWeight: 600,
+            color: '#c9a84c', letterSpacing: 1,
+          }}>{item.price} ₺</span>
+        </div>
+      </div>
+    </div>
   );
 }
