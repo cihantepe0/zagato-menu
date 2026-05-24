@@ -4,7 +4,24 @@ import fs from 'fs/promises';
 import path from 'path';
 import sharp from 'sharp';
 
-const DATA_PATH = path.join(process.cwd(), 'data', 'menuData.json');
+const PERSISTENT_PATH = '/app/persistent/menuData.json';
+const BUNDLED_PATH = path.join(process.cwd(), 'data', 'menuData.json');
+
+async function getDataPath() {
+  try {
+    await fs.access(PERSISTENT_PATH);
+    return PERSISTENT_PATH;
+  } catch {
+    try {
+      const bundledData = await fs.readFile(BUNDLED_PATH, 'utf8');
+      await fs.mkdir('/app/persistent', { recursive: true });
+      await fs.writeFile(PERSISTENT_PATH, bundledData, 'utf8');
+      return PERSISTENT_PATH;
+    } catch {
+      return BUNDLED_PATH;
+    }
+  }
+}
 
 // Max dimensions for menu item images (displayed at 90x90 on menu, 72x72 in admin)
 const MAX_WIDTH = 600;
@@ -44,7 +61,8 @@ export async function POST(request) {
     const dataUrl = `data:image/jpeg;base64,${compressedBuffer.toString('base64')}`;
 
     // Update JSON
-    const dataStr = await fs.readFile(DATA_PATH, 'utf8');
+    const dataPath = await getDataPath();
+    const dataStr = await fs.readFile(dataPath, 'utf8');
     const allData = JSON.parse(dataStr);
 
     const catIndex = allData.findIndex(c => c.id === categoryId);
@@ -56,7 +74,7 @@ export async function POST(request) {
     }
 
     allData[catIndex].items[itemIndex].img = dataUrl;
-    await fs.writeFile(DATA_PATH, JSON.stringify(allData, null, 2), 'utf8');
+    await fs.writeFile(dataPath, JSON.stringify(allData, null, 2), 'utf8');
 
     return NextResponse.json({
       success: true,
