@@ -17,8 +17,6 @@ const iconMap = {
 export default function AdminDashboard() {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [compressing, setCompressing] = useState(false);
-  const [compressMsg, setCompressMsg] = useState('');
   const router = useRouter();
 
   useEffect(() => {
@@ -34,25 +32,6 @@ export default function AdminDashboard() {
   const handleLogout = () => {
     localStorage.removeItem('zagato_admin_token');
     router.push('/admin');
-  };
-
-  const handleCompressAll = async () => {
-    if (!confirm('Mevcut tüm görseller sıkıştırılacak. Devam?')) return;
-    setCompressing(true);
-    setCompressMsg('');
-    try {
-      const res = await fetch('/api/compress-all', { method: 'POST' });
-      const data = await res.json();
-      if (data.success) {
-        setCompressMsg(`✓ ${data.message}`);
-      } else {
-        setCompressMsg('✗ Hata: ' + data.error);
-      }
-    } catch {
-      setCompressMsg('✗ Bağlantı hatası');
-    }
-    setCompressing(false);
-    setTimeout(() => setCompressMsg(''), 6000);
   };
 
   const sharedStyle = {
@@ -107,45 +86,14 @@ export default function AdminDashboard() {
       </header>
 
       {/* Page Title */}
-      <div style={{ padding: '40px 24px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 12 }}>
-        <div>
-          <h1 style={{
-            fontFamily: "'Cinzel', serif", fontSize: '1.6rem', fontWeight: 700,
-            color: '#c9a84c', letterSpacing: 3, marginBottom: 8,
-          }}>Menü Yönetimi</h1>
-          <p style={{ color: 'rgba(240,234,216,0.45)', fontSize: '0.85rem' }}>
-            Bir kategoriye tıklayarak ürünleri ve fotoğrafları düzenleyebilirsiniz.
-          </p>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
-          {compressMsg && (
-            <span style={{
-              fontSize: '0.78rem',
-              color: compressMsg.startsWith('✓') ? '#4ade80' : '#ff6b6b',
-              padding: '6px 12px',
-              background: compressMsg.startsWith('✓') ? 'rgba(74,222,128,0.1)' : 'rgba(255,107,107,0.1)',
-              borderRadius: 6,
-              border: `1px solid ${compressMsg.startsWith('✓') ? 'rgba(74,222,128,0.3)' : 'rgba(255,107,107,0.3)'}`,
-            }}>{compressMsg}</span>
-          )}
-          <button
-            onClick={handleCompressAll}
-            disabled={compressing}
-            style={{
-              padding: '9px 16px',
-              border: '1px solid rgba(201,168,76,0.25)',
-              borderRadius: 8, background: 'transparent',
-              color: compressing ? 'rgba(201,168,76,0.4)' : '#c9a84c',
-              fontSize: '0.78rem', cursor: compressing ? 'not-allowed' : 'pointer',
-              fontFamily: "'Outfit', sans-serif", display: 'flex', alignItems: 'center', gap: 6,
-            }}
-          >
-            <svg viewBox="0 0 24 24" width={14} height={14} fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5-5 5 5M12 5v12"/>
-            </svg>
-            {compressing ? 'Sıkıştırılıyor...' : 'Görselleri Sıkıştır'}
-          </button>
-        </div>
+      <div style={{ padding: '40px 24px 24px' }}>
+        <h1 style={{
+          fontFamily: "'Cinzel', serif", fontSize: '1.6rem', fontWeight: 700,
+          color: '#c9a84c', letterSpacing: 3, marginBottom: 8,
+        }}>Menü Yönetimi</h1>
+        <p style={{ color: 'rgba(240,234,216,0.45)', fontSize: '0.85rem' }}>
+          Bir kategoriye tıklayarak ürünleri ve fotoğrafları düzenleyebilirsiniz.
+        </p>
       </div>
 
       {/* Category Grid */}
