@@ -2,348 +2,134 @@
   {
     "id": "baslangic",
     "category": "Başlangıçlar",
+    "category_en": "Starters",
     "icon": "starter",
     "items": [
-      {
-        "name": "Sarımsaklı Ekmek",
-        "desc": "Sarımsaklı tereyağı",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Somon Gravlaks",
-        "desc": "Ekşi mayalı ekmek üzerine şefin özel sosu, somon gravlaks, kapari çiçeği, dereotu",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Muhteşem 4'lü",
-        "desc": "Somon gravlaks, sarımsaklı ekmek, kuru domates sos, tartar sos",
-        "price": "",
-        "img": null
-      }
+      { "name": "Sarımsaklı Ekmek", "name_en": "Garlic Bread", "desc": "Sarımsaklı tereyağı", "desc_en": "Garlic butter", "price": "", "img": null },
+      { "name": "Somon Gravlaks", "name_en": "Salmon Gravlax", "desc": "Ekşi mayalı ekmek üzerine şefin özel sosu, somon gravlaks, kapari çiçeği, dereotu", "desc_en": "Sourdough bread with chef's special sauce, salmon gravlax, caper flower, dill", "price": "", "img": null },
+      { "name": "Muhteşem 4'lü", "name_en": "The Magnificent Four", "desc": "Somon gravlaks, sarımsaklı ekmek, kuru domates sos, tartar sos", "desc_en": "Salmon gravlax, garlic bread, sun-dried tomato sauce, tartar sauce", "price": "", "img": null }
     ]
   },
   {
     "id": "salata",
     "category": "Salatalar",
+    "category_en": "Salads",
     "icon": "salad",
     "items": [
-      {
-        "name": "Vegan Salata",
-        "desc": "Roka, havuç, avokado, cherry domates, nohut, siyah zeytin, dereotu, ceviz, mor lahana",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Sezar Salata",
-        "desc": "Sezar sos, göbek salata, cherry domates, kruton ekmek, ızgara tavuk, parmesan peyniri",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Yeşil Elmalı Somon Gravlaks",
-        "desc": "Mevsim yeşillikleri, somon gravlaks, pancar, cherry domates, ceviz, dereotu, şefin özel sosu",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Zagato Tütsülenmiş Hellimli",
-        "desc": "Mısır, cherry domates, mevsim yeşillikleri, ceviz, tütsülenmiş hellim, yeşil elma, şefin özel sosu",
-        "price": "",
-        "img": null
-      }
+      { "name": "Vegan Salata", "name_en": "Vegan Salad", "desc": "Roka, havuç, avokado, cherry domates, nohut, siyah zeytin, dereotu, ceviz, mor lahana", "desc_en": "Arugula, carrot, avocado, cherry tomatoes, chickpeas, black olives, dill, walnuts, red cabbage", "price": "", "img": null },
+      { "name": "Sezar Salata", "name_en": "Caesar Salad", "desc": "Sezar sos, göbek salata, cherry domates, kruton ekmek, ızgara tavuk, parmesan peyniri", "desc_en": "Caesar dressing, romaine lettuce, cherry tomatoes, croutons, grilled chicken, parmesan", "price": "", "img": null },
+      { "name": "Yeşil Elmalı Somon Gravlaks", "name_en": "Green Apple Salmon Gravlax", "desc": "Mevsim yeşillikleri, somon gravlaks, pancar, cherry domates, ceviz, dereotu, şefin özel sosu", "desc_en": "Seasonal greens, salmon gravlax, beetroot, cherry tomatoes, walnuts, dill, chef's special sauce", "price": "", "img": null },
+      { "name": "Zagato Tütsülenmiş Hellimli", "name_en": "Zagato Smoked Halloumi", "desc": "Mısır, cherry domates, mevsim yeşillikleri, ceviz, tütsülenmiş hellim, yeşil elma, şefin özel sosu", "desc_en": "Corn, cherry tomatoes, seasonal greens, walnuts, smoked halloumi, green apple, chef's special sauce", "price": "", "img": null }
     ]
   },
   {
     "id": "arasicak",
     "category": "Ara Sıcaklar",
+    "category_en": "Hot Starters",
     "icon": "hot",
     "items": [
-      {
-        "name": "Çıtır Tabak",
-        "desc": "4 kişilik ve 2 kişilik kombo tabağı — Panelenmiş çıtır tavuk, panelenmiş çıtır hellim, soğan halkası, dana sosis, patates tava, börek",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Patates Tava",
-        "desc": "Parmesan, fesleğen, kekik, biberiye",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Kalamar Tava",
-        "desc": "Çıtır maydanoz, kalamar, tartar sos",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Karides Güveç",
-        "desc": "Sarımsak, tereyağı, mantar, maydanoz",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Güveçte İlikli Ahtapot",
-        "desc": "Cherry domates, sarımsak, fesleğen, kekik",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Paçanga Böreği (2 Adet)",
-        "desc": "Pastırma, kaşar peyniri, mevsim yeşillikleri, cherry domates",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Misket Köfte (3 Adet)",
-        "desc": "Yoğurt, domates sos, kızarmış yufka",
-        "price": "",
-        "img": null
-      }
+      { "name": "Çıtır Tabak", "name_en": "Crispy Platter", "desc": "4 kişilik ve 2 kişilik kombo — Çıtır tavuk, çıtır hellim, soğan halkası, dana sosis, patates tava, börek", "desc_en": "2 or 4 person combo — Crispy chicken, crispy halloumi, onion rings, beef sausage, pan-fried potatoes, börek", "price": "", "img": null },
+      { "name": "Patates Tava", "name_en": "Pan-Fried Potatoes", "desc": "Parmesan, fesleğen, kekik, biberiye", "desc_en": "Parmesan, basil, thyme, rosemary", "price": "", "img": null },
+      { "name": "Kalamar Tava", "name_en": "Fried Calamari", "desc": "Çıtır maydanoz, kalamar, tartar sos", "desc_en": "Crispy parsley, calamari, tartar sauce", "price": "", "img": null },
+      { "name": "Karides Güveç", "name_en": "Shrimp Casserole", "desc": "Sarımsak, tereyağı, mantar, maydanoz", "desc_en": "Garlic, butter, mushrooms, parsley", "price": "", "img": null },
+      { "name": "Güveçte İlikli Ahtapot", "name_en": "Octopus Casserole", "desc": "Cherry domates, sarımsak, fesleğen, kekik", "desc_en": "Cherry tomatoes, garlic, basil, thyme", "price": "", "img": null },
+      { "name": "Paçanga Böreği (2 Adet)", "name_en": "Paçanga Pastry (2 pcs)", "desc": "Pastırma, kaşar peyniri, mevsim yeşillikleri, cherry domates", "desc_en": "Pastırma, kashar cheese, seasonal greens, cherry tomatoes", "price": "", "img": null },
+      { "name": "Misket Köfte (3 Adet)", "name_en": "Meatballs (3 pcs)", "desc": "Yoğurt, domates sos, kızarmış yufka", "desc_en": "Yogurt, tomato sauce, crispy phyllo", "price": "", "img": null }
     ]
   },
   {
     "id": "burger-dana",
     "category": "Burgerler (Dana)",
+    "category_en": "Burgers (Beef)",
     "icon": "burger",
     "items": [
-      {
-        "name": "Zagato Jack Daniel's Smoke Burger",
-        "desc": "Jack Daniel's sos, karamelize soğan, yeşillik, domates, patates tava",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Cheese Burger",
-        "desc": "Cheddar peyniri, karamelize soğan, yeşillik, domates, turşu, red sos, patates tava",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Garlic Mushroom & Cheese Burger",
-        "desc": "Karamelize mantar, sarımsak, domates, turşu, yeşillik, cheddar peyniri, karamelize soğan, red sos, patates tava",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Bacon Cheese Burger",
-        "desc": "Dana bacon, cheddar peyniri, karamelize soğan, yeşillik, domates, turşu, red sos, patates tava",
-        "price": "",
-        "img": null
-      }
+      { "name": "Zagato Jack Daniel's Smoke Burger", "name_en": "Zagato Jack Daniel's Smoke Burger", "desc": "Jack Daniel's sos, karamelize soğan, yeşillik, domates, patates tava", "desc_en": "Jack Daniel's sauce, caramelized onion, greens, tomato, pan-fried potatoes", "price": "", "img": null },
+      { "name": "Cheese Burger", "name_en": "Cheese Burger", "desc": "Cheddar peyniri, karamelize soğan, yeşillik, domates, turşu, red sos, patates tava", "desc_en": "Cheddar cheese, caramelized onion, greens, tomato, pickles, red sauce, pan-fried potatoes", "price": "", "img": null },
+      { "name": "Garlic Mushroom & Cheese Burger", "name_en": "Garlic Mushroom & Cheese Burger", "desc": "Karamelize mantar, sarımsak, domates, turşu, yeşillik, cheddar peyniri, karamelize soğan, red sos, patates tava", "desc_en": "Caramelized mushrooms, garlic, tomato, pickles, greens, cheddar cheese, caramelized onion, red sauce, pan-fried potatoes", "price": "", "img": null },
+      { "name": "Bacon Cheese Burger", "name_en": "Bacon Cheese Burger", "desc": "Dana bacon, cheddar peyniri, karamelize soğan, yeşillik, domates, turşu, red sos, patates tava", "desc_en": "Beef bacon, cheddar cheese, caramelized onion, greens, tomato, pickles, red sauce, pan-fried potatoes", "price": "", "img": null }
     ]
   },
   {
     "id": "burger-tavuk",
     "category": "Burgerler (Tavuk)",
+    "category_en": "Burgers (Chicken)",
     "icon": "chicken",
     "items": [
-      {
-        "name": "Çıtır Chicken Burger",
-        "desc": "Panelenmiş tavuk, yeşillik, domates, karamelize soğan, özel gusto sos, patates tava",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Chicken Cheese Burger",
-        "desc": "Izgara tavuk, cheddar peyniri, yeşillik, domates, karamelize soğan, özel gusto sos, patates tava",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Garlic Mushroom & Cheese Burger",
-        "desc": "Karamelize mantar, sarımsak, domates, turşu, yeşillik, patates tava",
-        "price": "",
-        "img": null
-      }
+      { "name": "Çıtır Chicken Burger", "name_en": "Crispy Chicken Burger", "desc": "Panelenmiş tavuk, yeşillik, domates, karamelize soğan, özel gusto sos, patates tava", "desc_en": "Breaded chicken, greens, tomato, caramelized onion, special gusto sauce, pan-fried potatoes", "price": "", "img": null },
+      { "name": "Chicken Cheese Burger", "name_en": "Chicken Cheese Burger", "desc": "Izgara tavuk, cheddar peyniri, yeşillik, domates, karamelize soğan, özel gusto sos, patates tava", "desc_en": "Grilled chicken, cheddar cheese, greens, tomato, caramelized onion, special gusto sauce, pan-fried potatoes", "price": "", "img": null },
+      { "name": "Garlic Mushroom & Cheese Burger", "name_en": "Garlic Mushroom & Cheese Burger", "desc": "Karamelize mantar, sarımsak, domates, turşu, yeşillik, patates tava", "desc_en": "Caramelized mushrooms, garlic, tomato, pickles, greens, pan-fried potatoes", "price": "", "img": null }
     ]
   },
   {
     "id": "makarna",
     "category": "Makarna & Risotto",
+    "category_en": "Pasta & Risotto",
     "icon": "pasta",
     "items": [
-      {
-        "name": "Frutti di Mare Fettuccine",
-        "desc": "Kalamar, ahtapot, karides, fesleğen, parmesan, domates sos, krema",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Rigatoni Bolognese",
-        "desc": "Klasik Bolonez sos, fesleğen",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Fettuccine Bonfile",
-        "desc": "Domates soslu bonfile",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Fettuccine Alfredo",
-        "desc": "Tavuk, mantar, krema",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Mantarlı Risotto",
-        "desc": "Porcini ve kestane mantarı, sarımsak, beyaz şarap, parmesan",
-        "price": "",
-        "img": null
-      }
+      { "name": "Frutti di Mare Fettuccine", "name_en": "Frutti di Mare Fettuccine", "desc": "Kalamar, ahtapot, karides, fesleğen, parmesan, domates sos, krema", "desc_en": "Calamari, octopus, shrimp, basil, parmesan, tomato sauce, cream", "price": "", "img": null },
+      { "name": "Rigatoni Bolognese", "name_en": "Rigatoni Bolognese", "desc": "Klasik Bolonez sos, fesleğen", "desc_en": "Classic Bolognese sauce, basil", "price": "", "img": null },
+      { "name": "Fettuccine Bonfile", "name_en": "Fettuccine Tenderloin", "desc": "Domates soslu bonfile", "desc_en": "Tenderloin in tomato sauce", "price": "", "img": null },
+      { "name": "Fettuccine Alfredo", "name_en": "Fettuccine Alfredo", "desc": "Tavuk, mantar, krema", "desc_en": "Chicken, mushrooms, cream", "price": "", "img": null },
+      { "name": "Mantarlı Risotto", "name_en": "Mushroom Risotto", "desc": "Porcini ve kestane mantarı, sarımsak, beyaz şarap, parmesan", "desc_en": "Porcini and chestnut mushrooms, garlic, white wine, parmesan", "price": "", "img": null }
     ]
   },
   {
     "id": "pizza",
     "category": "Pizzatesler",
+    "category_en": "Pizzas",
     "icon": "pizza",
     "items": [
-      {
-        "name": "Pizza Margherita",
-        "desc": "Domates sos, mozzarella peyniri",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Pizza Romana",
-        "desc": "Domates sos, mozzarella peyniri, sucuk",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Pizza Frutti di Mare",
-        "desc": "Karides, kalamar, ahtapot, domates sos, mozzarella peyniri",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Pizza Alaturca",
-        "desc": "Mantar, renkli biberler, sucuk, salam, zeytin, mısır, cherry domates",
-        "price": "",
-        "img": null
-      }
+      { "name": "Pizza Margherita", "name_en": "Pizza Margherita", "desc": "Domates sos, mozzarella peyniri", "desc_en": "Tomato sauce, mozzarella cheese", "price": "", "img": null },
+      { "name": "Pizza Romana", "name_en": "Pizza Romana", "desc": "Domates sos, mozzarella peyniri, sucuk", "desc_en": "Tomato sauce, mozzarella cheese, sucuk sausage", "price": "", "img": null },
+      { "name": "Pizza Frutti di Mare", "name_en": "Pizza Frutti di Mare", "desc": "Karides, kalamar, ahtapot, domates sos, mozzarella peyniri", "desc_en": "Shrimp, calamari, octopus, tomato sauce, mozzarella cheese", "price": "", "img": null },
+      { "name": "Pizza Alaturca", "name_en": "Pizza Alaturca", "desc": "Mantar, renkli biberler, sucuk, salam, zeytin, mısır, cherry domates", "desc_en": "Mushrooms, colorful peppers, sucuk, salami, olives, corn, cherry tomatoes", "price": "", "img": null }
     ]
   },
   {
     "id": "et",
     "category": "Et Yemekleri",
+    "category_en": "Meat Dishes",
     "icon": "steak",
     "items": [
-      {
-        "name": "Kuzu Pirzola",
-        "desc": "Mevsim sebzeleri, patates graten",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Antrikot Izgara",
-        "desc": "Buharda mevsim sebzeleri, patates graten, mantar sos",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Black Pepper Antrikot",
-        "desc": "Buharda mevsim sebzeleri, patates graten, Black Pepper sos",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Rokfor Soslu Bonfile",
-        "desc": "Mevsim sebzeleri, kumpir patates, ızgara bonfile",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Trüflü Mantar Soslu Bonfile",
-        "desc": "Izgara bonfile, buharda mevsim sebzeleri, kumpir patates",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Zagato Barbekü Tabağı (2 Kişilik)",
-        "desc": "Kuzu pirzola, antrikot, steak, kanat, but, Adana, patates kızartması, soğan, domates, biber",
-        "price": "",
-        "img": null
-      }
+      { "name": "Kuzu Pirzola", "name_en": "Lamb Chops", "desc": "Mevsim sebzeleri, patates graten", "desc_en": "Seasonal vegetables, potato gratin", "price": "", "img": null },
+      { "name": "Antrikot Izgara", "name_en": "Grilled Entrecôte", "desc": "Buharda mevsim sebzeleri, patates graten, mantar sos", "desc_en": "Steamed seasonal vegetables, potato gratin, mushroom sauce", "price": "", "img": null },
+      { "name": "Black Pepper Antrikot", "name_en": "Black Pepper Entrecôte", "desc": "Buharda mevsim sebzeleri, patates graten, Black Pepper sos", "desc_en": "Steamed seasonal vegetables, potato gratin, black pepper sauce", "price": "", "img": null },
+      { "name": "Rokfor Soslu Bonfile", "name_en": "Roquefort Tenderloin", "desc": "Mevsim sebzeleri, kumpir patates, ızgara bonfile", "desc_en": "Seasonal vegetables, baked potato, grilled tenderloin", "price": "", "img": null },
+      { "name": "Trüflü Mantar Soslu Bonfile", "name_en": "Truffle Mushroom Tenderloin", "desc": "Izgara bonfile, buharda mevsim sebzeleri, kumpir patates", "desc_en": "Grilled tenderloin, steamed seasonal vegetables, baked potato", "price": "", "img": null },
+      { "name": "Zagato Barbekü Tabağı (2 Kişilik)", "name_en": "Zagato BBQ Platter (for 2)", "desc": "Kuzu pirzola, antrikot, steak, kanat, but, Adana, patates kızartması, soğan, domates, biber", "desc_en": "Lamb chops, entrecôte, steak, wings, drumstick, Adana kebab, fries, onion, tomato, peppers", "price": "", "img": null }
     ]
   },
   {
     "id": "tavuk",
     "category": "Tavuk Yemekleri",
+    "category_en": "Chicken Dishes",
     "icon": "chicken",
     "items": [
-      {
-        "name": "Alpino Kebap",
-        "desc": "Izgara tavuk but, beğendi, Cafe de Paris sos, kızarmış domates, yeşil biber, patates kızartması",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Mantar Soslu Tavuk",
-        "desc": "But ve tavuk göğsü, mevsim salatası, patates kızartması, soğan halkası",
-        "price": "",
-        "img": null
-      }
+      { "name": "Alpino Kebap", "name_en": "Alpino Kebab", "desc": "Izgara tavuk but, beğendi, Cafe de Paris sos, kızarmış domates, yeşil biber, patates kızartması", "desc_en": "Grilled chicken thigh, hünkar beğendi, Cafe de Paris sauce, grilled tomato, green pepper, fries", "price": "", "img": null },
+      { "name": "Mantar Soslu Tavuk", "name_en": "Mushroom Chicken", "desc": "But ve tavuk göğsü, mevsim salatası, patates kızartması, soğan halkası", "desc_en": "Thigh and breast, seasonal salad, fries, onion rings", "price": "", "img": null }
     ]
   },
   {
     "id": "balik",
     "category": "Balıklar",
+    "category_en": "Fish",
     "icon": "fish",
     "items": [
-      {
-        "name": "Pazıya Sarılı Somon",
-        "desc": "Mevsim sebzeleri, bebek patates, arpacık soğan, nar ekşisi, cherry domates, beyaz şarap ile pazı içerisinde ızgara somon",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Levrek Izgara",
-        "desc": "Izgara limon, roka, ızgara bebek patates, kırmızı soğan",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Chili Fish",
-        "desc": "Çupra, cherry domates, patates kızartması, roka, limon ve chili sos",
-        "price": "",
-        "img": null
-      }
+      { "name": "Pazıya Sarılı Somon", "name_en": "Chard-Wrapped Salmon", "desc": "Mevsim sebzeleri, bebek patates, arpacık soğan, nar ekşisi, cherry domates, beyaz şarap ile pazı içerisinde ızgara somon", "desc_en": "Seasonal vegetables, baby potatoes, pearl onions, pomegranate molasses, cherry tomatoes, grilled salmon wrapped in chard with white wine", "price": "", "img": null },
+      { "name": "Levrek Izgara", "name_en": "Grilled Sea Bass", "desc": "Izgara limon, roka, ızgara bebek patates, kırmızı soğan", "desc_en": "Grilled lemon, arugula, grilled baby potatoes, red onion", "price": "", "img": null },
+      { "name": "Chili Fish", "name_en": "Chili Fish", "desc": "Çupra, cherry domates, patates kızartması, roka, limon ve chili sos", "desc_en": "Sea bream, cherry tomatoes, fries, arugula, lemon and chili sauce", "price": "", "img": null }
     ]
   },
   {
     "id": "tatli",
     "category": "Tatlılar",
+    "category_en": "Desserts",
     "icon": "dessert",
     "items": [
-      {
-        "name": "San Sebastian Cheesecake",
-        "desc": "",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Brownie",
-        "desc": "",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Sufle",
-        "desc": "",
-        "price": "",
-        "img": null
-      },
-      {
-        "name": "Meyve Tabağı",
-        "desc": "",
-        "price": "",
-        "img": null
-      }
+      { "name": "San Sebastian Cheesecake", "name_en": "San Sebastian Cheesecake", "desc": "", "desc_en": "", "price": "", "img": null },
+      { "name": "Brownie", "name_en": "Brownie", "desc": "", "desc_en": "", "price": "", "img": null },
+      { "name": "Sufle", "name_en": "Soufflé", "desc": "", "desc_en": "", "price": "", "img": null },
+      { "name": "Meyve Tabağı", "name_en": "Fruit Platter", "desc": "", "desc_en": "", "price": "", "img": null }
     ]
   }
 ]

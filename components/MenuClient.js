@@ -89,25 +89,19 @@ const icons = {
 
 
 export default function MenuClient({ initialData }) {
-  const [menuData, setMenuData] = useState(initialData || []);
+  const [menuData] = useState(initialData || []);
   const [activeCategory, setActiveCategory] = useState(initialData?.[0]?.id || 'baslangic');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [animating, setAnimating] = useState(false);
+  const [lang, setLang] = useState('tr');
   const listRef = useRef(null);
   const navRef = useRef(null);
 
-  // Reload data periodically to pick up admin changes
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/menu', { cache: 'no-store' });
-        const data = await res.json();
-        setMenuData(data);
-      } catch (e) {}
-    };
-    fetchData();
-  }, []);
-
+  // Helper: pick correct language field
+  const t = (item, field) => {
+    if (lang === 'en') return item[`${field}_en`] || item[field] || '';
+    return item[field] || '';
+  };
   const currentCategory = menuData.find(c => c.id === activeCategory) || menuData[0];
 
   const switchCategory = (id) => {
@@ -169,8 +163,24 @@ export default function MenuClient({ initialData }) {
             </svg>
           </button>
 
-          {/* Spacer */}
-          <div style={{ width: 40, height: 40 }} />
+          {/* TR / EN toggle */}
+          <button
+            onClick={() => setLang(l => l === 'tr' ? 'en' : 'tr')}
+            style={{
+              width: 40, height: 40,
+              border: '1px solid rgba(201,168,76,0.25)',
+              borderRadius: '50%',
+              background: 'rgba(201,168,76,0.06)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              cursor: 'pointer', transition: 'all 0.25s',
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: '0.62rem', fontWeight: 700,
+              letterSpacing: 1, color: '#c9a84c',
+            }}
+            aria-label="Language"
+          >
+            {lang === 'tr' ? 'EN' : 'TR'}
+          </button>
         </div>
 
         {/* Ornament */}
@@ -192,7 +202,7 @@ export default function MenuClient({ initialData }) {
           color: 'rgba(240,234,216,0.5)', textTransform: 'uppercase',
           fontFamily: "'Outfit', sans-serif", fontWeight: 300,
           position: 'relative', zIndex: 1,
-        }}>İyi Yemek &nbsp;·&nbsp; İyi Müzik</p>
+        }}>{lang === 'tr' ? 'İyi Yemek\u00a0·\u00a0İyi Müzik' : 'Fine Dining\u00a0·\u00a0Fine Music'}</p>
       </header>
 
       {/* ── CATEGORY NAV ── */}
@@ -249,7 +259,7 @@ export default function MenuClient({ initialData }) {
                 whiteSpace: 'nowrap',
                 transition: 'color 0.25s',
                 fontFamily: "'Outfit', sans-serif",
-              }}>{cat.category}</span>
+              }}>{lang === 'en' ? (cat.category_en || cat.category) : cat.category}</span>
             </button>
           ))}
         </div>
@@ -270,7 +280,7 @@ export default function MenuClient({ initialData }) {
             <h2 style={{
               fontFamily: "'Cinzel', serif", fontSize: '1.1rem', fontWeight: 700,
               letterSpacing: 3, color: '#c9a84c', textTransform: 'uppercase', whiteSpace: 'nowrap',
-            }}>{currentCategory?.category}</h2>
+            }}>{lang === 'en' ? (currentCategory?.category_en || currentCategory?.category) : currentCategory?.category}</h2>
             <svg viewBox="0 0 24 24" width={16} height={16} fill="#c9a84c" style={{ opacity: 0.5, transform: 'scaleX(-1)' }}>
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -287,7 +297,7 @@ export default function MenuClient({ initialData }) {
           }}
         >
           {(currentCategory?.items || []).map((item, i) => (
-            <MenuItem key={i} item={item} index={i} />
+            <MenuItem key={i} item={item} index={i} lang={lang} />
           ))}
         </div>
 
@@ -298,7 +308,7 @@ export default function MenuClient({ initialData }) {
           display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12,
         }}>
           <span style={{ flex: 1, height: 1, display: 'block', background: 'linear-gradient(to right, transparent, rgba(201,168,76,0.2))' }} />
-          Fiyatlarımıza KDV dahildir
+          {lang === 'tr' ? 'Fiyatlarımıza KDV dahildir' : 'All prices include VAT'}
           <span style={{ flex: 1, height: 1, display: 'block', background: 'linear-gradient(to left, transparent, rgba(201,168,76,0.2))' }} />
         </div>
 
@@ -357,7 +367,7 @@ export default function MenuClient({ initialData }) {
         {/* Drawer Category List */}
         <div style={{ flex: 1, overflowY: 'auto', padding: '16px 0' }}>
           <div style={{ padding: '8px 24px 12px', fontSize: '0.65rem', letterSpacing: 2, color: 'rgba(201,168,76,0.45)', textTransform: 'uppercase', fontFamily: "'Outfit', sans-serif" }}>
-            Menü Kategorileri
+            {lang === 'tr' ? 'Menü Kategorileri' : 'Menu Categories'}
           </div>
           {menuData.map((cat, i) => (
             <button
@@ -382,9 +392,9 @@ export default function MenuClient({ initialData }) {
                   fontFamily: "'Cinzel', serif", fontSize: '0.85rem', fontWeight: 600,
                   color: cat.id === activeCategory ? '#c9a84c' : '#f0ead8',
                   letterSpacing: 1, transition: 'color 0.2s',
-                }}>{cat.category}</div>
+                }}>{lang === 'en' ? (cat.category_en || cat.category) : cat.category}</div>
                 <div style={{ fontSize: '0.7rem', color: 'rgba(240,234,216,0.4)', marginTop: 2 }}>
-                  {cat.items?.length} ürün
+                  {cat.items?.length} {lang === 'en' ? 'items' : 'ürün'}
                 </div>
               </div>
             </button>
@@ -407,7 +417,9 @@ export default function MenuClient({ initialData }) {
 }
 
 // Single menu item component with animation
-function MenuItem({ item, index }) {
+function MenuItem({ item, index, lang }) {
+  const name = lang === 'en' ? (item.name_en || item.name) : item.name;
+  const desc = lang === 'en' ? (item.desc_en || item.desc) : item.desc;
   return (
     <div style={{
       display: 'flex', alignItems: 'flex-start', gap: 14,
@@ -452,10 +464,10 @@ function MenuItem({ item, index }) {
         <div style={{
           fontFamily: "'Cinzel', serif", fontSize: '0.95rem', fontWeight: 700,
           color: '#e8cc7a', letterSpacing: 1, textTransform: 'uppercase', lineHeight: 1.2,
-        }}>{item.name}</div>
+        }}>{name}</div>
         <div style={{
           fontSize: '0.8rem', color: 'rgba(240,234,216,0.55)', fontWeight: 300, lineHeight: 1.5,
-        }}>{item.desc}</div>
+        }}>{desc}</div>
         <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 4 }}>
           <span style={{
             fontFamily: "'Cinzel', serif", fontSize: '1.1rem', fontWeight: 600,
