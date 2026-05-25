@@ -12,7 +12,40 @@ const iconMap = {
   share: '🍽️',
   drink: '🍹',
   dessert: '🍮',
+  burger: '🍔',
+  chicken: '🍗',
+  pasta: '🍝',
+  pizza: '🍕',
+  steak: '🥩',
+  fish: '🐟',
+  hot: '🔥',
 };
+
+// Keyword-based icon fallback for auto-created categories
+function getIcon(cat) {
+  if (iconMap[cat.icon]) return iconMap[cat.icon];
+  const name = (cat.category || '').toLowerCase();
+  if (name.includes('bira') || name.includes('beer')) return '🍺';
+  if (name.includes('kokteyl') || name.includes('cocktail') || name.includes('mojito')) return '🍸';
+  if (name.includes('şarap') || name.includes('wine') || name.includes('rose') || name.includes('rosé')) return '🍷';
+  if (name.includes('kahve') || name.includes('coffee')) return '☕';
+  if (name.includes('çay') || name.includes('tea')) return '🍵';
+  if (name.includes('limonata') || name.includes('frozen') || name.includes('smoothie')) return '🧃';
+  if (name.includes('shot')) return '🥃';
+  if (name.includes('milkshake')) return '🥤';
+  if (name.includes('sangria')) return '🍷';
+  if (name.includes('gin') || name.includes('cin')) return '🫙';
+  if (name.includes('rakı') || name.includes('raki')) return '🥛';
+  if (name.includes('tatlı') || name.includes('dessert')) return '🍮';
+  if (name.includes('salata') || name.includes('salad')) return '🥗';
+  if (name.includes('balık') || name.includes('fish')) return '🐟';
+  if (name.includes('tavuk') || name.includes('chicken')) return '🍗';
+  if (name.includes('pizza')) return '🍕';
+  if (name.includes('makarna') || name.includes('pasta') || name.includes('risotto')) return '🍝';
+  if (name.includes('burger')) return '🍔';
+  if (name.includes('et') || name.includes('meat') || name.includes('steak') || name.includes('bonfile')) return '🥩';
+  return '🍴';
+}
 
 export default function AdminDashboard() {
   const [categories, setCategories] = useState([]);
@@ -124,7 +157,7 @@ export default function AdminDashboard() {
             >
               <div style={{ position: 'absolute', top: -20, right: -20, width: 80, height: 80, borderRadius: '50%', background: 'radial-gradient(circle, rgba(201,168,76,0.06), transparent)', pointerEvents: 'none' }} />
               
-              <div style={{ fontSize: '2rem', marginBottom: 12 }}>{iconMap[cat.icon] || '🍴'}</div>
+              <div style={{ fontSize: '2rem', marginBottom: 12 }}>{getIcon(cat)}</div>
               <h2 style={{
                 fontFamily: "'Cinzel', serif", fontSize: '1.05rem', fontWeight: 700,
                 color: '#e8cc7a', letterSpacing: 2, marginBottom: 4,
