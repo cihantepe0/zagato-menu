@@ -4,9 +4,7 @@ export const dynamic = 'force-dynamic';
 import MenuClient from '@/components/MenuClient';
 
 async function loadJSON(persistentPath, bundledPath) {
-  // Try persistent volume first
   try { return JSON.parse(await fs.readFile(persistentPath, 'utf8')); } catch {}
-  // Fall back to bundled
   try { return JSON.parse(await fs.readFile(bundledPath, 'utf8')); } catch {}
   return null;
 }
@@ -17,5 +15,12 @@ export default async function Home() {
     loadJSON('/app/persistent/fixMenu.json', path.join(process.cwd(), 'data', 'fixMenu.json')),
   ]);
 
-  return <MenuClient initialData={menuData || []} fixMenuData={fixMenuData} />;
+  // Strip base64 images from SSR payload — client fetches them separately
+  // This prevents a ~2MB hydration payload that breaks React event binding
+  const lightData = (menuData || []).map(cat => ({
+    ...cat,
+    items: cat.items.map(({ img, ...rest }) => rest),
+  }));
+
+  return <MenuClient initialData={lightData} fixMenuData={fixMenuData} />;
 }

@@ -89,13 +89,23 @@ const icons = {
 
 
 export default function MenuClient({ initialData, fixMenuData }) {
-  const [menuData] = useState(initialData || []);
+  const [menuData, setMenuData] = useState(initialData || []);
   const [activeCategory, setActiveCategory] = useState(initialData?.[0]?.id || 'baslangic');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [animating, setAnimating] = useState(false);
   const [lang, setLang] = useState('tr');
   const listRef = useRef(null);
   const navRef = useRef(null);
+
+  // After hydration, fetch full data (with images) from API
+  useEffect(() => {
+    fetch('/api/menu')
+      .then(r => r.json())
+      .then(fullData => {
+        if (Array.isArray(fullData) && fullData.length > 0) setMenuData(fullData);
+      })
+      .catch(() => {});
+  }, []);
 
   // Helper: pick correct language field
   const t = (item, field) => {
