@@ -177,6 +177,47 @@ export default function AdminDashboard() {
             </div>
           </Link>
         ))}
+
+        {/* Fix Menü Card */}
+        <Link href="/admin/fixmenu" style={{ textDecoration: 'none' }}>
+          <div style={{
+            background: 'linear-gradient(135deg, #0d100c 0%, #080906 100%)',
+            border: '1px solid rgba(201,168,76,0.3)',
+            borderRadius: 16, padding: '24px',
+            cursor: 'pointer', transition: 'all 0.25s',
+            position: 'relative', overflow: 'hidden',
+          }}
+            onMouseEnter={e => {
+              e.currentTarget.style.borderColor = 'rgba(201,168,76,0.6)';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 8px 32px rgba(201,168,76,0.12)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.borderColor = 'rgba(201,168,76,0.3)';
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          >
+            <div style={{ position: 'absolute', top: -20, right: -20, width: 80, height: 80, borderRadius: '50%', background: 'radial-gradient(circle, rgba(201,168,76,0.1), transparent)', pointerEvents: 'none' }} />
+            <div style={{ fontSize: '2rem', marginBottom: 12 }}>📋</div>
+            <h2 style={{
+              fontFamily: "'Cinzel', serif", fontSize: '1.05rem', fontWeight: 700,
+              color: '#c9a84c', letterSpacing: 2, marginBottom: 4,
+            }}>Fix Menü</h2>
+            <p style={{ fontSize: '0.75rem', color: 'rgba(240,234,216,0.4)', marginBottom: 0 }}>
+              Günün sabit menüsünü düzenle
+            </p>
+            <div style={{
+              display: 'flex', justifyContent: 'flex-end', alignItems: 'center',
+              marginTop: 16, paddingTop: 16,
+              borderTop: '1px solid rgba(201,168,76,0.1)',
+            }}>
+              <span style={{ fontSize: '0.8rem', color: '#c9a84c', letterSpacing: 1 }}>
+                Düzenle →
+              </span>
+            </div>
+          </div>
+        </Link>
       </div>
     </div>
   );

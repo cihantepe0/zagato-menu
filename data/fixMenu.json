@@ -1,0 +1,24 @@
+{
+  "sections": [
+    {
+      "label": "Meze",
+      "label_en": "Mezze",
+      "items": ["Atom", "Humus", "Cacık", "Haydari", "Acılı Ezme", "Patlıcan Salatası", "Enginar", "Pancar", "Kuru Domates", "Havuç Tarator"]
+    },
+    {
+      "label": "Ara Sıcak",
+      "label_en": "Hot Starter",
+      "items": ["Muska Böreği", "Misket Köfte", "Pide Hellim"]
+    },
+    {
+      "label": "Ana Yemek",
+      "label_en": "Main Course",
+      "items": ["Karışık Izgara"]
+    },
+    {
+      "label": "Tatlı",
+      "label_en": "Dessert",
+      "items": ["Kırbaç Tatlısı", "Meyve Tabağı"]
+    }
+  ]
+}

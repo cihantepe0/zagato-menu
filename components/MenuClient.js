@@ -88,7 +88,7 @@ const icons = {
 };
 
 
-export default function MenuClient({ initialData }) {
+export default function MenuClient({ initialData, fixMenuData }) {
   const [menuData] = useState(initialData || []);
   const [activeCategory, setActiveCategory] = useState(initialData?.[0]?.id || 'baslangic');
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -206,7 +206,7 @@ export default function MenuClient({ initialData }) {
       </header>
 
       {/* ── FIX MENÜ ── */}
-      <FixMenu lang={lang} />
+      <FixMenu lang={lang} fixMenuData={fixMenuData} />
 
       {/* ── CATEGORY NAV ── */}
       <nav style={{
@@ -483,60 +483,23 @@ function MenuItem({ item, index, lang }) {
 }
 
 // ── FIX MENÜ COMPONENT ────────────────────────────────────────────
-function FixMenu({ lang }) {
+function FixMenu({ lang, fixMenuData }) {
   const [open, setOpen] = useState(false);
 
-  const tr = {
-    title: 'Fix Menü',
-    subtitle: 'Günün Sabit Menüsü',
-    toggle_open: 'Menüyü Gör',
-    toggle_close: 'Kapat',
-    sections: [
-      {
-        label: 'Meze',
-        items: ['Atom', 'Humus', 'Cacık', 'Haydari', 'Acılı Ezme', 'Patlıcan Salatası', 'Enginar', 'Pancar', 'Kuru Domates', 'Havuç Tarator'],
-      },
-      {
-        label: 'Ara Sıcak',
-        items: ['Muska Böreği', 'Misket Köfte', 'Pide Hellim'],
-      },
-      {
-        label: 'Ana Yemek',
-        items: ['Karışık Izgara'],
-      },
-      {
-        label: 'Tatlı',
-        items: ['Kırbaç Tatlısı', 'Meyve Tabağı'],
-      },
-    ],
-  };
+  if (!fixMenuData?.sections?.length) return null;
 
-  const en = {
-    title: 'Fixed Menu',
-    subtitle: "Today's Set Menu",
-    toggle_open: 'View Menu',
-    toggle_close: 'Close',
-    sections: [
-      {
-        label: 'Mezze',
-        items: ['Atom', 'Hummus', 'Tzatziki', 'Haydari', 'Spicy Ezme', 'Eggplant Salad', 'Artichoke', 'Beetroot', 'Sun-dried Tomatoes', 'Carrot Tarator'],
-      },
-      {
-        label: 'Hot Starter',
-        items: ['Muska Pastry', 'Meatballs', 'Pide Halloumi'],
-      },
-      {
-        label: 'Main Course',
-        items: ['Mixed Grill'],
-      },
-      {
-        label: 'Dessert',
-        items: ['Whipped Dessert', 'Fruit Platter'],
-      },
-    ],
-  };
+  const sections = fixMenuData.sections.map(sec => ({
+    label: lang === 'en' ? (sec.label_en || sec.label) : sec.label,
+    items: sec.items || [],
+  }));
 
-  const content = lang === 'en' ? en : tr;
+  const content = {
+    title: lang === 'en' ? 'Fixed Menu' : 'Fix Menü',
+    subtitle: lang === 'en' ? "Today's Set Menu" : 'Günün Sabit Menüsü',
+    toggle_open: lang === 'en' ? 'View Menu' : 'Menüyü Gör',
+    toggle_close: lang === 'en' ? 'Close' : 'Kapat',
+    sections,
+  };
 
   return (
     <div style={{
