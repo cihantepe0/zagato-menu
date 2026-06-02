@@ -5,10 +5,10 @@ const sharp = require('sharp');
 const IMG_FOLDER = '/Users/hasantepe/Desktop/zagato tam işlenen';
 const DATA_PATH = path.join(__dirname, '..', 'data', 'menuData.json');
 
-// Food categories only (in display order) - skip drink/alcohol categories
+// Food categories in order — Mezeler EXCLUDED (no photos)
 const FOOD_CAT_IDS = [
   'baslangic',
-  'mezeler',
+  // 'mezeler' → atlanıyor, görsel yok
   'arasicak',
   'burger-dana',
   'burger-tavuk',
@@ -24,7 +24,7 @@ async function run() {
   // 1. Get sorted image list
   const images = fs.readdirSync(IMG_FOLDER)
     .filter(f => /\.(png|jpg|jpeg|webp)$/i.test(f))
-    .sort()  // DSC files sort naturally in order
+    .sort()
     .map(f => path.join(IMG_FOLDER, f));
 
   console.log(`📷 ${images.length} görsel bulundu`);
@@ -32,7 +32,14 @@ async function run() {
   // 2. Load menu data
   const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
 
-  // 3. Collect food items in order
+  // 3. Clear any existing images from Mezeler
+  const mezelerCat = data.find(c => c.id === 'mezeler');
+  if (mezelerCat) {
+    mezelerCat.items.forEach(item => { item.img = null; });
+    console.log(`🧹 Mezeler görselleri temizlendi (${mezelerCat.items.length} ürün)`);
+  }
+
+  // 4. Collect target items (Mezeler excluded)
   const targets = [];
   for (const catId of FOOD_CAT_IDS) {
     const cat = data.find(c => c.id === catId);
