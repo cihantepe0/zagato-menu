@@ -32,6 +32,94 @@
     ]
   },
   {
+    "id": "mezeler",
+    "category": "Mezeler",
+    "category_en": "Mezze",
+    "icon": "salad",
+    "items": [
+      {
+        "name": "Atom",
+        "name_en": "Atom",
+        "desc": "",
+        "desc_en": "",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Humus",
+        "name_en": "Hummus",
+        "desc": "",
+        "desc_en": "",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Cacık",
+        "name_en": "Tzatziki",
+        "desc": "",
+        "desc_en": "",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Haydari",
+        "name_en": "Haydari",
+        "desc": "",
+        "desc_en": "",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Acılı Ezme",
+        "name_en": "Spicy Ezme",
+        "desc": "",
+        "desc_en": "",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Patlıcan Salatası",
+        "name_en": "Eggplant Salad",
+        "desc": "",
+        "desc_en": "",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Enginar",
+        "name_en": "Artichoke",
+        "desc": "",
+        "desc_en": "",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Pancar",
+        "name_en": "Beetroot",
+        "desc": "",
+        "desc_en": "",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Kuru Domates",
+        "name_en": "Sun-dried Tomatoes",
+        "desc": "",
+        "desc_en": "",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Havuç Tarator",
+        "name_en": "Carrot Tarator",
+        "desc": "",
+        "desc_en": "",
+        "price": "",
+        "img": null
+      }
+    ]
+  },
+  {
     "id": "arasicak",
     "category": "Ara Sıcaklar",
     "category_en": "Hot Starters",

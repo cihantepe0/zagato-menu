@@ -205,6 +205,9 @@ export default function MenuClient({ initialData }) {
         }}>{lang === 'tr' ? 'İyi Yemek\u00a0·\u00a0İyi Müzik' : 'Fine Dining\u00a0·\u00a0Fine Music'}</p>
       </header>
 
+      {/* ── FIX MENÜ ── */}
+      <FixMenu lang={lang} />
+
       {/* ── CATEGORY NAV ── */}
       <nav style={{
         position: 'sticky', top: 0, zIndex: 100,
@@ -473,6 +476,161 @@ function MenuItem({ item, index, lang }) {
             fontFamily: "'Cinzel', serif", fontSize: '1.1rem', fontWeight: 600,
             color: '#c9a84c', letterSpacing: 1,
           }}>{item.price} ₺</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── FIX MENÜ COMPONENT ────────────────────────────────────────────
+function FixMenu({ lang }) {
+  const [open, setOpen] = useState(false);
+
+  const tr = {
+    title: 'Fix Menü',
+    subtitle: 'Günün Sabit Menüsü',
+    toggle_open: 'Menüyü Gör',
+    toggle_close: 'Kapat',
+    sections: [
+      {
+        label: 'Meze',
+        items: ['Atom', 'Humus', 'Cacık', 'Haydari', 'Acılı Ezme', 'Patlıcan Salatası', 'Enginar', 'Pancar', 'Kuru Domates', 'Havuç Tarator'],
+      },
+      {
+        label: 'Ara Sıcak',
+        items: ['Muska Böreği', 'Misket Köfte', 'Pide Hellim'],
+      },
+      {
+        label: 'Ana Yemek',
+        items: ['Karışık Izgara'],
+      },
+      {
+        label: 'Tatlı',
+        items: ['Kırbaç Tatlısı', 'Meyve Tabağı'],
+      },
+    ],
+  };
+
+  const en = {
+    title: 'Fixed Menu',
+    subtitle: "Today's Set Menu",
+    toggle_open: 'View Menu',
+    toggle_close: 'Close',
+    sections: [
+      {
+        label: 'Mezze',
+        items: ['Atom', 'Hummus', 'Tzatziki', 'Haydari', 'Spicy Ezme', 'Eggplant Salad', 'Artichoke', 'Beetroot', 'Sun-dried Tomatoes', 'Carrot Tarator'],
+      },
+      {
+        label: 'Hot Starter',
+        items: ['Muska Pastry', 'Meatballs', 'Pide Halloumi'],
+      },
+      {
+        label: 'Main Course',
+        items: ['Mixed Grill'],
+      },
+      {
+        label: 'Dessert',
+        items: ['Whipped Dessert', 'Fruit Platter'],
+      },
+    ],
+  };
+
+  const content = lang === 'en' ? en : tr;
+
+  return (
+    <div style={{
+      margin: '0 16px 4px',
+      background: 'linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(8,6,4,0.9) 100%)',
+      border: '1px solid rgba(201,168,76,0.3)',
+      borderRadius: 16,
+      overflow: 'hidden',
+    }}>
+      {/* Header row */}
+      <button
+        onClick={() => setOpen(o => !o)}
+        style={{
+          width: '100%', display: 'flex', alignItems: 'center',
+          justifyContent: 'space-between', padding: '14px 18px',
+          background: 'transparent', border: 'none', cursor: 'pointer',
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          {/* fork-knife icon */}
+          <svg viewBox="0 0 24 24" width={18} height={18} fill="none" stroke="#c9a84c" strokeWidth="1.5">
+            <path d="M3 2v7c0 1.1.9 2 2 2h1v11h2V11h1a2 2 0 002-2V2h-2v5H7V2H5v5H4V2H3zM19 2c-1.7 0-3 2-3 5v4h2v9h2V2h-1z"/>
+          </svg>
+          <div style={{ textAlign: 'left' }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: '0.95rem', fontWeight: 700,
+              color: '#c9a84c', letterSpacing: 2,
+            }}>{content.title}</div>
+            <div style={{ fontSize: '0.65rem', color: 'rgba(240,234,216,0.4)', letterSpacing: 1, marginTop: 1 }}>
+              {content.subtitle}
+            </div>
+          </div>
+        </div>
+        <div style={{
+          fontSize: '0.68rem', color: '#c9a84c', letterSpacing: 1,
+          fontFamily: "'Outfit', sans-serif", fontWeight: 600,
+          display: 'flex', alignItems: 'center', gap: 4,
+        }}>
+          {open ? content.toggle_close : content.toggle_open}
+          <svg viewBox="0 0 24 24" width={14} height={14} fill="none" stroke="#c9a84c" strokeWidth="2"
+            style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}>
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </div>
+      </button>
+
+      {/* Expanded content */}
+      <div style={{
+        maxHeight: open ? 800 : 0,
+        overflow: 'hidden',
+        transition: 'max-height 0.4s cubic-bezier(0.4,0,0.2,1)',
+      }}>
+        <div style={{
+          borderTop: '1px solid rgba(201,168,76,0.15)',
+          padding: '16px 18px 20px',
+          display: 'flex', flexDirection: 'column', gap: 16,
+        }}>
+          {content.sections.map((section, si) => (
+            <div key={si}>
+              {/* Section label */}
+              <div style={{
+                display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10,
+              }}>
+                <div style={{ height: 1, width: 20, background: 'rgba(201,168,76,0.4)' }} />
+                <span style={{
+                  fontFamily: "'Cinzel', serif", fontSize: '0.7rem', fontWeight: 700,
+                  color: '#c9a84c', letterSpacing: 2, textTransform: 'uppercase',
+                }}>{section.label}</span>
+                <div style={{ flex: 1, height: 1, background: 'rgba(201,168,76,0.15)' }} />
+              </div>
+              {/* Items */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px 10px' }}>
+                {section.items.map((item, ii) => (
+                  <span key={ii} style={{
+                    fontSize: '0.8rem', color: 'rgba(240,234,216,0.8)',
+                    fontFamily: "'Outfit', sans-serif", fontWeight: 300,
+                    display: 'flex', alignItems: 'center', gap: 5,
+                  }}>
+                    <span style={{ color: 'rgba(201,168,76,0.4)', fontSize: '0.55rem' }}>◆</span>
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+          {/* Note */}
+          <div style={{
+            marginTop: 4, paddingTop: 12,
+            borderTop: '1px solid rgba(201,168,76,0.1)',
+            fontSize: '0.65rem', color: 'rgba(240,234,216,0.3)',
+            fontFamily: "'Outfit', sans-serif", letterSpacing: 0.5, textAlign: 'center',
+          }}>
+            {lang === 'tr' ? 'Tüm fiyatlara KDV dahildir' : 'All prices include VAT'}
+          </div>
         </div>
       </div>
     </div>
