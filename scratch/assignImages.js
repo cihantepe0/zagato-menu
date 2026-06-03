@@ -8,6 +8,7 @@ const DATA_PATH = path.join(__dirname, '..', 'data', 'menuData.json');
 // Food categories in order — Mezeler EXCLUDED (no photos)
 const FOOD_CAT_IDS = [
   'baslangic',
+  'salata',        // Salatalar dahil
   // 'mezeler' → atlanıyor, görsel yok
   'arasicak',
   'burger-dana',
