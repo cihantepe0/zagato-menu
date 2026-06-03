@@ -120,6 +120,46 @@
     ]
   },
   {
+    "id": "salata",
+    "category": "Salatalar",
+    "category_en": "Salads",
+    "icon": "salad",
+    "items": [
+      {
+        "name": "Vegan Salata",
+        "name_en": "Vegan Salad",
+        "desc": "Roka, havuç, avokado, cherry domates, nohut, siyah zeytin, dereotu, ceviz, mor lahana",
+        "desc_en": "Rocket, carrot, avocado, cherry tomatoes, chickpeas, black olive, dill, walnut, red cabbage",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Sezar Salata",
+        "name_en": "Caesar Salad",
+        "desc": "Sezar sos, göbek salata, cherry domates, kruton ekmek, ızgara tavuk, parmesan peyniri",
+        "desc_en": "Caesar dressing, romaine lettuce, cherry tomatoes, croutons, grilled chicken, parmesan",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Yeşil Elmalı Somon Gravlaks",
+        "name_en": "Green Apple Gravlax Salad",
+        "desc": "Mevsim yeşillikleri, somon gravlaks, pancar, cherry domates, ceviz, dereotu, şefin özel sosu",
+        "desc_en": "Mixed greens, salmon gravlax, beetroot, cherry tomatoes, walnut, dill, chef's special dressing",
+        "price": "",
+        "img": null
+      },
+      {
+        "name": "Zagato Tütsülenmiş Hellimli",
+        "name_en": "Zagato Smoked Halloumi Salad",
+        "desc": "Mısır, cherry domates, mevsim yeşillikleri, ceviz, tütsülenmiş hellim, yeşil elma, şefin özel sosu",
+        "desc_en": "Corn, cherry tomatoes, mixed greens, walnut, smoked halloumi, green apple, chef's special dressing",
+        "price": "",
+        "img": null
+      }
+    ]
+  },
+  {
     "id": "arasicak",
     "category": "Ara Sıcaklar",
     "category_en": "Hot Starters",
