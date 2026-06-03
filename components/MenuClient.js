@@ -96,16 +96,25 @@ export default function MenuClient({ initialData, fixMenuData }) {
   const [lang, setLang] = useState('tr');
   const listRef = useRef(null);
   const navRef = useRef(null);
+  const loadedCats = useRef(new Set()); // track which categories have images loaded
 
-  // After hydration, fetch full data (with images) from API
+  // Fetch images only for the active category (lazy, on-demand)
   useEffect(() => {
-    fetch('/api/menu')
+    if (loadedCats.current.has(activeCategory)) return; // already loaded
+    loadedCats.current.add(activeCategory);
+
+    fetch(`/api/menu/${activeCategory}`)
       .then(r => r.json())
-      .then(fullData => {
-        if (Array.isArray(fullData) && fullData.length > 0) setMenuData(fullData);
+      .then(catData => {
+        if (!catData?.items) return;
+        setMenuData(prev => prev.map(c =>
+          c.id === activeCategory
+            ? { ...c, items: catData.items }
+            : c
+        ));
       })
       .catch(() => {});
-  }, []);
+  }, [activeCategory]);
 
   // Helper: pick correct language field
   const t = (item, field) => {
