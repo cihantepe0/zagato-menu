@@ -494,7 +494,13 @@ function MenuItem({ item, index, lang }) {
           <span style={{
             fontFamily: "'Cinzel', serif", fontSize: '1.1rem', fontWeight: 600,
             color: '#c9a84c', letterSpacing: 1,
-          }}>{item.price} ₺</span>
+          }}>
+            {item.price
+              ? item.price.toString().includes('/')
+                ? item.price.toString().split('/').map(p => p.trim()).join(' — ') + ' ₺'
+                : item.price + ' ₺'
+              : ''}
+          </span>
         </div>
       </div>
     </div>
