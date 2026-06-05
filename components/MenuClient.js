@@ -423,16 +423,6 @@ export default function MenuClient({ initialData, fixMenuData }) {
           ))}
         </div>
 
-        {/* Drawer footer */}
-        <div style={{
-          padding: '20px 24px',
-          borderTop: '1px solid rgba(201,168,76,0.15)',
-          fontSize: '0.7rem', color: 'rgba(201,168,76,0.5)',
-          letterSpacing: 1, textAlign: 'center',
-          fontFamily: "'Outfit', sans-serif",
-        }}>
-          — SINCE 2020 —
-        </div>
       </div>
     </div>
   );
