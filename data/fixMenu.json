@@ -3,22 +3,66 @@
     {
       "label": "Meze",
       "label_en": "Mezze",
-      "items": ["Atom", "Humus", "Cacık", "Haydari", "Acılı Ezme", "Patlıcan Salatası", "Enginar", "Pancar", "Kuru Domates", "Havuç Tarator"]
+      "items": [
+        "Atom",
+        "Humus",
+        "Cacık",
+        "Haydari",
+        "Acılı Ezme",
+        "Patlıcan Salatası",
+        "Enginar",
+        "Pancar",
+        "Kuru Domates",
+        "Havuç Tarator"
+      ],
+      "items_en": [
+        "Atom",
+        "Hummus",
+        "Tzatziki",
+        "Haydari",
+        "Spicy Ezme",
+        "Aubergine Salad",
+        "Artichoke",
+        "Beetroot",
+        "Sun-dried Tomatoes",
+        "Carrot Tarator"
+      ]
     },
     {
       "label": "Ara Sıcak",
       "label_en": "Hot Starter",
-      "items": ["Muska Böreği", "Misket Köfte", "Pide Hellim"]
+      "items": [
+        "Muska Böreği",
+        "Misket Köfte",
+        "Pide Hellim"
+      ],
+      "items_en": [
+        "Muska Pastry",
+        "Mini Meatballs",
+        "Halloumi Pide"
+      ]
     },
     {
       "label": "Ana Yemek",
       "label_en": "Main Course",
-      "items": ["Karışık Izgara"]
+      "items": [
+        "Karışık Izgara"
+      ],
+      "items_en": [
+        "Mixed Grill"
+      ]
     },
     {
       "label": "Tatlı",
       "label_en": "Dessert",
-      "items": ["Kırbaç Tatlısı", "Meyve Tabağı"]
+      "items": [
+        "Kırbaç Tatlısı",
+        "Meyve Tabağı"
+      ],
+      "items_en": [
+        "Whipped Cream Dessert",
+        "Fruit Platter"
+      ]
     }
   ]
 }

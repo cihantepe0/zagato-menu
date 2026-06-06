@@ -505,7 +505,7 @@ function FixMenu({ lang, fixMenuData }) {
 
   const sections = fixMenuData.sections.map(sec => ({
     label: lang === 'en' ? (sec.label_en || sec.label) : sec.label,
-    items: sec.items || [],
+    items: lang === 'en' ? (sec.items_en || sec.items || []) : (sec.items || []),
   }));
 
   const content = {
