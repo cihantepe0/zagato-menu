@@ -20,14 +20,20 @@ export default function EditCategory() {
     const token = localStorage.getItem('zagato_admin_token');
     if (!token) { router.push('/admin'); return; }
 
-    fetch('/api/menu')
-      .then(r => r.json())
-      .then(data => {
-        setAllData(data);
-        const cat = data.find(c => c.id === categoryId);
+    // Fetch all categories (lightweight, no images) for save context
+    // AND fetch the specific category with images for editing
+    Promise.all([
+      fetch('/api/menu').then(r => r.json()),
+      fetch(`/api/menu/${categoryId}`).then(r => r.json()),
+    ])
+      .then(([allData, catWithImages]) => {
+        setAllData(allData);
+        const cat = allData.find(c => c.id === categoryId);
         if (cat) {
           setCategory(cat);
-          setItems(JSON.parse(JSON.stringify(cat.items || [])));
+          // Use catWithImages.items (has img field) if available
+          const fullItems = catWithImages?.items || cat.items || [];
+          setItems(JSON.parse(JSON.stringify(fullItems)));
         }
         setLoading(false);
       })
@@ -87,7 +93,10 @@ export default function EditCategory() {
   const handleSave = async () => {
     setSaving(true);
     try {
-      const newAllData = allData.map(cat =>
+      // Fetch full data (with images) first, then merge our edited items
+      const fullData = await fetch('/api/menu?full=1').then(r => r.json()).catch(() => allData);
+      const saveData = Array.isArray(fullData) ? fullData : allData;
+      const newAllData = saveData.map(cat =>
         cat.id === categoryId ? { ...cat, items } : cat
       );
       const res = await fetch('/api/menu', {
@@ -97,7 +106,7 @@ export default function EditCategory() {
       });
       const result = await res.json();
       if (result.success) {
-        setAllData(newAllData);
+        setAllData(newAllData.map(cat => ({ ...cat, items: cat.items.map(({ img, ...rest }) => rest) })));
         setSaveMsg('✓ Kaydedildi');
       } else {
         setSaveMsg('✗ Kaydetme başarısız');

@@ -2,10 +2,18 @@ import { NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
 import { getMenuData, saveMenuData } from '@/lib/dataHelper';
 
-export async function GET() {
+export async function GET(request) {
   try {
     const data = await getMenuData();
-    // Strip images from this endpoint — images come via /api/menu/[categoryId]
+    const { searchParams } = new URL(request.url);
+    const full = searchParams.get('full') === '1';
+
+    if (full) {
+      // Return full data with images (for admin save operations)
+      return NextResponse.json(data);
+    }
+
+    // Default: strip images — client fetches per-category
     const light = data.map(cat => ({
       ...cat,
       items: cat.items.map(({ img, ...rest }) => rest),
