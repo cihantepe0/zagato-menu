@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
-import { getMenuData, saveMenuData } from '@/lib/dataHelper';
 import sharp from 'sharp';
 
 const MAX_WIDTH = 600;
@@ -11,8 +10,6 @@ export async function POST(request) {
   try {
     const formData = await request.formData();
     const file = formData.get('file');
-    const categoryId = formData.get('categoryId');
-    const itemIndex = parseInt(formData.get('itemIndex'), 10);
 
     if (!file) {
       return NextResponse.json({ error: 'No file uploaded' }, { status: 400 });
@@ -32,15 +29,8 @@ export async function POST(request) {
 
     const dataUrl = `data:image/jpeg;base64,${compressedBuffer.toString('base64')}`;
 
-    // Load current data, update item, save back
-    const allData = await getMenuData();
-    const catIndex = allData.findIndex(c => c.id === categoryId);
-    if (catIndex === -1) return NextResponse.json({ error: 'Category not found' }, { status: 404 });
-    if (!allData[catIndex].items[itemIndex]) return NextResponse.json({ error: 'Item not found' }, { status: 404 });
-
-    allData[catIndex].items[itemIndex].img = dataUrl;
-    await saveMenuData(allData);
-
+    // Return the compressed image URL only.
+    // The frontend stores it in local state and persists it when user clicks "Kaydet".
     return NextResponse.json({ success: true, url: dataUrl, meta: { originalKB, compressedKB } });
   } catch (error) {
     console.error('Upload error:', error);
