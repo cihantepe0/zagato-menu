@@ -312,6 +312,13 @@
     ]
   },
   {
+    "id": "kebap",
+    "category": "Kebaplar",
+    "category_en": "Kebabs",
+    "icon": "grill",
+    "items": []
+  },
+  {
     "id": "et",
     "category": "Et Yemekleri",
     "category_en": "Meat Dishes",
