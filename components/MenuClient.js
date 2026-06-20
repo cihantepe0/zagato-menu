@@ -57,6 +57,14 @@ const icons = {
       <path d="M3 18h18M6 20h12"/>
     </svg>
   ),
+  kebab: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <line x1="4" y1="20" x2="20" y2="4"/>
+      <rect x="8.5" y="10.5" width="4" height="3" rx="1.5" transform="rotate(-45 8.5 10.5)"/>
+      <rect x="12" y="7" width="4" height="3" rx="1.5" transform="rotate(-45 12 7)"/>
+      <rect x="5" y="14" width="4" height="3" rx="1.5" transform="rotate(-45 5 14)"/>
+    </svg>
+  ),
   fish: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
       <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6S2 12 2 12z"/>
