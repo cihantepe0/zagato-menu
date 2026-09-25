@@ -93,10 +93,16 @@ export default function EditCategory() {
   const handleSave = async () => {
     setSaving(true);
     try {
-      // Fetch full data (with images) first, then merge our edited items
-      const fullData = await fetch('/api/menu?full=1').then(r => r.json()).catch(() => allData);
-      const saveData = Array.isArray(fullData) ? fullData : allData;
-      const newAllData = saveData.map(cat =>
+      // Fetch full data (with images) first, then merge our edited items.
+      // Never fall back to the image-less list — saving it would wipe every photo.
+      const fullData = await fetch('/api/menu?full=1').then(r => r.json()).catch(() => null);
+      if (!Array.isArray(fullData)) {
+        setSaveMsg('✗ Veri alınamadı, tekrar deneyin');
+        setSaving(false);
+        setTimeout(() => setSaveMsg(''), 3000);
+        return;
+      }
+      const newAllData = fullData.map(cat =>
         cat.id === categoryId ? { ...cat, items } : cat
       );
       const res = await fetch('/api/menu', {
