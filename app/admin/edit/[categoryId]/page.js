@@ -4,17 +4,21 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import Link from 'next/link';
 
+// Stable client-side id per item so uploads/edits always hit the right item,
+// even if items are added or deleted while a photo is uploading.
+let uidCounter = 0;
+const withUid = (item) => ({ ...item, _uid: ++uidCounter });
+
 export default function EditCategory() {
   const { categoryId } = useParams();
   const router = useRouter();
 
-  const [allData, setAllData] = useState([]);
   const [category, setCategory] = useState(null);
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [saveMsg, setSaveMsg] = useState('');
-  const [uploadingIndex, setUploadingIndex] = useState(null);
+  const [uploadingUid, setUploadingUid] = useState(null);
 
   useEffect(() => {
     const token = localStorage.getItem('zagato_admin_token');
@@ -22,57 +26,51 @@ export default function EditCategory() {
 
     // Fetch all categories (lightweight, no images) for save context
     // AND fetch the specific category with images for editing
+    // no-store: a cached (stale) copy would overwrite newer photos on save
     Promise.all([
-      fetch('/api/menu').then(r => r.json()),
-      fetch(`/api/menu/${categoryId}`).then(r => r.json()),
+      fetch('/api/menu', { cache: 'no-store' }).then(r => r.json()),
+      fetch(`/api/menu/${categoryId}`, { cache: 'no-store' }).then(r => r.json()),
     ])
       .then(([allData, catWithImages]) => {
-        setAllData(allData);
         const cat = allData.find(c => c.id === categoryId);
         if (cat) {
           setCategory(cat);
           // Use catWithImages.items (has img field) if available
           const fullItems = catWithImages?.items || cat.items || [];
-          setItems(JSON.parse(JSON.stringify(fullItems)));
+          setItems(JSON.parse(JSON.stringify(fullItems)).map(withUid));
         }
         setLoading(false);
       })
       .catch(() => setLoading(false));
   }, [categoryId, router]);
 
-  const updateItem = (index, field, value) => {
-    setItems(prev => {
-      const updated = [...prev];
-      updated[index] = { ...updated[index], [field]: value };
-      return updated;
-    });
+  const updateItem = (uid, field, value) => {
+    setItems(prev => prev.map(it => (it._uid === uid ? { ...it, [field]: value } : it)));
   };
 
   const addNewItem = () => {
-    setItems(prev => [...prev, { name: '', desc: '', price: '', img: null }]);
+    setItems(prev => [...prev, withUid({ name: '', desc: '', price: '', img: null })]);
     // Scroll to bottom after adding
     setTimeout(() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }), 100);
   };
 
-  const removeItem = (index) => {
+  const removeItem = (uid) => {
     if (!confirm('Bu ürünü silmek istediğinizden emin misiniz?')) return;
-    setItems(prev => prev.filter((_, i) => i !== index));
+    setItems(prev => prev.filter(it => it._uid !== uid));
   };
 
-  const handleImageUpload = async (index, file) => {
+  const handleImageUpload = async (uid, file) => {
     if (!file) return;
-    setUploadingIndex(index);
+    setUploadingUid(uid);
     try {
       const formData = new FormData();
       formData.append('file', file);
-      formData.append('categoryId', categoryId);
-      formData.append('itemIndex', index);
 
       const res = await fetch('/api/upload', { method: 'POST', body: formData });
       const result = await res.json();
 
       if (result.url) {
-        updateItem(index, 'img', result.url);
+        updateItem(uid, 'img', result.url);
         setSaveMsg('✓ Fotoğraf yüklendi');
         setTimeout(() => setSaveMsg(''), 2500);
       } else {
@@ -83,36 +81,25 @@ export default function EditCategory() {
       setSaveMsg('✗ Yükleme hatası');
       setTimeout(() => setSaveMsg(''), 2500);
     }
-    setUploadingIndex(null);
+    setUploadingUid(null);
   };
 
-  const removeImage = (index) => {
-    updateItem(index, 'img', null);
+  const removeImage = (uid) => {
+    updateItem(uid, 'img', null);
   };
 
   const handleSave = async () => {
     setSaving(true);
     try {
-      // Fetch full data (with images) first, then merge our edited items.
-      // Never fall back to the image-less list — saving it would wipe every photo.
-      const fullData = await fetch('/api/menu?full=1').then(r => r.json()).catch(() => null);
-      if (!Array.isArray(fullData)) {
-        setSaveMsg('✗ Veri alınamadı, tekrar deneyin');
-        setSaving(false);
-        setTimeout(() => setSaveMsg(''), 3000);
-        return;
-      }
-      const newAllData = fullData.map(cat =>
-        cat.id === categoryId ? { ...cat, items } : cat
-      );
-      const res = await fetch('/api/menu', {
-        method: 'POST',
+      // Send only this category; the server merges it into the latest data
+      const cleanItems = items.map(({ _uid, ...rest }) => rest);
+      const res = await fetch(`/api/menu/${categoryId}`, {
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newAllData),
+        body: JSON.stringify({ items: cleanItems }),
       });
       const result = await res.json();
       if (result.success) {
-        setAllData(newAllData.map(cat => ({ ...cat, items: cat.items.map(({ img, ...rest }) => rest) })));
         setSaveMsg('✓ Kaydedildi');
       } else {
         setSaveMsg('✗ Kaydetme başarısız');
@@ -265,15 +252,15 @@ export default function EditCategory() {
 
         {items.map((item, index) => (
           <ItemEditor
-            key={index}
+            key={item._uid}
             item={item}
             index={index}
             categoryId={categoryId}
-            uploadingIndex={uploadingIndex}
-            onUpdate={(field, value) => updateItem(index, field, value)}
-            onImageUpload={(file) => handleImageUpload(index, file)}
-            onRemoveImage={() => removeImage(index)}
-            onDelete={() => removeItem(index)}
+            isUploading={uploadingUid === item._uid}
+            onUpdate={(field, value) => updateItem(item._uid, field, value)}
+            onImageUpload={(file) => handleImageUpload(item._uid, file)}
+            onRemoveImage={() => removeImage(item._uid)}
+            onDelete={() => removeItem(item._uid)}
             styles={S}
           />
         ))}
@@ -304,9 +291,8 @@ export default function EditCategory() {
   );
 }
 
-function ItemEditor({ item, index, categoryId, uploadingIndex, onUpdate, onImageUpload, onRemoveImage, onDelete, styles: S }) {
+function ItemEditor({ item, index, categoryId, isUploading, onUpdate, onImageUpload, onRemoveImage, onDelete, styles: S }) {
   const fileInputRef = useRef(null);
-  const isUploading = uploadingIndex === index;
   const isNew = !item.name && !item.desc && !item.price && !item.img;
 
   return (
